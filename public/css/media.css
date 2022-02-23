@@ -1,0 +1,108 @@
+/* home page*/
+
+@media screen and (max-width: 768px){
+
+    .features-icons .col-md-4{
+        margin: 5% auto;
+    }
+}
+
+@media screen and (min-width: 768px){
+
+    header.masthead .masthead-heading{
+        width: 60%;
+        margin: 15px auto;
+    }
+
+}
+
+@media screen and (min-width: 768px){
+    .timeline .timeline-image i{
+        font-size: 100px;
+    }
+}
+
+
+@media screen and (max-width: 768px){
+
+    .timeline .timeline-image i{
+        font-size: 80px;
+    }
+
+}
+
+@media screen and (min-width: 992px){
+
+    .timeline .timeline-image i{
+        font-size: 150px;
+    }
+}
+
+@media screen and (min-width: 1200px){
+    .timeline .timeline-image i{
+        font-size: 155px;
+    }
+}
+
+/*end home page*/
+
+
+
+/* start flight data  */
+
+@media screen and (max-width: 992px){
+    .flight-data{
+        min-height: 1000px;
+    } 
+}
+
+@media screen and (max-width: 1200px){
+
+    .request-form{
+        width: 100%;
+    }
+
+}
+/* end flight data */
+
+
+
+/* start travel data  */
+@media screen and (max-width: 992px){
+
+    .traveler-data{
+        min-height: 1300px;
+    }
+
+}
+/* end travel data */
+
+
+
+/* start confirm request */
+@media screen and (max-width: 768px){
+    .confirm-request .success{
+        width: 100%;
+    }
+}
+/* end confirm request */
+
+
+
+/* start profile */
+@media screen and (max-width: 768px){
+    .profile table{
+        width: 100%;
+    }
+}
+/* end profile */
+
+
+/* start request detail */
+@media screen and (max-width: 992px){
+    .request-detail .card{
+        width: 100%;
+    }
+}
+/* end request detail */
+

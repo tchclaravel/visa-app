@@ -1,0 +1,264 @@
+@extends('app.layout.home_master')
+
+
+@section('title') الرئيسية @endsection
+
+
+@section('content')
+
+<!-- Masthead-->
+<header class="masthead" id="start">
+    <div class="container">
+        <div class="masthead-heading" style="font-size: 50px; color:#ffd35c"> 
+            كل شئ أصبح سهلاً!
+        </div>
+        <div class="masthead-heading" style="font-size: 30px">
+            معنا يمكنك حجز تأشيرة دخول لأي دولة في دقائق .. أليس هذا رائعاً؟!
+        </div>
+
+        <a class="btn btn-primary btn-lg text-uppercase" href="#services">أبدأ الآن</a>
+    </div>
+</header>
+
+<!-- Features-->
+<section class="page-section" id="features">
+    <div class="container">
+        <div class="text-center">
+            <h2 class="section-heading text-uppercase" style="color:#f57402;">المميزات</h2>
+            <h3 class="section-subheading text-muted" style="font-style: normal"> لماذا يجب إستخدام تأشيرتك علينا؟</h3>
+        </div>
+        <div class="row text-center features-icons">
+            <div class="col-md-4">
+                <img src="{{asset('app/template/design/icon-1.png')}}" alt="">
+                <h4 class="my-3">سهولة الإستخدام</h4>
+                <p class="text-muted">
+                    نقدم فورمات بسيطة و سهلة كل ما عليك هو تعبئة الحقول المحددة بالبيانات المطلوبة
+                </p>
+            </div>
+            <div class="col-md-4">
+                <img src="{{asset('app/template/design/icon-2.png')}}" alt="">
+                <h4 class="my-3">تجهيز المتطلبات</h4>
+                <p class="text-muted">
+                    نقدم لك أبلكيشن على شكل ملف PDF يحتوي على كل بيانات التقديم باللغة الإنجليزية دون الحاجة للترجمة
+                </p>
+            </div>
+            <div class="col-md-4">
+                <img src="{{asset('app/template/design/icon-3.png')}}" alt="">
+                <h4 class="my-3">أسعار رمزية</h4>
+                <p class="text-muted">
+                    نوفر لك خدمات دراسة و علاج برسوم رمزية و بأكثر من طريقة للدفع
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Steps-->
+<section class="page-section" id="steps">
+    <div class="container">
+        <div class="text-center">
+            <h2 class="section-heading text-uppercase" style="color:#f57402;"">خطوات بسيطة و سهلة</h2>
+            <h3 class="section-subheading text-muted" style="font-style: normal">نص تجريبي نص تجريبي نص تجريبي</h3>
+        </div>
+        <ul class="timeline">
+            <li>
+                <div class="timeline-image"><img class="rounded-circle img-fluid" src="{{asset('app/template/design/step-1.png')}}" alt="..." /></div>
+                <div class="timeline-panel">
+                    <div class="timeline-heading">
+                        <h4 class="subheading">إختيار الوجهة</h4>
+                        {{-- <h4 class="subheading">Our Humble Beginnings</h4> --}}
+                    </div>
+                    <div class="timeline-body">
+                        <p class="text-muted">
+                            نص تجريبي نص تجريبي نص تجريبي نص تجريبي نص تجريبي نص تجريبي نص تجريبي نص تجريبي نص تجريبي نص تجريبي نص تجريبي نص تجريبي نص تجريبي نص تجريبي نص تجريبي نص تجريبي
+                        </p>
+                    </div>
+                </div>
+            </li>
+            <li class="timeline-inverted">
+                <div class="timeline-image"><img class="rounded-circle img-fluid" src="{{asset('app/template/design/step-2.png')}}" alt="..." /></div>
+                <div class="timeline-panel">
+                    <div class="timeline-heading">
+                        {{-- <h4>March 2011</h4> --}}
+                        <h4 class="subheading">تعبئة بيانات المسافرين</h4>
+                    </div>
+                    <div class="timeline-body">
+                        <p class="text-muted">
+                            نص تجريبي نص تجريبي نص تجريبي نص تجريبي نص تجريبي نص تجريبي نص تجريبي نص تجريبي نص تجريبي نص تجريبي نص تجريبي نص تجريبي نص تجريبي نص تجريبي نص تجريبي نص تجريبي
+                        </p>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="timeline-image"><img class="rounded-circle img-fluid" src="{{asset('app/template/design/step-3.png')}}" alt="..." /></div>
+                <div class="timeline-panel">
+                    <div class="timeline-heading">
+                        {{-- <h4>December 2015</h4> --}}
+                        <h4 class="subheading">تحديد الموعد</h4>
+                    </div>
+                    <div class="timeline-body">
+                        <p class="text-muted">
+                            نص تجريبي نص تجريبي نص تجريبي نص تجريبي نص تجريبي نص تجريبي نص تجريبي نص تجريبي نص تجريبي نص تجريبي نص تجريبي نص تجريبي نص تجريبي نص تجريبي نص تجريبي نص تجريبي
+                        </p>
+                    </div>
+                </div>
+            </li>
+            <li class="timeline-inverted">
+                <div class="timeline-image"><img class="rounded-circle img-fluid" src="{{asset('app/template/design/step-4.png')}}" alt="..." /></div>
+                <div class="timeline-panel">
+                    <div class="timeline-heading">
+                        {{-- <h4>July 2020</h4> --}}
+                        <h4 class="subheading">إختيار طريقة الدفع</h4>
+                    </div>
+                    <div class="timeline-body">
+                        <p class="text-muted">
+                            نص تجريبي نص تجريبي نص تجريبي نص تجريبي نص تجريبي نص تجريبي نص تجريبي نص تجريبي نص تجريبي نص تجريبي نص تجريبي نص تجريبي نص تجريبي نص تجريبي نص تجريبي نص تجريبي
+                        </p>
+                    </div>
+                </div>
+            </li>
+            <li>
+                <div class="timeline-image">
+                    <i class="bi bi-check-circle-fill"></i>
+                </div>
+                <div class="timeline-panel">
+                    <div class="timeline-heading">
+                        <h4 style="margin-top: 23px" class="subheading">مبروك! أكتمل طلبك</h4>
+                    </div>
+                    <div class="timeline-body">
+                        <p class="text-muted">
+                            نص تجريبي نص تجريبي نص تجريبي نص تجريبي نص تجريبي نص تجريبي نص تجريبي نص تجريبي نص تجريبي نص تجريبي نص تجريبي نص تجريبي نص تجريبي نص تجريبي نص تجريبي نص تجريبي
+                        </p>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+</section>
+<!-- Team-->
+{{-- <section class="page-section bg-light" id="team">
+    <div class="container">
+        <div class="text-center">
+            <h2 class="section-heading text-uppercase">Our Amazing Team</h2>
+            <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+        </div>
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="team-member">
+                    <img class="mx-auto rounded-circle" src="{{asset('app/template/assets/img/team/1.jpg')}}" alt="..." />
+                    <h4>Parveen Anand</h4>
+                    <p class="text-muted">Lead Designer</p>
+                    <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-twitter"></i></a>
+                    <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-facebook-f"></i></a>
+                    <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="team-member">
+                    <img class="mx-auto rounded-circle" src="{{asset('app/template/assets/img/team/2.jpg')}}" alt="..." />
+                    <h4>Diana Petersen</h4>
+                    <p class="text-muted">Lead Marketer</p>
+                    <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-twitter"></i></a>
+                    <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-facebook-f"></i></a>
+                    <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="team-member">
+                    <img class="mx-auto rounded-circle" src="{{asset('app/template/assets/img/team/3.jpg')}}" alt="..." />
+                    <h4>Larry Parker</h4>
+                    <p class="text-muted">Lead Developer</p>
+                    <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-twitter"></i></a>
+                    <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-facebook-f"></i></a>
+                    <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-linkedin-in"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-8 mx-auto text-center"><p class="large text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut eaque, laboriosam veritatis, quos non quis ad perspiciatis, totam corporis ea, alias ut unde.</p></div>
+        </div>
+    </div>
+</section> --}}
+<!-- Clients-->
+{{-- <div class="py-5">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-md-3 col-sm-6 my-3">
+                <a href="#!"><img class="img-fluid img-brand d-block mx-auto" src="{{asset('app/template/assets/img/logos/microsoft.svg')}}" alt="..." /></a>
+            </div>
+            <div class="col-md-3 col-sm-6 my-3">
+                <a href="#!"><img class="img-fluid img-brand d-block mx-auto" src="{{asset('app/template/assets/img/logos/google.svg')}}" alt="..." /></a>
+            </div>
+            <div class="col-md-3 col-sm-6 my-3">
+                <a href="#!"><img class="img-fluid img-brand d-block mx-auto" src="{{asset('app/template/assets/img/logos/facebook.svg')}}" alt="..." /></a>
+            </div>
+            <div class="col-md-3 col-sm-6 my-3">
+                <a href="#!"><img class="img-fluid img-brand d-block mx-auto" src="{{asset('app/template/assets/img/logos/ibm.svg')}}" alt="..." /></a>
+            </div>
+        </div>
+    </div>
+</div> --}}
+<!-- Contact-->
+<section class="page-section" id="contact">
+    <div class="container">
+        <div class="text-center">
+            <h2 class="section-heading text-uppercase">إتـصل بــنا</h2>
+            <h3 class="section-subheading text-muted" style="font-style: normal; ">
+                إترك رسالة و سوف نقوم بالرد عليك في أقرب وقت ممكن
+            </h3>
+        </div>
+        <!-- * * * * * * * * * * * * * * *-->
+        <!-- * * SB Forms Contact Form * *-->
+        <!-- * * * * * * * * * * * * * * *-->
+        <!-- This form is pre-integrated with SB Forms.-->
+        <!-- To make this form functional, sign up at-->
+        <!-- https://startbootstrap.com/solution/contact-forms-->
+        <!-- to get an API token!-->
+        <form id="contactForm" data-sb-form-api-token="API_TOKEN">
+            <div class="row align-items-stretch mb-5">
+                <div class="col-md-6">
+                    <div class="form-group">
+                        <!-- Name input-->
+                        <input class="form-control" id="name" type="text" placeholder="الأسـم" data-sb-validations="required" />
+                    </div>
+                    <div class="form-group">
+                        <!-- Email address input-->
+                        <input class="form-control" style="text-align: right" id="email" type="email" placeholder="الإيـميـل" data-sb-validations="required,email" />
+                    </div>
+                    <div class="form-group mb-md-0">
+                        <!-- Phone number input-->
+                        <input class="form-control" style="text-align: right" id="phone" type="tel" placeholder="رقـم الجـوال" data-sb-validations="required" />
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="form-group form-group-textarea mb-md-0">
+                        <!-- Message input-->
+                        <textarea class="form-control" id="message" placeholder="أكـتب رسالـتك هنا .." data-sb-validations="required"></textarea>
+                    </div>
+                </div>
+            </div>
+            <!-- Submit success message-->
+            <!---->
+            <!-- This is what your users will see when the form-->
+            <!-- has successfully submitted-->
+            <div class="d-none" id="submitSuccessMessage">
+                <div class="text-center text-white mb-3">
+                    <div class="fw-bolder">Form submission successful!</div>
+                    To activate this form, sign up at
+                    <br />
+                    <a href="https://startbootstrap.com/solution/contact-forms">https://startbootstrap.com/solution/contact-forms</a>
+                </div>
+            </div>
+            <!-- Submit error message-->
+            <!---->
+            <!-- This is what your users will see when there is-->
+            <!-- an error submitting the form-->
+            <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3">Error sending message!</div></div>
+            <!-- Submit Button-->
+            <div class="text-center"><button class="btn btn-primary btn-lg text-uppercase disabled" id="submitButton" type="submit">إرسال الرسالة</button></div>
+        </form>
+    </div>
+</section>
+
+
+@endsection

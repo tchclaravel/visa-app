@@ -1,0 +1,344 @@
+/* main colors
+
+#ffc800
+
+#0c1e34
+#033c59
+#005479
+#f5a302
+#ffba41
+#ffd35c
+
+
+#f57402
+
+*/
+
+
+
+/* <--- general tags --->  */
+@import url(https://fontlibrary.org//face/droid-arabic-kufi);
+body{
+    font-family: 'DroidArabicKufiRegular';
+    color:#0c1e34;
+    background-image: url("/../app/template/design/body-background.jpg");
+    /* background: rgb(253, 255, 229); */
+    /* font-style: normal !important; */
+}
+
+label{
+    font-size: 12px;
+    font-weight: bold;
+}
+
+input::-webkit-input-placeholder {
+    font-size: 12px;
+}
+
+
+body *{
+    font-family: 'DroidArabicKufiRegular' !important;
+}
+
+.app-container{
+    min-height: 700px;
+    position: relative;
+}
+
+.v-cenetr{
+    margin: 0;
+    position: absolute;
+    top: 47%;
+    transform: translateY(-50%);
+}
+
+
+.form-control{
+    text-align: right;
+}
+
+.shadow{
+    background: #fff;
+}
+
+.main-color{
+    color: #ffc800;
+}
+
+.footer{
+    color: #fff;
+    background-color: #033c59;
+    opacity: 100%;
+}
+
+.footer a{
+    color: #fff;
+}
+
+h1,h2,h3,h4,h5,h6{
+    color:#033c59;
+}
+
+/* <--- end general tags --->  */
+
+
+
+/* <-- custom media query ---> */
+
+
+/* <-- end media query ---> */
+
+
+
+/* <--- navbar ---> */
+.navbar .nav_logo{
+    font-weight: bold;
+    color: #ffc800 ;
+    font-size: 25px;
+}
+/* <--- end navbar ---> */
+
+
+/* <--- home ---> */
+.features-icons img{
+    width: 35%;
+}
+
+.features-icons p{
+    font-size: 14px;
+    max-width: 75%;
+    margin: 0 auto;
+}
+
+
+.timeline .timeline-image i{
+    font-size: 170px;
+    color:#005479;
+}
+
+.timeline .timeline-panel h4{
+    color: #005479;
+}
+
+/* <--- end home ---> */
+
+
+/* request form */
+.request-form .breadcrumb .badge{
+    /* color: #005479; */
+    /* background: #9fc203; */
+}
+
+.request-form{
+    border: 1px dashed #033c59;
+    border-radius: 5px;
+    padding: 10px 5px;
+    width: 50%;
+}
+
+.scroll .option{
+    min-width: 189px;
+}
+/*  end request form */
+
+
+/* flight data */
+
+.flight-data{
+    min-height: 900px;
+}
+
+/* end flight data */
+
+
+
+/* traveler data */
+.traveler-data{
+    min-height: 1000px;
+}
+
+.traveler-data .notify-user{
+    /* background: #fffebc; */
+    padding: 5px;
+    height: auto;
+    margin: 0;
+}
+
+.traveler-data .notify-user span{
+    display: block;
+    margin: 35px auto;
+    font-size: 14px;
+    color: red;
+}
+
+.traveler-data .notify-user img{
+    width:120px;
+    height:100px;
+    margin-left: 15px;
+}
+/* end traveler data */
+
+
+
+/* start appointment data */
+ .appointment-data .total-price h4{
+    margin-top: 10px;
+}
+
+.appointment-data .total-price h3{
+    margin-top: 5px;
+    color: #f57402;
+    font-size: 33px;
+}
+
+.appointment-data .nice-select{
+    width: 286px;
+}
+
+.appointment-data .nice-select .option{
+    width: 282px;
+}
+
+.appointment-data .scroll .option{
+    width: 274px;
+}
+/* end appointment data */
+
+
+
+
+
+/* start bank transfer */
+.bank-transfer{
+    min-height: 1000px;
+}
+
+.bank-transfer .total-price h4{
+    margin-top: 10px;
+}
+
+.bank-transfer .total-price h3{
+    margin-top: 5px;
+    color: #f57402;
+    font-size: 33px;
+}
+
+.bank-transfer .nice-select{
+    width: 315px;
+}
+
+.bank-transfer .scroll .option{
+    width: 303px;
+}
+
+.bank-transfer .bank-detail{
+    border-radius: 5px;
+    margin: 10px;
+    padding: 10px;
+}
+
+.bank-transfer .bank-detail h5{
+    margin-top: 5px;
+    color: #024eb3;
+}
+
+.bank-transfer .bank-detail span{
+    display: block;
+    padding: 5px;
+    background: rgb(243, 243, 243);
+    margin: 5px;
+    font-size: 14px;
+}
+/* end bank transfer */
+
+
+
+/* start confirm request */
+.confirm-request .success{
+    border: 1px dotted #033c59;
+    border-radius: 5px;
+    padding: 20px 5px;
+    text-align: center !important;
+    width: 50%;
+}
+
+.confirm-request .success img{
+    width: 140px;
+    height: 115px;
+}
+
+.confirm-request .success hr{
+    color: #6d6d6d;
+    text-decoration: double;
+    margin: 10px auto;
+}
+
+.confirm-request .success .nice{
+    font-size: 30px;
+    color: green;
+}
+
+.confirm-request .success h1{
+    margin: 3px 0;
+    background: #f5a302;
+    color: #fff;
+    padding: 3px 20px;
+    margin: 5px auto;
+    width: auto;
+}
+
+.confirm-request .success span{
+    font-size: 14px;
+}
+/* end confirm request */
+
+
+
+/* start user profile */
+.profile table{
+    width: 50%;
+}
+
+.profile table thead{
+    font-size: 13px;
+}
+
+.profile table tbody .badge{
+    background: #f57402;
+}
+
+.profile table tbody .number{
+    font-size: 20px;
+    font-weight: bold;
+}
+.profile table .fa-eye{
+    font-size: 25px;
+    color:#005479;
+}
+
+.profile table .btn{
+    padding: 2px 3px;
+}
+/* end user profile */
+
+
+/* start request detail */
+.request-detail .card{
+    width: 60%;
+    font-size: 14px;
+    color: rgb(92, 92, 92);
+}
+
+.request-detail .card span{
+    padding: 10px;
+    border: 1px solid rgb(235, 235, 235);
+    border-radius: 5px;
+    margin: 5px auto;
+}
+
+.request-detail .card .travelers span{
+    border: none;
+    padding: 5px;
+
+}
+/* end request detail */
