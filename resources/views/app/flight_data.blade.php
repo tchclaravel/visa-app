@@ -1,7 +1,7 @@
 @extends('app.layout.app_master')
 
 
-@section('title') بدأ الطلب @endsection
+@section('title') بيانات الرحلة @endsection
 
 
 @section('content')
@@ -9,7 +9,7 @@
     {{-- <h4 class="form-title">بيانات الرحلة</h4> --}}
 
     <div class="d-flex justify-content-center v-cenetr">
-        <form class="row g-4 col-md-6 mb-5 mt-5 request-form">
+        <form class="row g-4 col-md-6 mb-5 mt-5 request-form" method="GET" action="{{route('step-2')}}">
 
           <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
@@ -90,9 +90,6 @@
               <button type="submit" class="btn btn-primary">التالي</button>
             </div>
         </form>
-        {{-- <div class="image col-md-6 my-2">
-          <img src="{{asset('app/template/design/start-setp.png')}}" alt="">
-        </div> --}}
     </div>
 
 

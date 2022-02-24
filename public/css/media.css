@@ -52,6 +52,17 @@
 }
 
 
+@media screen and (max-width: 450px){
+    #steps .text-center .section-heading{
+        font-size: 25px;
+    }
+
+    #steps .text-center .section-subheading{
+        font-size: 14px;
+    }
+}
+
+
 /*end home page*/
 
 

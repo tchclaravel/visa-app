@@ -1,7 +1,7 @@
 @extends('app.layout.app_master')
 
 
-@section('title') بدأ الطلب @endsection
+@section('title') بيانات المسافرين @endsection
 
 
 @section('content')
@@ -10,7 +10,7 @@
 
     <div class="d-flex justify-content-center v-cenetr">
         
-        <form class="row g-4 mb-5 mt-5 request-form">
+        <form class="row g-4 mb-5 mt-5 request-form" method="GET" action="{{route('step-3')}}">
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
                   <li class="breadcrumb-item"><span>بيانات الرحلة</span></li>
@@ -89,7 +89,7 @@
           </div>
 
             <div class="col-12 mb-2">
-              <button type="submit" class="btn btn-secondary">رجوع</button>
+              {{-- <button type="submit" class="btn btn-secondary">رجوع</button> --}}
               <button type="submit" class="btn btn-primary">التالي</button>
             </div>
         </form>

@@ -15,26 +15,22 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () { return view('welcome');});
 
-Route::get('/home' , function(){ return view('app.home');});
+Route::get('/home' , function(){ return view('app.home');})->name('home');
+Route::get('/step-1' , function(){ return view('app.flight_data');})->name('step-1');
 
-Route::get('/start' , function(){ return view('app.flight_data');});
-
-Route::get('/test' , function(){ return view('backup.protfolio');});
-
-Route::get('/seconde' , function(){ return view('app.traveler_data');});
-
-Route::get('/third' , function(){ return view('app.appointment_payment'); });
-
-Route::get('/bank-transfer' , function(){ return view('app.bank_transfer'); });
-
-Route::get('/confirm-request' , function(){ return view('app.confirmed_request'); });
-
+Route::get('/step-2' , function(){ return view('app.traveler_data');})->name('step-2');
+Route::get('/step-3' , function(){ return view('app.appointment_payment'); })->name('step-3');
+Route::get('/bank-transfer' , function(){ return view('app.bank_transfer'); })->name('bank_transfer');
+Route::get('/confirm-request' , function(){ return view('app.confirmed_request'); })->name('confirm_request');
 
 
 // User routes
 Route::get('/login' , function(){ return view('app.user.login'); });
-Route::get('/profile' , function(){ return view('app.user.profile'); });
-Route::get('/request-detail' , function(){ return view('app.user.request_detail'); });
+Route::get('/profile' , function(){ return view('app.user.profile'); })->name('profile');
+Route::get('/request-detail' , function(){ return view('app.user.request_detail'); })->name('request_detail');
+
+
+Route::get('/test' , function(){ return view('backup.protfolio');});
 
 
 

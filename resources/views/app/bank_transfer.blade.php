@@ -6,11 +6,10 @@
 
 @section('content')
 <div class="row bank-transfer">
-    {{-- <h4 class="form-title">بيانات الرحلة</h4> --}}
-
+    
     <div class="d-flex justify-content-center v-cenetr">
         
-        <form class="row g-4 mb-5 mt-5 request-form">
+        <form class="row g-4 mb-5 mt-5 request-form" method="GET" action="{{route('confirm_request')}}">
             <h4 class="text-center">حوالة بنكية</h5>
             <div class="col-lg-12 cover mb-2">
                 <img src="{{asset('app/template/design/banks.jpg')}}" class="img-fluid" alt="banks">
@@ -47,7 +46,7 @@
             </div>
 
             <div class="col-12 mb-2">
-              <button type="submit" class="btn btn-secondary">رجوع</button>
+              {{-- <button type="submit" class="btn btn-secondary">رجوع</button> --}}
               <button type="submit" class="btn text-white" style="background: rgb(96, 168, 1)">تأكيد</button>
             </div>
         </form>

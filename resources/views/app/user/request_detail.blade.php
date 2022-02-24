@@ -6,11 +6,10 @@
 
 @section('content')
 <div class="row request-detail">
-    {{-- <h4 class="form-title">بيانات الرحلة</h4> --}}
 
     <div class="d-flex justify-content-center">
         <div class="row mt-5 mb-5">
-            <div class="card mx-auto">
+            <div class="card mx-auto shadow" style="background: rgb(255, 255, 246)">
                 <div class="card-body row">
                     <span class="col-md-5">رقم الطلب : 3474565</span>
                     <span class="col-md-5">اسم المستخدم : محمد عمر</span>
