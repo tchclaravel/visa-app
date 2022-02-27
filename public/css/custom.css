@@ -100,6 +100,18 @@ h1,h2,h3,h4,h5,h6{
 
 
 /* <--- home ---> */
+header.masthead .masthead-heading{
+    font-size: 45px; 
+    color:#ffd35c;
+    /* inline-size: 500px; */
+    /* overflow-wrap: break-word; */
+}
+
+header.masthead .sub-head{
+    color: #fff;
+    font-size: 30px;
+}
+
 .features-icons img{
     width: 35%;
 }
@@ -152,7 +164,7 @@ h1,h2,h3,h4,h5,h6{
 /* flight data */
 
 .flight-data{
-    min-height: 900px;
+    min-height: 1000px;
 }
 
 /* end flight data */
@@ -200,6 +212,7 @@ h1,h2,h3,h4,h5,h6{
 
 .appointment-data .nice-select{
     width: 286px;
+    max-width: 90%;
 }
 
 .appointment-data .nice-select .option{
@@ -310,17 +323,21 @@ h1,h2,h3,h4,h5,h6{
     font-size: 13px;
 }
 
-.profile table tbody .badge{
-    background: #f57402;
+.profile table tbody .status{
+    font-size: 11px;
+    color: #fff;
+    padding: 2px;
+    border-radius: 2px;
 }
 
 .profile table tbody .number{
     font-size: 20px;
     font-weight: bold;
+    color: rgb(107, 107, 107);
 }
 .profile table .fa-eye{
     font-size: 25px;
-    color:#005479;
+    color:rgb(73, 73, 73);
 }
 
 .profile table .btn{

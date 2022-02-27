@@ -19,28 +19,28 @@
             <tbody>
                 <tr>
                     <td><span class="number">12423534</span></td>
-                    <td><span class="badge">بإنتظار المراجعة</span></td>
+                    <td><span class="status" style="background:rgb(238, 115, 0)">بإنتظار المراجعة</span></td>
                     <td>
                         <a href="{{route('request_detail')}}" class="btn btn-sm bg-white"><i class="fa fa-eye fa-lg"></i> </a>
                     </td>
                 </tr>
                 <tr>
                     <td><span class="number">98267290</span></td>
-                    <td><span class="badge bg-success">مؤكد</span></td>
+                    <td><span class="status" style="background:rgb(47, 128, 0)">تم التأكيد</span></td>
                     <td>
                         <a href="{{route('request_detail')}}" class="btn btn-sm bg-white"><i class="fa fa-eye fa-lg"></i> </a>
                     </td>
                 </tr>
                 <tr>
                     <td><span class="number">12423534</span></td>
-                    <td><span class="badge">بإنتظار المراجعة</span></td>
+                    <td><span class="status" style="background:rgb(238, 115, 0)">بإنتظار المراجعة</span></td>
                     <td>
                         <a href="{{route('request_detail')}}" class="btn btn-sm bg-white"><i class="fa fa-eye fa-lg"></i> </a>
                     </td>
                 </tr>
                 <tr>
                     <td><span class="number">98267290</span></td>
-                    <td><span class="badge bg-success">مؤكد</span></td>
+                    <td><span class="status" style="background:rgb(47, 128, 0)">تم التأكيد</span></td>
                     <td>
                         <a href="{{route('request_detail')}}" class="btn btn-sm bg-white"><i class="fa fa-eye fa-lg"></i> </a>
                     </td>

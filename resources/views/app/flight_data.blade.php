@@ -79,7 +79,7 @@
 
           <div class="col-lg-6">
             <label for="interview_place" class="form-label d-block">أين تريد مكان المقابلة؟</label>
-            <select  id="interview_place" class="scroll" aria-label="Default select example">
+            <select  id="interview_place" aria-label="Default select example">
               <option value="1" selected>الرياض</option>
               <option value="2">الظهران </option>
               <option value="3">جدة</option>

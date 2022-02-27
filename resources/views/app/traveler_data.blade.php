@@ -24,7 +24,7 @@
                     <span>قم بالضغط على الصورة لتوضيح الخانات المطلوبة على الجواز</span>
                 </div>
 
-                <div class="col-sm-3">
+                <div class="col">
                     <div class="portfolio-item">
                         <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal1">
                             <img class="img-fluid" src="{{asset('app/template/design/passport.jpeg')}}" alt="..." />

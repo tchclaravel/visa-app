@@ -8,13 +8,35 @@
 }
 
 @media screen and (min-width: 768px){
-
     header.masthead .masthead-heading{
-        width: 60%;
+        width: 65%;
         margin: 15px auto;
     }
-
 }
+
+
+@media screen and (max-width: 992px){
+    header.masthead .masthead-heading{
+        width: 68%;
+    }
+}
+
+
+@media screen and (max-width: 768px){
+
+    header.masthead .masthead-heading{
+        width: 80%;
+        margin: 15px auto;
+    }
+    header.masthead .masthead-heading{
+        font-size: 30px;
+    }
+
+    header.masthead .sub-head{
+        font-size: 20px;
+    }
+}
+
 
 @media screen and (min-width: 768px){
     .timeline .timeline-image i{
@@ -62,6 +84,14 @@
     }
 }
 
+@media screen and (max-width: 768px){
+    section#contact{
+        background-repeat: repeat;
+    }
+}
+
+
+
 
 /*end home page*/
 
@@ -71,7 +101,7 @@
 
 @media screen and (max-width: 992px){
     .flight-data{
-        min-height: 1000px;
+        min-height: 1300px;
     } 
 }
 
@@ -90,7 +120,21 @@
 @media screen and (max-width: 992px){
 
     .traveler-data{
-        min-height: 1300px;
+        min-height: 1400px;
+    }
+
+}
+
+@media screen and (max-width: 768px){
+
+    .traveler-data .portfolio-item img{
+        display: block;
+        margin: 0 auto;
+    }
+
+    .traveler-data .notify-user span{
+        font-size: 12px;
+        text-align: center;
     }
 
 }
