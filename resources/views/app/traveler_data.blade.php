@@ -35,12 +35,12 @@
 
           <div class="col-12 col-lg-6">
             <label for="fname" class="form-label">الأسم الأول</label>
-            <input type="text" class="form-control" id="fname" placeholder="أكتب الأسم الأول من الجواز">
+            <input type="text" class="form-control" id="fname" placeholder="الأسم الأول بالإنجليزية من الجواز">
           </div>
 
           <div class="col-12 col-lg-6">
             <label for="lname" class="form-label">أسم العائلة</label>
-            <input type="text" class="form-control" id="lname" placeholder="أكتب الأسم العائلة من الجواز">
+            <input type="text" class="form-control" id="lname" placeholder="أسم العائلة بالإنجليزية من الجواز">
           </div>
 
           <div class="col-12">

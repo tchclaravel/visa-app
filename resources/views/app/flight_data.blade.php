@@ -19,16 +19,6 @@
             </ol>
           </nav>
 
-          <div class="col-12">
-            <label for="email" class="form-label">البريد الإلكتروني</label>
-            <input type="email" class="form-control" id="email" placeholder="البريد الإلكتروني هنا">
-          </div>
-
-          <div class="col-12">
-            <label for="phone" class="form-label">رقم الجوال</label>
-            <input type="text" class="form-control" id="phone" placeholder="رقم الجوال هنا">
-          </div>
-
           <div class="col-lg-6">
               <label for="embassy" class="form-label d-block">أختر السفارة</label>
               <select  id="embassy" class="scroll" aria-label="Default select example">
@@ -61,11 +51,7 @@
               <option value="3">دراسية</option>
             </select>
           </div>
-         
-          <div class="col-lg-12">
-            <label for="expected_date" class="form-label"> تاريخ السفر المتوقع </label>
-            <input type="date" class="form-control" id="expected_date " placeholder="تاريخ إستخراج الجواز">
-          </div>
+
 
           <div class="col-lg-6">
             <label for="travelers" class="form-label d-block">عدد المسافرين</label>
@@ -77,6 +63,11 @@
             </select>
           </div>
 
+          <div class="col-6">
+            <label for="expected_date" class="form-label"> تاريخ السفر المتوقع </label>
+            <input type="date" class="form-control" id="expected_date " placeholder="تاريخ إستخراج الجواز">
+          </div>
+
           <div class="col-lg-6">
             <label for="interview_place" class="form-label d-block">أين تريد مكان المقابلة؟</label>
             <select  id="interview_place" aria-label="Default select example">
@@ -84,6 +75,11 @@
               <option value="2">الظهران </option>
               <option value="3">جدة</option>
             </select>
+          </div>
+
+          <div class="col-11">
+            <label for="phone" class="form-label">رقم الجوال</label>
+            <input type="text" class="form-control" id="phone" placeholder="رقم الجوال هنا">
           </div>
 
             <div class="col-12 mb-2">
