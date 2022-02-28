@@ -62,8 +62,8 @@
               <option value="3">4</option>
             </select>
           </div>
-
           <div class="col-6">
+            
             <label for="expected_date" class="form-label"> تاريخ السفر المتوقع </label>
             <input type="date" class="form-control" id="expected_date " placeholder="تاريخ إستخراج الجواز">
           </div>
