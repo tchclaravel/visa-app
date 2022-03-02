@@ -1,4 +1,4 @@
-@extends('app.layout.app_master')
+@extends('client.layout.app_master')
 
 
 @section('title')الموعد و الدفع @endsection
@@ -9,7 +9,7 @@
 
     <div class="d-flex justify-content-center v-cenetr">
         
-        <form class="row g-4 mb-5 mt-5 request-form" method="GET" action="{{route('bank_transfer')}}">
+        <form class="row g-4 mb-5 mt-5 request-form" method="GET" action="{{route('client.bank')}}">
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
                   <li class="breadcrumb-item"><span>بيانات الرحلة</span></li>

@@ -8,23 +8,23 @@
         <title>@yield('title')</title>
 
         {{-- Styles Sheet Links --}}
-        @include('app.layout.include.style_links')
+        @include('client.layout.include.style_links')
 
     </head>
     <body id="page-top" dir="rtl" style="background-image: url('{{asset('/app/template/design/body-background.jpg')}}');">
         <!-- Navigation-->
-        @include('app.layout.include.header')
+        @include('client.layout.include.home-header')
 
         <!-- Main Content -->
-        <div class="container app-container">
+        <div>
             @yield('content')
         </div>
 
         <!-- Footer-->
-        @include('app.layout.include.footer')
+        @include('client.layout.include.footer')
 
         {{-- Scripts Sheet Links --}}
-        @include('app.layout.include.script_links')
+        @include('client.layout.include.script_links')
 
     </body>
 </html>

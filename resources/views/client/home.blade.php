@@ -1,4 +1,4 @@
-@extends('app.layout.home_master')
+@extends('client.layout.home_master')
 
 
 @section('title') الرئيسية @endsection
@@ -16,7 +16,7 @@
             معنا يمكنك حجز تأشيرة دخول لأي دولة في دقائق .. أليس هذا رائعاً؟!
         </div>
 
-        <a class="btn btn-primary btn-lg text-uppercase" href="{{route('step-1')}}">أبدأ الآن</a>
+        <a class="btn btn-primary btn-lg text-uppercase" href="{{route('client.step_one')}}">أبدأ الآن</a>
     </div>
 </header>
 

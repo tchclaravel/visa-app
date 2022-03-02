@@ -1,4 +1,4 @@
-@extends('app.layout.app_master')
+@extends('client.layout.app_master')
 
 
 @section('title') حوالة بنكية @endsection
@@ -9,7 +9,7 @@
     
     <div class="d-flex justify-content-center v-cenetr">
         
-        <form class="row g-4 mb-5 mt-5 request-form" method="GET" action="{{route('confirm_request')}}">
+        <form class="row g-4 mb-5 mt-5 request-form" method="GET" action="{{route('client.request_sent')}}">
             <h4 class="text-center">حوالة بنكية</h5>
             <div class="col-lg-12 cover mb-2">
                 <img src="{{asset('app/template/design/banks.jpg')}}" class="img-fluid" alt="banks">

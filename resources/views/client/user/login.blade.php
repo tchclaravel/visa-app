@@ -1,4 +1,4 @@
-@extends('app.layout.app_master')
+@extends('client.layout.app_master')
 
 
 @section('title') تسجيل الدخول  @endsection

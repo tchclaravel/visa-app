@@ -1,4 +1,4 @@
-@extends('app.layout.app_master')
+@extends('client.layout.app_master')
 
 
 @section('title') تأكيد الطلب @endsection
@@ -18,7 +18,7 @@
                 
                 <span>
                     يمكنك متابعة هذا الطلب <br>
-                    من حسابك الشخصي <a href="{{route('profile')}}">من هنا</a>
+                    من حسابك الشخصي <a href="{{route('user.profile')}}">من هنا</a>
                 </span> 
         </div>
     </div>

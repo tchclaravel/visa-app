@@ -23,6 +23,8 @@ class CreateVisaRequestsTable extends Migration
             $table->mediumInteger('travelers_number');
             $table->string('interview_place');
             $table->string('request_status');
+            $table->smallInteger('appointment'); // Get from appointment table
+            $table->string('payment_method'); 
             $table->string('request_number');
             $table->timestamps();
 

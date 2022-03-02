@@ -19,6 +19,8 @@ class VisaRequest extends Model
         'travelers_number',
         'interview_place',
         'request_status',
+        'appointment',
+        'payment_method',
         'request_number'
     ];
 

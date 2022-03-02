@@ -1,4 +1,4 @@
-@extends('app.layout.app_master')
+@extends('client.layout.app_master')
 
 
 @section('title') بيانات الرحلة @endsection
@@ -9,7 +9,7 @@
     {{-- <h4 class="form-title">بيانات الرحلة</h4> --}}
 
     <div class="d-flex justify-content-center v-cenetr">
-        <form class="row g-4 col-md-6 mb-5 mt-5 request-form" method="GET" action="{{route('step-2')}}">
+        <form class="row g-4 col-md-6 mb-5 mt-5 request-form" method="GET" action="{{route('client.step_two')}}">
 
           <nav aria-label="breadcrumb">
             <ol class="breadcrumb">
