@@ -25,27 +25,18 @@ Route::get('/', function () { return view('welcome');});
 
 Route::get('/home' , [HomeController::class , 'home'])->name('client.home');
 Route::get('/step-1' , [VisaRequestController::class , 'requestForm'])->name('client.step_one');
+Route::post('/step-1' , [VisaRequestController::class , 'storeRequest'])->name('client.step_one.store');
+
+
 Route::get('/step-2' , [TravelerController::class , 'travelerForm'])->name('client.step_two');
 Route::get('/step-3' , [VisaRequestController::class , 'appointmentForm'])->name('client.step_three');
 Route::get('/bank-transfer' , [PaymentsController::class , 'bank'])->name('client.bank');
 Route::get('/confirm-request' , [VisaRequestController::class , 'requestSent'])->name('client.request_sent');
 
-Route::get('/request-detail' , [VisaRequestController::class , 'showRequest'])->name('client.request.show');
-
 // User routes
 Route::get('/login' , [UserController::class , 'login'])->name('user.login');
 Route::get('/profile' , [UserController::class , 'profile'])->name('user.profile');
-
-
-// Route::get('/home' , function(){ return view('app.home');})->name('home');
-// Route::get('/step-1' , function(){ return view('app.flight_data');})->name('step-1');
-
-// Route::get('/step-2' , function(){ return view('app.traveler_data');})->name('step-2');
-// Route::get('/step-3' , function(){ return view('app.appointment_payment'); })->name('step-3');
-// Route::get('/bank-transfer' , function(){ return view('app.bank_transfer'); })->name('bank_transfer');
-// Route::get('/confirm-request' , function(){ return view('app.confirmed_request'); })->name('confirm_request');
-// Route::get('/test' , function(){ return view('backup.protfolio');});
-
+Route::get('/request-detail' , [VisaRequestController::class , 'showRequest'])->name('client.request.show');
 
 
 // Route::get('/dashboard', function () {

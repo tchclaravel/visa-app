@@ -161,13 +161,23 @@ header.masthead .sub-head{
 /*  end request form */
 
 
-/* flight data */
+/* start request form page  */
 
 .flight-data{
     min-height: 1000px;
 }
 
-/* end flight data */
+.validation_message{
+    font-size: 13px;
+    color: #f53302;
+}
+
+.validation_message li{
+    padding: 3px 1px;
+    list-style-type:square;
+}
+
+/* end request form page */
 
 
 
