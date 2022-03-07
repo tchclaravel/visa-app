@@ -32,23 +32,19 @@ class VisaRequest extends FormRequest
             'interview_place' => 'required',
             'phone' => 'required',
         ];
-        // [
-        //     'name.required' => 'Name is required',
-        // ]
-        // ;
     }
 
 
     public function messages()
     {
         return [
-            'country_id.required' => 'حقل السفارة يجب أن لا يكون فارغاً',
-            'city_id.required' => 'حقل الوجهة يجب أن لا يكون فارغاً',
-            'visa_type.required' => 'حقل نوع التأشيرة يجب أن لا يكون فارغاً',
-            'travelers_number.required' => 'حقل عدد المسافرين يجب أن لا يكون فارغاً',
-            'expected_date.required' => 'حقل تاريخ السفر يجب أن لا يكون فارغاً',
-            'interview_place.required' => 'حقل مكان المقابلة يجب أن لا يكون فارغاً',
-            'phone.required' => 'حقل رقم الجوال يجب أن لا يكون فارغاً',
+            'country_id.required' => 'يرجى تعبئة حقل السفارة',
+            'city_id.required' => 'يرجى تعبئة حقل الوجهة',
+            'visa_type.required' => 'يرجى تعبئة حقل نوع التأشيرة ',
+            'travelers_number.required' => 'يرجى تعبئة حقل عدد المسافرين',
+            'expected_date.required' => 'يرجى تعبئة حقل تاريخ السفر',
+            'interview_place.required' => 'يرجى تعبئة حقل مكان المقابلة',
+            'phone.required' => 'يرجى تعبئة حقل رقم الجوال',
         ];
     }
 

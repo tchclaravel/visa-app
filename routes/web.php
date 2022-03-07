@@ -29,6 +29,8 @@ Route::post('/step-1' , [VisaRequestController::class , 'storeRequest'])->name('
 
 
 Route::get('/step-2' , [TravelerController::class , 'travelerForm'])->name('client.step_two');
+Route::post('/step-2' , [TravelerController::class , 'storeTraveler'])->name('client.step_two.store');
+
 Route::get('/step-3' , [VisaRequestController::class , 'appointmentForm'])->name('client.step_three');
 Route::get('/bank-transfer' , [PaymentsController::class , 'bank'])->name('client.bank');
 Route::get('/confirm-request' , [VisaRequestController::class , 'requestSent'])->name('client.request_sent');

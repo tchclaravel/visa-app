@@ -17,22 +17,41 @@ class VisaRequestController extends Controller
     // Store request data
     public function storeRequest(VisaRequest $request){
 
-        $request->session()->put('visa_request' , $request->all());
+        // Save step number in session
         $request->session()->put('step_number' , 1);
 
+        /* 
+           Check if number of travelers == 1 
+           [case:true => not need to multi step traveler form]
+           [case:flase => start to excute mutli step traveler form] 
+        */
+        if($request->travelers_number == 1){
+            $request->session()->put('visa_request' , $request->except('travelers_number'));
+            return redirect()->route('client.step_two');
+        }
+
+        $request->session()->put('visa_request' , $request->all());
         return redirect()->route('client.step_two');
 
     }
     
     // Step three => Appointment Form
     public function appointmentForm(){
+
+        // Prevent access step three directly
+        if(url()->previous() != '\step-2'){
+            return redirect()->route('client.home');
+        }
+        
         return view('client.steps.appointment_payment');
     }
+
    
-    // REQUEST  SENT PAGE
+    // Request sent page
     public function requestSent(){
         return view('client.steps.request_sent');
     }
+
 
     // Show request details
     public function showRequest(){
