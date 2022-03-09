@@ -15,4 +15,3 @@
 <script src="{{asset('js/jquery.js')}}"></script>
 <script src="{{asset('js/jquery.nice-select.min.js')}}"></script>
 <script src="{{asset('js/custom.js')}}"></script>
-

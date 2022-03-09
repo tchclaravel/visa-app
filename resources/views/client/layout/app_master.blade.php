@@ -10,6 +10,8 @@
         {{-- Styles Sheet Links --}}
         @include('client.layout.include.style_links')
 
+        {{-- Use Livewire --}}
+        @livewireStyles
     </head>
     <body id="page-top" dir="rtl" style="background-image: url('{{asset('/app/template/design/body-background.jpg')}}');">
         <!-- Navigation-->
@@ -25,6 +27,8 @@
 
         {{-- Scripts Sheet Links --}}
         @include('client.layout.include.script_links')
-
+        
+        {{-- use livewire script --}}
+        @livewireScripts
     </body>
 </html>

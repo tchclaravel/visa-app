@@ -30,7 +30,7 @@ class VisaRequest extends FormRequest
             'travelers_number' => 'required',
             'expected_date' => 'required',
             'interview_place' => 'required',
-            'phone' => 'required',
+            // 'phone' => 'required|unique:visa_requests',
         ];
     }
 
