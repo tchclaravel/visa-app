@@ -158,6 +158,9 @@ return [
     |
     */
 
-    'attributes' => [],
+    'attributes' => [
+        'fname' => 'الأسم الأول',
+        'lname' => 'أسم العائلة'
+    ],
 
 ];

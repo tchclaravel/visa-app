@@ -3,9 +3,11 @@
 namespace App\Http\Livewire;
 
 use App\Http\Requests\TravelerRequest;
+use App\Rules\EnglishOnly;
 use Illuminate\Contracts\Validation\Rule;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
+use Illuminate\Validation\Rule as ValidationRule;
 use Livewire\Component;
 
 class TravelerForm extends Component
@@ -21,16 +23,22 @@ class TravelerForm extends Component
     public $address;
 
 
-    protected $rules = [
-        'fname' => 'required|min:3',
-        'lname' => 'required',
-        'passport_number' => 'required', 
-        'passport_issuance' => 'required', 
-        'passport_expiry' => 'required',
-        'gender' => 'required',
-        'social_status' => 'required', 
-        'address' => 'required'
-    ];
+    // protected $rules = [
+
+    // ];
+
+    public function rules(){
+        return [
+            'fname' => ['required' , new EnglishOnly()],
+            'lname' => ['required' , new EnglishOnly()],
+            'passport_number' => 'required', 
+            'passport_issuance' => 'required', 
+            'passport_expiry' => 'required',
+            'gender' => 'required',
+            'social_status' => 'required', 
+            'address' => 'required'
+        ];
+    }
 
     protected $messages = [
         'fname.required' => 'يرجى تعبئة حقل الأسم الأول',
@@ -51,12 +59,8 @@ class TravelerForm extends Component
 
     public function submitForm(){
 
-        Validator::make([$this->fname,$this->lname] , [
-            'fname' => ['required' , Rule::notIn(['A','B','C','D','E','F','G','H','I','J','K','L','N','M','O','P','Q','R','S','T','U','V','W','X','Y','Z'])],
-            'Lname' => ['required' , Rule::notIn(['A','B','C','D','E','F','G','H','I','J','K','L','N','M','O','P','Q','R','S','T','U','V','W','X','Y','Z'])],
-        ]);
-
         $traveler = $this->validate();
+
 
         $traveler['fname']              = $this->fname ;
         $traveler['lname']              = $this->lname ;
