@@ -71,34 +71,34 @@ class TravelerForm extends Component
         $traveler['social_status']      = $this->social_status ;
         $traveler['address']            = $this->address ;
 
-        // $request->session()->put('current_traveler' , 1);
+        session()->put('current_traveler' , 1);
 
-        // // Fetch number of tarvelers from previous session
-        // $travelers_number = $request->session()->get('visa_request.travelers_number');
+        // Fetch number of tarvelers from previous session
+        $travelers_number = session()->get('visa_request.travelers_number');
 
-        // /* 
-        //     Check if number of tarvelers > 1 
-        //     [case:true => store travelers data in indexed session]
-        //     [case:flase => just put data as normal array] 
-        // */
-        // if($travelers_number > 1){
-        //     // push new traveler
-        //     $request->session()->push('travelers' , $request->all());
-        //     // decrement number of travelers
-        //     $request->session()->decrement('visa_request.travelers_number');
+        /* 
+            Check if number of tarvelers > 1 
+            [case:true => store travelers data in indexed session]
+            [case:flase => just put data as normal array] 
+        */
+        if($travelers_number > 1){
+            // push new traveler
+            session()->push('travelers' , $traveler);
+            // decrement number of travelers
+            session()->decrement('visa_request.travelers_number');
 
-        //     // dynamic way to get current traveler number to display in traveler form
-        //     $tr_num = sizeof($request->session()->get('travelers')) + 1;
-        //     $request->session()->now('current_traveler', $tr_num);
+            // dynamic way to get current traveler number to display in traveler form
+            $tr_num = sizeof(session()->get('travelers')) + 1;
+            session()->now('current_traveler', $tr_num);
 
-        //     return redirect()->back()->with('current_traveler');
+            return redirect()->back()->with('current_traveler');
 
-        // }else{
-        //     $request->session()->push('travelers' , $request->all());
-        //     // Store step number
-        //     $request->session()->put('step_number' , 2);
-        //     return redirect()->route('client.step_three');
-        // }
+        }else{
+            session()->push('travelers' , $traveler);
+            // Store step number
+            session()->put('step_number' , 2);
+            return redirect()->route('client.step_three');
+        }
     }
 
 

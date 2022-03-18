@@ -15,9 +15,9 @@ class CreateVisaRequestsTable extends Migration
     {
         Schema::create('visa_requests', function (Blueprint $table) {
             $table->id();
-            $table->unsignedSmallInteger('user_id');
-            $table->unsignedSmallInteger('country_id');
-            $table->unsignedSmallInteger('city_id');
+            $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('country_id');
+            $table->unsignedBigInteger('city_id');
             $table->string('visa_type');
             $table->date('expected_date');
             $table->mediumInteger('travelers_number');

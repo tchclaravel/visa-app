@@ -12,6 +12,6 @@
 <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
 
 {{-- nice select --}}
-<script src="{{asset('js/jquery.js')}}"></script>
+{{-- <script src="{{asset('js/jquery.js')}}"></script>
 <script src="{{asset('js/jquery.nice-select.min.js')}}"></script>
-<script src="{{asset('js/custom.js')}}"></script>
+<script src="{{asset('js/custom.js')}}"></script> --}}

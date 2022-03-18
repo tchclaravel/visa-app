@@ -1,4 +1,4 @@
-<form class="row g-4 request-form" method="POST" wire:submit.prevent="submitForm" action="{{route('client.step_two.store')}}">
+<form class="row g-4 request-form" method="POST" wire:submit="submitForm" action="{{route('client.step_two.store')}}">
     @csrf
       <nav aria-label="breadcrumb">
           <ol class="breadcrumb">
@@ -63,17 +63,17 @@
 
     <div class="col-12 col-lg-6">
       <label for="lname" class="form-label">أسم العائلة</label>
-      <input wire:model="lname" name="lname" type="text" class="form-control" id="lname" placeholder="أسم العائلة بالإنجليزية من الجواز">
+      <input wire:model.debounce.500ms="lname" name="lname" type="text" class="form-control" id="lname" placeholder="أسم العائلة بالإنجليزية من الجواز">
     </div>
 
     <div class="col-12">
       <label for="passport_number" class="form-label">رقم الجواز</label>
-      <input wire:model.defer="passport_number" name="passport_number" type="text" class="form-control" id="passport_number" placeholder="أكتب رقم الجواز">
+      <input wire:model="passport_number" name="passport_number" type="text" class="form-control" id="passport_number" placeholder="أكتب رقم الجواز">
     </div>
 
     <div class="col-12 col-lg-6">
       <label for="passport_issuance" class="form-label">تاريخ إستخراج الجواز</label>
-      <input wire:model.defer="passport_issuance" name="passport_issuance" type="date" class="form-control" id="	passport_issuance" placeholder="تاريخ إستخراج الجواز">
+      <input wire:model="passport_issuance" name="passport_issuance" type="date" class="form-control" id="	passport_issuance" placeholder="تاريخ إستخراج الجواز">
     </div>
 
     <div class="col-12 col-lg-6">
@@ -83,7 +83,7 @@
 
     <div class="col-lg-6">
         <label for="gender" class="form-label d-block">الجنس</label>
-        <select wire:model.defer="gender" name="gender" id="gender" aria-label="Default select example">
+        <select wire:model="gender" name="gender" id="gender" aria-label="Default select example">
           <option value="1">ذكر</option>
           <option value="2">أنثى</option>
         </select>
@@ -91,7 +91,7 @@
 
     <div class="col-lg-6">
       <label for="social_status" class="form-label d-block">الحالة الإجتماعية</label>
-      <select wire:model.defer="social_status" name="social_status" id="social_status" aria-label="Default select example">
+      <select wire:model="social_status" name="social_status" id="social_status" aria-label="Default select example">
         <option value="1">أعزب</option>
         <option value="2">متزوج</option>
       </select>
@@ -99,7 +99,7 @@
 
     <div class="col-lg-6">
       <label for="address" class="form-label d-block">المدينة التي تقيم بها</label>
-      <select wire:model.defer="address" name="address" id="address" aria-label="Default select example" class="scroll">
+      <select wire:model="address" name="address" id="address" aria-label="Default select example" class="scroll">
         <option value="{{null}}" selected>أختر المدينة</option>
         <option value="2">جدة </option>
         <option value="3">الرياض</option>

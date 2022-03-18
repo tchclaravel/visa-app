@@ -17,7 +17,7 @@
 <link rel="stylesheet" media="screen" href="https://fontlibrary.org//face/droid-arabic-kufi" type="text/css"/>
 
 {{-- nice select --}}
-<link rel="stylesheet" href="{{asset('css/nice-select.css')}}">
+{{-- <link rel="stylesheet" href="{{asset('css/nice-select.css')}}"> --}}
 
 <!-- Custom Css -->
 <link rel="stylesheet" href="{{asset('css/custom.css')}}">

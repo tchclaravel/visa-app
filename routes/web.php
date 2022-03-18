@@ -6,6 +6,7 @@ use App\Http\Controllers\Client\ShowPageController;
 use App\Http\Controllers\Client\TravelerController;
 use App\Http\Controllers\Client\UserController;
 use App\Http\Controllers\Client\VisaRequestController;
+use App\Http\Livewire\VisaRequestForm;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -25,7 +26,7 @@ Route::get('/', function () { return view('welcome');});
 
 Route::get('/home' , [HomeController::class , 'home'])->name('client.home');
 Route::get('/step-1' , [VisaRequestController::class , 'requestForm'])->name('client.step_one');
-Route::post('/step-1' , [VisaRequestController::class , 'storeRequest'])->name('client.step_one.store');
+Route::post('/step-1' , [VisaRequestForm::class , 'storeRequest'])->name('client.step_one.store');
 
 
 Route::get('/step-2' , [TravelerController::class , 'travelerForm'])->name('client.step_two');
