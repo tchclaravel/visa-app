@@ -1,0 +1,33 @@
+:root {
+    --background-gradient: linear-gradient(30deg, #f39c12 30%, #f1c40f);
+    --gray: #fff4c3;
+    --darkgray: #dbd8a6;
+  }
+  
+  select {
+      border: 1px solid #f1c40f;
+      border-radius: 4px;
+    /* Reset Select */
+    /* appearance: none; */
+    outline: 0;
+    border: 0;
+    box-shadow: none;
+    /* Personalize */
+    /* flex: 1; */
+    padding: 0 1em;
+    color: rgb(59, 59, 59);
+    background-color: var(--darkgray);
+    background-image: none;
+    cursor: pointer;
+    overflow: scroll;
+    max-height: 80px;
+}
+
+option:hover{
+    background-color: #f1c40f;
+}
+
+
+option{
+    background-color: #f1c40f;
+}

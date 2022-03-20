@@ -22,3 +22,4 @@
 <!-- Custom Css -->
 <link rel="stylesheet" href="{{asset('css/custom.css')}}">
 <link rel="stylesheet" href="{{asset('css/media.css')}}">
+{{-- <link rel="stylesheet" href="{{asset('css/select.css')}}"> --}}

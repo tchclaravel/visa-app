@@ -79,6 +79,29 @@ h1,h2,h3,h4,h5,h6{
     color:#033c59;
 }
 
+.btn-primary{
+    background-color: #005479;
+    border: 1px solid #fff;
+}
+
+.btn-primary:hover{
+    background-color: #f5a302;
+}
+
+/* custom scroll bar style start*/
+
+::-webkit-scrollbar {
+    width: 8px;
+    background: transparent;
+}
+    
+::-webkit-scrollbar-thumb {
+    min-height:50px;
+    /* -webkit-box-shadow: inset 0 0 6px rgb(9, 8, 24); */
+    background-color: #005479;
+}
+  
+
 /* <--- end general tags --->  */
 
 
@@ -175,6 +198,8 @@ header.masthead .sub-head{
     font-size: 13px;
     color: #f53302;
 }
+
+
 
 .validation_message li{
     padding: 3px 1px;

@@ -16,7 +16,7 @@
             معنا يمكنك حجز تأشيرة دخول لأي دولة في دقائق .. أليس هذا رائعاً؟!
         </div>
 
-        <a class="btn btn-primary btn-lg text-uppercase" href="{{route('client.step_one')}}">أبدأ الآن</a>
+        <a class="btn text-white btn-lg text-uppercase" href="{{route('client.step_one')}}" style="background: #f5a302">أبدأ الآن</a>
     </div>
 </header>
 
@@ -24,7 +24,7 @@
 <section class="page-section" id="features">
     <div class="container">
         <div class="text-center">
-            <h2 class="section-heading text-uppercase" style="color:#f57402;">المميزات</h2>
+            <h2 class="section-heading text-uppercase" style="color:#f5a302;">المميزات</h2>
             <h3 class="section-subheading text-muted" style="font-style: normal"> لماذا يجب إستخدام تأشيرتك علينا؟</h3>
         </div>
         <div class="row text-center features-icons">
@@ -57,7 +57,7 @@
 <section class="page-section" id="steps">
     <div class="container">
         <div class="text-center">
-            <h2 class="section-heading" style="color:#f57402;">خطوات بسيطة و سهلة</h2>
+            <h2 class="section-heading" style="color:#f5a302;">خطوات بسيطة و سهلة</h2>
             <h3 class="section-subheading text-muted" style="font-style: normal">نص تجريبي نص تجريبي نص تجريبي</h3>
         </div>
         <ul class="timeline">

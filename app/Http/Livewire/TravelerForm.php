@@ -22,6 +22,8 @@ class TravelerForm extends Component
     public $gender;
     public $address;
 
+    public $tr_num = 1;
+
 
     // protected $rules = [
 
@@ -57,10 +59,15 @@ class TravelerForm extends Component
         $this->validateOnly($propertyName);
     }
 
+    public function render()
+    {
+        return view('livewire.traveler-form');
+    }
+
+
     public function submitForm(){
 
         $traveler = $this->validate();
-
 
         $traveler['fname']              = $this->fname ;
         $traveler['lname']              = $this->lname ;
@@ -88,10 +95,15 @@ class TravelerForm extends Component
             session()->decrement('visa_request.travelers_number');
 
             // dynamic way to get current traveler number to display in traveler form
-            $tr_num = sizeof(session()->get('travelers')) + 1;
-            session()->now('current_traveler', $tr_num);
+            $this->tr_num = sizeof(session()->get('travelers')) + 1;
+            session()->now('current_traveler', $this->tr_num);
 
-            return redirect()->back()->with('current_traveler');
+            // $this->reset();
+            // return redirect()->back()->with('current_traveler');
+            // return redirect()->back()->with('current_traveler');
+            return redirect(request()->header('Referer'));
+
+
 
         }else{
             session()->push('travelers' , $traveler);
@@ -99,13 +111,6 @@ class TravelerForm extends Component
             session()->put('step_number' , 2);
             return redirect()->route('client.step_three');
         }
-    }
-
-
-
-    public function render()
-    {
-        return view('livewire.traveler-form');
     }
 
 

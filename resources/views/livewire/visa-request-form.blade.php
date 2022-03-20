@@ -19,10 +19,10 @@
       </div>
     @endif
 
-    <div class="col-lg-6">
+    <div class="col-lg-6 select">
         <label for="country_id" class="form-label d-block">أختر السفارة</label>
-        <select wire:model="country_id" class="scroll" aria-label="Default select example">
-          <option value="" selected>أختر السفارة</option>
+        <select wire:model="country_id" class="form-control" aria-label="Default select example">
+          <option value=""> ------- </option>
           @foreach($countries as $country)
           <option value="{{$country->id}}">{{$country->country_name}}</option>
           {{-- <option value="1">السودان</option>
@@ -34,10 +34,10 @@
     </div>
 
     {{-- Livewire status --}}
-    <div class="col-lg-6">
-        <label for="city_id" class="form-label d-block">الوجهة</label>
-        <select wire:model="city_id" name="city_id"  id="city_id" class="scroll" aria-label="Default select example">
-          <option value="" selected>أختر الوجهة</option>
+    <div class="col-lg-6 select">
+        <label for="city_id" class="form-label d-block">أختر الوجهة </label>
+        <select wire:model="city_id" name="city_id" class="form-control"  id="city_id" aria-label="Default select example">
+          <option value=""> ------- </option>
           @if (count($cities) > 0)
             @foreach($cities as $city)
               <option value="{{$city->id}}">{{$city->city_name}}</option>
@@ -47,15 +47,15 @@
     </div>  
     
     {{-- Livewire status --}}
-    <div class="col-lg-6">
+    <div class="col-lg-6 select">
       <label for="visa_type" class="form-label d-block">نوع التأشيرة</label>
-      <select wire:model="visa_type" name="visa_type"  id="visa_type" aria-label="Default select example">
+      <select wire:model="visa_type" name="visa_type" class="form-control" id="visa_type" aria-label="Default select example">
         @if (count($visas) > 0)
           @foreach($visas as $visa)
             <option value="{{$visa->id}}" {{$visa->id == 2 ? 'selected' : ''}}>{{$visa->visa_type}}</option>
           @endforeach
         @else
-            <option value="">أختر نوع التأشيره</option>
+            <option value="">-------</option>
         @endif 
         {{-- <option value="2">علاجية </option>
         <option value="3">دراسية</option> --}}
@@ -63,12 +63,37 @@
     </div>
 
 
-    <div class="col-lg-6">
+    <div class="col-lg-6 select">
       <label for="travelers_number" class="form-label d-block">عدد المسافرين</label>
-      <select wire:model="travelers_number" name="travelers_number"  id="travelers_number" class="scroll" aria-label="Default select example">
+      <select wire:model="travelers_number" class="form-control" name="travelers_number"  id="travelers_number" class="scroll" aria-label="Default select example">
         <option value="1" selected>1</option>
         <option value="2">2 </option>
         <option value="3">3</option>
+        <option value="3">4</option>
+        <option value="3">4</option>
+        <option value="3">4</option>
+        <option value="3">4</option>
+        <option value="3">4</option>
+        <option value="3">4</option>
+        <option value="3">4</option>
+        <option value="3">4</option>
+        <option value="3">4</option>
+        <option value="3">4</option>
+        <option value="3">4</option>
+        <option value="3">4</option>
+        <option value="3">4</option>
+        <option value="3">4</option>
+        <option value="3">4</option>
+        <option value="3">4</option>
+        <option value="3">4</option>
+        <option value="3">4</option>
+        <option value="3">4</option>
+        <option value="3">4</option>
+        <option value="3">4</option>
+        <option value="3">4</option>
+        <option value="3">4</option>
+        <option value="3">4</option>
+        <option value="3">4</option>
         <option value="3">4</option>
       </select>
     </div>
@@ -78,10 +103,10 @@
       <input wire:model="expected_date" name="expected_date" type="date" class="form-control" id="expected_date">
     </div>
 
-    <div class="col-lg-6">
+    <div class="col-lg-6 select">
       <label for="interview_place" class="form-label d-block">أختر مكان المقابلة؟</label>
-      <select wire:model="interview_place" name="interview_place" id="interview_place" aria-label="Default select example">
-        <option value="{{null}}" selected>.....</option>
+      <select wire:model="interview_place" class="form-control" name="interview_place" id="interview_place" aria-label="Default select example">
+        <option value="">.....</option>
         <option value="1">الرياض</option>
         <option value="2">الظهران </option>
         <option value="3">جدة</option>

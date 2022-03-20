@@ -25,8 +25,8 @@
             </div>
 
             <div class="col-12">
-                <label for="embassy" class="form-label d-block" style="color: #f54702">يمكنك الدفع عن طريق الحوالة البنكية إلى أحد البنوك التالية</label>
-                <select  id="embassy"class="scroll" aria-label="Default select example">
+                <label for="embassy" class="form-label d-block" style="color: #f5a302">يمكنك الدفع عن طريق الحوالة البنكية إلى أحد البنوك التالية</label>
+                <select  id="embassy" class="form-control" aria-label="Default select example">
                     <option value="1" selected>أختر البنك </option>
                     <option value="1">بنك الرياض</option>
                     <option value="1"> مصرف الراجحي</option>
