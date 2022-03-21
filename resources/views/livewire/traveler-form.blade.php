@@ -84,7 +84,7 @@
     <div class="col-lg-6">
         <label for="gender" class="form-label d-block">الجنس</label>
         <select wire:model="gender" class="form-control" name="gender" id="gender" aria-label="Default select example">
-          <option value="">...</option>
+          <option value="">---</option>
           <option value="1">ذكر</option>
           <option value="2">أنثى</option>
         </select>
@@ -93,7 +93,7 @@
     <div class="col-lg-6">
       <label for="social_status" class="form-label d-block">الحالة الإجتماعية</label>
       <select wire:model="social_status"class="form-control" name="social_status" id="social_status" aria-label="Default select example">
-        <option value="">...</option>
+        <option value="">---</option>
         <option value="1">أعزب</option>
         <option value="2">متزوج</option>
       </select>
@@ -102,7 +102,7 @@
     <div class="col-lg-6">
       <label for="address" class="form-label d-block">المدينة التي تقيم بها</label>
       <select wire:model="address" name="address" class="form-control" id="address" aria-label="Default select example" class="scroll">
-        <option value="">...</option>
+        <option value="">---</option>
         <option value="2">جدة </option>
         <option value="3">الرياض</option>
         <option value="4">مكة</option>

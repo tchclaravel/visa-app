@@ -33,7 +33,12 @@ Route::get('/step-2' , [TravelerController::class , 'travelerForm'])->name('clie
 Route::post('/step-2' , [TravelerController::class , 'storeTraveler'])->name('client.step_two.store');
 
 Route::get('/step-3' , [VisaRequestController::class , 'appointmentForm'])->name('client.step_three');
+Route::post('/step-3' , [VisaRequestController::class , 'storeAppointment'])->name('client.step_three.store');
+
+// Payment methods routes
 Route::get('/bank-transfer' , [PaymentsController::class , 'bank'])->name('client.bank');
+Route::get('/e-payment' , [PaymentsController::class , 'ePayment'])->name('client.e-payment');
+
 Route::get('/confirm-request' , [VisaRequestController::class , 'requestSent'])->name('client.request_sent');
 
 // User routes

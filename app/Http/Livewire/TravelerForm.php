@@ -4,6 +4,7 @@ namespace App\Http\Livewire;
 
 use App\Http\Requests\TravelerRequest;
 use App\Rules\EnglishOnly;
+use App\Rules\UniquePassport;
 use Illuminate\Contracts\Validation\Rule;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
@@ -33,7 +34,7 @@ class TravelerForm extends Component
         return [
             'fname' => ['required' , new EnglishOnly()],
             'lname' => ['required' , new EnglishOnly()],
-            'passport_number' => 'required', 
+            'passport_number' => ['required' , new UniquePassport()], 
             'passport_issuance' => 'required', 
             'passport_expiry' => 'required',
             'gender' => 'required',
@@ -46,6 +47,7 @@ class TravelerForm extends Component
         'fname.required' => 'يرجى تعبئة حقل الأسم الأول',
         'lname.required' => 'يرجى تعبئة حقل أسم العائلة',
         'passport_number.required' => 'يرجى تعبئة حقل رقم الجواز',
+        'passport_number.unique' => 'رقم الجواز الذي أدخلته موجود في سجلاتنا',
         'passport_issuance.required' => 'يرجى تعبئة حقل تاريخ إستخراج الجواز',
         'passport_expiry.required' => 'يرجى تعبئة حقل تاريخ إنتهاء الجواز',
         'gender.required' => 'يرُجى تعبئة حقل النوع',
