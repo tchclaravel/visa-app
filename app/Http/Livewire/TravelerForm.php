@@ -34,7 +34,7 @@ class TravelerForm extends Component
         return [
             'fname' => ['required' , new EnglishOnly()],
             'lname' => ['required' , new EnglishOnly()],
-            'passport_number' => ['required' , new UniquePassport()], 
+            'passport_number' => ['required' , 'unique:travelers' , new UniquePassport()], 
             'passport_issuance' => 'required', 
             'passport_expiry' => 'required',
             'gender' => 'required',

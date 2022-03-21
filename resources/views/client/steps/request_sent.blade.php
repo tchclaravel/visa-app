@@ -14,7 +14,7 @@
                 <span class="mb-1">تم تأكيد الطلب</span>
                 <hr>
                 <span class="mt-1">رقم الطلب</span>
-                <h1 class="mb-4">879454</h1>
+                <h1 class="mb-4">{{session('request_number')}}</h1>
                 
                 <span>
                     يمكنك متابعة هذا الطلب <br>
