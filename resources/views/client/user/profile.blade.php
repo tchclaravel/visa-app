@@ -7,9 +7,21 @@
 @section('content')
 <div class="row profile">
 
+    @if(Session::has('success'))
+    <div class="toast show text-white border-1 mt-1 custom_toast"  role="alert" aria-live="assertive" aria-atomic="true">
+        <div class="d-flex">
+          <div class="toast-body">
+            {{session('success')}}  
+          </div>
+          <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
+        </div>
+    </div>
+    @endif
+
     <h4 class="text-center my-5"> كل الطلبات </h5>
 
     <div class="table-responsive table-responsive-md table-responsive-sm d-flex justify-content-center">
+        @if(count($requests) > 0)
         <table class="table table-striped">
             <thead class="align-middle">
                 <th>رقم الطلب</th>
@@ -17,22 +29,27 @@
                 <th>عرض</th>
             </thead>
             <tbody>
-                <tr>
-                    <td><span class="number">12423534</span></td>
-                    <td><span class="status" style="background:rgb(238, 115, 0)">بإنتظار المراجعة</span></td>
-                    <td>
-                        <a href="{{route('client.request.show')}}" class="btn btn-sm bg-white"><i class="fa fa-eye fa-lg"></i> </a>
-                    </td>
-                </tr>
-                <tr>
+                @foreach($requests as $request)
+                    <tr>
+                        <td><span class="number">{{$request->request_number}}</span></td>
+                        <td><span class="status" style="background:{{$request->request_status == 'pending' ? 'rgb(238, 115, 0)' : 'rgb(47, 128, 0)' }}">{{$request->request_status == 'pending' ? 'بإنتظار المراجعة' : 'تم التأكيد'}}</span></td>
+                        <td>
+                            <a href="{{route('client.request.show', $request->id)}}" class="btn btn-sm bg-white"><i class="fa fa-eye fa-lg"></i> </a>
+                        </td>
+                    </tr>
+                @endforeach
+                {{-- <tr>
                     <td><span class="number">98267290</span></td>
                     <td><span class="status" style="background:rgb(47, 128, 0)">تم التأكيد</span></td>
                     <td>
                         <a href="{{route('client.request.show')}}" class="btn btn-sm bg-white"><i class="fa fa-eye fa-lg"></i> </a>
                     </td>
-                </tr>
+                </tr> --}}
             </tbody>
         </table>
+        @else
+            <div class="alert alert-light">لا توجد لديك طلبات تأشيره</div>
+        @endif
     </div>
 
 </div>

@@ -85,8 +85,8 @@
         <label for="gender" class="form-label d-block">الجنس</label>
         <select wire:model="gender" class="form-control" name="gender" id="gender" aria-label="Default select example">
           <option value="">---</option>
-          <option value="1">ذكر</option>
-          <option value="2">أنثى</option>
+          <option value="male">ذكر</option>
+          <option value="female">أنثى</option>
         </select>
     </div>
 
@@ -94,8 +94,8 @@
       <label for="social_status" class="form-label d-block">الحالة الإجتماعية</label>
       <select wire:model="social_status"class="form-control" name="social_status" id="social_status" aria-label="Default select example">
         <option value="">---</option>
-        <option value="1">أعزب</option>
-        <option value="2">متزوج</option>
+        <option value="single">أعزب</option>
+        <option value="married">متزوج</option>
       </select>
     </div>   
 

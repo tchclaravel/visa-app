@@ -8,8 +8,14 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
-                <li class="nav-item"><a class="nav-link" href="#">تسجيل دخول</a></li>
-                <li class="nav-item"><a class="nav-link" href="#contact">إتصل بنا</a></li>
+                @guest
+                    <li class="nav-item"><a class="nav-link" href="{{route('user.login')}}">تسجيل دخول</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#contact">إتصل بنا</a></li>
+                @endguest
+                @auth
+                    <li class="nav-item"><a class="nav-link" href="{{route('user.profile')}}" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important; font-weight:600;">ID : {{Auth::user()->account_id}}</a></li> 
+                    <li class="nav-item"><a class="nav-link" href="{{route('user.logout')}}">تسجيل الخروج</a></li> 
+                @endauth
             </ul>
         </div>
     </div>

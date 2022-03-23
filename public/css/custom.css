@@ -88,6 +88,28 @@ h1,h2,h3,h4,h5,h6{
     background-color: #f5a302;
 }
 
+.total-price h5{
+    color: #f57402
+}
+
+.total-price h4{
+    background: #f57402;
+    color: #fff;
+    width: 75%;
+    text-align: center;
+}
+
+.total-price .price{
+    font-weight: bold; 
+    font-size:25px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
+}
+
+.total-price .sar{
+    font-size: 13px;
+    margin-bottom:10px;
+}
+
 /* custom scroll bar style start*/
 
 ::-webkit-scrollbar {
@@ -182,6 +204,31 @@ header.masthead .sub-head{
 
 }
 
+.request-form .btn-primary {
+    color: #fff;
+    background-color: #005479;
+    border-color: #01425e;
+  }
+  .request-form .btn-primary:hover {
+    color: #fff;
+    background-color: #016ead;
+    border-color: #01425e;
+  }
+  .request-form .btn-check:focus + .btn-primary, .btn-primary:focus {
+    color: #fff;
+    background-color: #005479;
+    border-color: #005479;
+    box-shadow: 0 0 0 0.25rem rgba(38, 168, 255, 0.5);
+  }
+  .request-form .btn-check:checked + .btn-primary, .btn-check:active + .btn-primary, .btn-primary:active, .btn-primary.active, .show > .btn-primary.dropdown-toggle {
+    color: #fff;
+    background-color: #005479;
+    border-color: #005479;
+  }
+  .request-form .btn-check:checked + .btn-primary:focus, .btn-check:active + .btn-primary:focus, .btn-primary:active:focus, .btn-primary.active:focus, .show > .btn-primary.dropdown-toggle:focus {
+    box-shadow: 0 0 0 0.25rem rgba(38, 150, 255, 0.507);
+  }
+
 .scroll .option{
     min-width: 189px;
 }
@@ -194,12 +241,26 @@ header.masthead .sub-head{
     min-height: 1000px;
 }
 
+/* .flight-data .total_price{
+    margin: 3px;
+    padding: 5px;
+    background: #ffd35c;
+    color: #005479;
+} */
+
 .validation_message{
     font-size: 13px;
     color: #f53302;
 }
 
+.custom_toast{
+    height: 50px;
+    background: rgb(96, 168, 1);
+}
 
+.error_toast{
+    background: #f53302;
+}
 
 .validation_message li{
     padding: 3px 1px;

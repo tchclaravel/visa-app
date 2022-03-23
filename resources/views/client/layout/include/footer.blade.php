@@ -8,8 +8,9 @@
                 <a class="btn btn-dark btn-social mx-2" href="#!"><i class="fab fa-linkedin-in"></i></a>
             </div>
             <div class="col-lg-4 text-lg-end">
-                <a class="link-dark text-decoration-none me-3" href="#!">سياسة الخصوصية</a>
-                <a class="link-dark text-decoration-none" href="#!">شروط الإستخدام</a>
+                <a class="link-dark text-decoration-none me-3" href="#">سياسة الخصوصية</a>
+                <a class="link-dark text-decoration-none me-3" href="#">شروط الإستخدام</a>
+                <a class="link-dark text-decoration-none" href="{{route('client.home')}}#contact">إتصل بنا</a>
             </div>
         </div>
     </div>

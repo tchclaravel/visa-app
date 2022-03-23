@@ -43,13 +43,4 @@ class TravelerController extends Controller
     }
 
 
-
-    public function storeTraveler(TravelerRequest $request){
-
-
-
-    }
-
-
-
 }

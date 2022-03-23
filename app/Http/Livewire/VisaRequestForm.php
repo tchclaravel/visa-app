@@ -17,13 +17,15 @@ class VisaRequestForm extends Component
     public $city_id;         
     public $visa_type;         
     public $expected_date;         
-    public $travelers_number;        
+    public $travelers_number = 1;        
     public $interview_place;       
     public $request_status;        
     public $appointment;       
     public $payment_method;            
     public $request_number;
     public $phone;
+
+    public $visa;
     
     public $cities = [];
     public $visas = [];
@@ -65,6 +67,8 @@ class VisaRequestForm extends Component
             $this->visas = Visa::where('country_id' , $this->country_id)->get();
         }
 
+        $this->visa = Visa::where('id' , $this->visa_type)->first();
+
         return view('livewire.visa-request-form')->withCountries(Country::orderBy('country_name')->get());
     }
 
@@ -73,12 +77,15 @@ class VisaRequestForm extends Component
 
         $visa_request = $this->validate();
 
+        $visa = Visa::where('id' , $this->visa_type)->first();
+
         $visa_request['country_id']       = $this->country_id ;
         $visa_request['city_id']          = $this->city_id ;
         $visa_request['visa_type']        = $this->visa_type ;
         $visa_request['expected_date']    = $this->expected_date ;
         $visa_request['travelers_number'] = $this->travelers_number ;
-        $visa_request['interview_place']  = $this->interview_place ;
+        $visa_request['travelers_number'] = $this->travelers_number ;
+        $visa_request['total_price']      = $visa->visa_price * $this->travelers_number;
         $visa_request['phone']            = $this->phone;
 
 

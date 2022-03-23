@@ -1,4 +1,4 @@
-<form class="row g-4 col-md-6 mb-5 mt-5 request-form" method="POST" wire:submit.prevent="storeRequest" action="{{route('client.step_one.store')}}">
+<form class="row g-4 col-md-6 mb-5 mt-5 request-form" method="POST" wire:submit.prevent="storeRequest">
     @csrf
     <nav aria-label="breadcrumb">
       <ol class="breadcrumb">
@@ -6,6 +6,18 @@
         <li class="breadcrumb-item"><span>بيانات المسافرين</span></></li>
         <li class="breadcrumb-item"><span>تحديد الموعد</span></li>
       </ol>
+
+
+      @if(!is_null($visa_type))
+        <div class="row total-price">
+          <div class="col-7 mt-1 mr-2">
+              <h5>إجمالي المبلغ</h5>
+          </div>
+          <div class="col-5 mt-1 mr-2">
+              <h4><span class="price">{{$visa->visa_price * $travelers_number}}</span><span class="sar">ريال سعودي</span></h3>
+          </div>
+        </div>
+      @endif
     </nav>
 
     {{-- Display errors validations --}}
@@ -83,16 +95,18 @@
       <label for="interview_place" class="form-label d-block">أختر مكان المقابلة؟</label>
       <select wire:model="interview_place" class="form-control" name="interview_place" id="interview_place" aria-label="Default select example">
         <option value="">---</option>
-        <option value="1">الرياض</option>
-        <option value="2">الظهران </option>
-        <option value="3">جدة</option>
+        <option value="Riyadh">الرياض</option>
+        <option value="Dhahran">الظهران </option>
+        <option value="Jeddah">جدة</option>
       </select>
     </div>
 
-    <div class="col-12">
-      <label for="phone" class="form-label">رقم الجوال</label>
-      <input wire:model="phone" name="phone" type="text" class="form-control" id="phone" placeholder="رقم الجوال هنا">
-    </div>
+    @guest
+      <div class="col-12">
+        <label for="phone" class="form-label">رقم الجوال</label>
+        <input wire:model="phone" name="phone" type="text" class="form-control" id="phone" placeholder="رقم الجوال هنا">
+      </div>
+    @endguest
 
     <div class="col-12 mb-2">
         <button type="submit" class="btn btn-primary">التالي</button>

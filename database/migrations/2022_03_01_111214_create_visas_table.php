@@ -15,10 +15,16 @@ class CreateVisasTable extends Migration
     {
         Schema::create('visas', function (Blueprint $table) {
             $table->id();
-            $table->unsignedSmallInteger('country_id');
+            $table->unsignedBigInteger('country_id');
             $table->string('visa_type');
             $table->integer('visa_price');
             $table->timestamps();
+
+            // Constraint
+            $table->foreign('country_id')->references('id')->on('countries')
+            ->onUpdate('cascade')->onDelete('cascade');
+
+                        
         });
     }
 

@@ -21,8 +21,8 @@ class CreateTravelersTable extends Migration
             $table->string('passport_number');
             $table->date('passport_issuance');
             $table->date('passport_expiry');
-            $table->boolean('gender');
-            $table->smallInteger('social_status');
+            $table->string('gender');
+            $table->string('social_status');
             $table->string('address');
             $table->timestamps();
         });

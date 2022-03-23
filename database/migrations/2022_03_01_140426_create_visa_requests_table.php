@@ -18,15 +18,40 @@ class CreateVisaRequestsTable extends Migration
             $table->unsignedBigInteger('user_id');
             $table->unsignedBigInteger('country_id');
             $table->unsignedBigInteger('city_id');
-            $table->string('visa_type');
+            $table->unsignedBigInteger('visa_type');
             $table->date('expected_date');
             $table->mediumInteger('travelers_number');
             $table->string('interview_place');
             $table->string('request_status');
-            $table->smallInteger('appointment'); // Get from appointment table
+            $table->unsignedBigInteger('appointment'); // Get from appointment table
+            $table->decimal('total_price'); 
             $table->string('payment_method'); 
             $table->string('request_number');
             $table->timestamps();
+
+
+            // Constraint
+            $table->foreign('user_id')->references('id')->on('users')
+            ->onUpdate('cascade')->onDelete('cascade');
+            
+            // Constraint
+            $table->foreign('country_id')->references('id')->on('countries')
+            ->onUpdate('cascade')->onDelete('cascade');
+
+            // Constraint
+            $table->foreign('appointment')->references('id')->on('appointments')
+            ->onUpdate('cascade')->onDelete('cascade');
+            
+            // Constraint
+            $table->foreign('city_id')->references('id')->on('cities')
+            ->onUpdate('cascade')->onDelete('cascade');
+
+            // Constraint
+            $table->foreign('visa_type')->references('id')->on('visas')
+            ->onUpdate('cascade')->onDelete('cascade');
+            
+            
+            
 
         });
     }

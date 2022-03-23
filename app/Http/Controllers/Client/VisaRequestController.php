@@ -4,6 +4,8 @@ namespace App\Http\Controllers\Client;
 
 use App\Http\Controllers\Controller;
 use App\Http\Requests\VisaRequest;
+use App\Models\Traveler;
+use App\Models\VisaRequest as ModelsVisaRequest;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Facades\Validator;
@@ -21,6 +23,7 @@ class VisaRequestController extends Controller
         Session::forget('current_traveler');
         Session::forget('paid');
         Session::forget('appointment');
+        Session::forget('request_number');
 
         return view('client.steps.request_form');
     }
@@ -38,37 +41,6 @@ class VisaRequestController extends Controller
         
         return view('client.steps.appointment_payment');
     }
-
-
-    public function storeAppointment(Request $request){
-
-        Validator::make($request->all() , [
-            'appointment' => 'required',
-            'payment_method' => 'required',
-        ],[
-            'appointment.required' => 'يرجى تعبئة حقل الموعد',
-            'payment_method.required' => 'يرجى تعبئة حقل وسيلة الدفع',
-        ])->validate();
-
-        $appointment['appointment'] = $request->appointment;
-        $appointment['payment_method'] = $request->payment_method;
-
-        // Store appointment data in session
-        session()->put('appointment' , $appointment);
-        session()->put('step_number' , 3);
-
-        if($request->payment_method == 2){
-            return redirect()->route('client.bank');
-        }elseif($request->payment_method == 3){
-            return redirect()->route('client.e-payment');
-        }else{
-            session()->put('paid' , true);
-            return redirect()->route('client.request_sent');
-        }
-
-
-    }
-
    
     // Request sent page
     public function requestSent(){
@@ -86,8 +58,16 @@ class VisaRequestController extends Controller
 
 
     // Show request details
-    public function showRequest(){
-        return view('client.user.request_detail');
+    public function showRequest($id){
+        $request = ModelsVisaRequest::findOrFail($id);
+        // We Stop here [we need create foreign key in travelers refer to request ]
+        // $travelers = Traveler::
+        
+        if(!$request){
+            return redirect()->route('client.home');
+        }
+
+        return view('client.user.request_detail' , compact('request'));
     }
 
 

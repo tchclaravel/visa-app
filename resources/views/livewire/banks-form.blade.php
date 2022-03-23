@@ -1,15 +1,15 @@
 <form class="row g-4 mb-5 mt-5 request-form" wire:submit.prevent="storeBank">
     <h4 class="text-center">حوالة بنكية</h5>
-    <div class="col-lg-12 cover mb-2">
+    {{-- <div class="col-lg-12 cover mb-2">
         <img src="{{asset('app/template/design/banks.jpg')}}" class="img-fluid" alt="banks">
-    </div>
+    </div> --}}
 
     <div class="row total-price">
-        <div class="col-sm-8">
-            <h4>إجمالي المبلغ</h4>
+        <div class="col-7 mt-1 mr-2">
+            <h5 class="mt-2">إجمالي المبلغ</h5>
         </div>
-        <div class="col-sm-4">
-            <h3>٣٤٥٠<span style="font-size: 20px;">ريال</span></h3>
+        <div class="col-5 mr-2 mb-2">
+            <h4><span class="price">{{session('visa_request.total_price')}}</span><span class="sar">ريال سعودي</span></h3>
         </div>
     </div>
 
@@ -27,7 +27,7 @@
     <div class="col-12">
         <label for="bank" class="form-label d-block" style="color: #f5a302">يمكنك الدفع عن طريق الحوالة البنكية إلى أحد البنوك التالية</label>
         <select wire:model="bank" id="bank" class="form-control" aria-label="Default select example">
-            <option value="{{null}}" selected>أختر البنك </option>
+            <option value="" selected>أختر البنك </option>
             @foreach($banks as $bank)
                 <option value="{{$bank->id}}" >{{$bank->bank_name}}</option>
             @endforeach

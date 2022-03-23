@@ -6471,7 +6471,7 @@ textarea.form-control-lg {
   color: #212529;
 }
 .link-dark:hover, .link-dark:focus {
-  color: #1a1e21;
+  color: #ffd35c;
 }
 
 .ratio {
@@ -11345,7 +11345,7 @@ p {
 }
 #mainNav .navbar-nav .nav-item .nav-link.active, #mainNav .navbar-nav .nav-item .nav-link:hover {
 
-  color: #ffba41;
+  color: #ffd35c;
 
   
 }
@@ -11383,7 +11383,7 @@ p {
 }
 #mainNavApp .navbar-nav .nav-item .nav-link.active, #mainNavApp .navbar-nav .nav-item .nav-link:hover {
 
-  color: #ffba41;
+  color: #ffd35c;
 
   
 }
