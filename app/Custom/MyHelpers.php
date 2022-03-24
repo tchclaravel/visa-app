@@ -69,6 +69,7 @@ class MyHelpers{
 
         foreach($travelers as $row){
             $traveler = new Traveler();
+            $traveler->request_id = $request->id;
             $traveler->fname = $row['fname'];
             $traveler->lname = $row['lname'];
             $traveler->passport_number = $row['passport_number'];

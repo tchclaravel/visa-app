@@ -60,14 +60,14 @@ class VisaRequestController extends Controller
     // Show request details
     public function showRequest($id){
         $request = ModelsVisaRequest::findOrFail($id);
-        // We Stop here [we need create foreign key in travelers refer to request ]
-        // $travelers = Traveler::
-        
+        // We Stop here [we need create foreign key in travelers refer to request ]        
         if(!$request){
             return redirect()->route('client.home');
         }
 
-        return view('client.user.request_detail' , compact('request'));
+        $travelers = Traveler::where('request_id' , $request->id)->get();
+
+        return view('client.user.request_detail' , compact('request' , 'travelers'));
     }
 
 

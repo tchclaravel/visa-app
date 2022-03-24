@@ -1,4 +1,4 @@
-<form class="row g-4 request-form" method="POST" wire:submit.prevent="submitForm" action="{{route('client.step_two.store')}}">
+<form class="row g-4 request-form" method="POST" wire:submit.prevent="submitForm">
     @csrf
       <nav aria-label="breadcrumb">
           <ol class="breadcrumb">

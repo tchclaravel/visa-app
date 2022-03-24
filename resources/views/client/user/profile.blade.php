@@ -48,7 +48,7 @@
             </tbody>
         </table>
         @else
-            <div class="alert alert-light">لا توجد لديك طلبات تأشيره</div>
+            <div class="alert alert-light col-8 text-center">لا توجد لديك طلبات تأشيره</div>
         @endif
     </div>
 

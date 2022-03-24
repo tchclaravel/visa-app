@@ -10,6 +10,7 @@ class Traveler extends Model
     use HasFactory;
 
     protected $fillable = [
+        'request_id',
         'fname',
         'lname',
         'passport_number', 
@@ -17,8 +18,13 @@ class Traveler extends Model
         'passport_expiry',
         'gender',
         'social_status', 
-        'address'
+        'address',
     ];
+
+
+    public function request(){
+        return $this->belongsTo(VisaRequest::class , 'request_id');
+    }
 
 
     
