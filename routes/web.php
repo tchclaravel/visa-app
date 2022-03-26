@@ -1,5 +1,14 @@
 <?php
 
+use App\Http\Controllers\Admin\AdminHomeController;
+use App\Http\Controllers\Admin\AdminCityController;
+use App\Http\Controllers\Admin\AdminCountryController;
+use App\Http\Controllers\Admin\AdminSettingController;
+use App\Http\Controllers\Admin\AdminUserController;
+use App\Http\Controllers\Admin\AdminVisaController;
+use App\Http\Controllers\Admin\AdminVisaRequestController;
+
+
 use App\Http\Controllers\Client\HomeController;
 use App\Http\Controllers\Client\PaymentsController;
 use App\Http\Controllers\Client\ShowPageController;
@@ -52,6 +61,22 @@ Route::get('/request-detail/{id}' , [VisaRequestController::class , 'showRequest
 
 Route::get('/admin/index' , function(){
     return view('admin.home');
+});
+
+Route::prefix('admin')->group(function(){
+
+    Route::get('/index' , [AdminHomeController::class , 'index'])->name('admin.index');
+
+    Route::get('/countries' , [AdminCountryController::class , 'index'])->name('admin.countries');
+    Route::post('/countries' , [AdminCountryController::class , 'store'])->name('admin.countries.store');
+
+
+    Route::get('/visa-requests' , [AdminVisaRequestController::class , 'index'])->name('admin.requests');
+    Route::get('/users' , [AdminUserController::class , 'index'])->name('admin.users');
+    Route::get('/visas' , [AdminVisaController::class , 'index'])->name('admin.visas');
+    Route::get('/cities' , [AdminCityController::class , 'index'])->name('admin.cities');
+    Route::get('/settings' , [AdminSettingController::class , 'index'])->name('admin.settings');
+
 });
 
 

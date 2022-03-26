@@ -1,19 +1,7 @@
 @extends('admin.layout.admin_master')
-
 @section('title') لوحة التحكم @endsection
-
 @section('content')
-<!-- ============================================================== -->
-<!-- Bread crumb and right sidebar toggle -->
-<!-- ============================================================== -->
-<div class="row page-titles">
-    <div class="col-md-5 align-self-center">
-        <h3 class="text-themecolor">الرئيسية</h3>
-    </div>
-</div>
-<!-- ============================================================== -->
-<!-- End Bread crumb and right sidebar toggle -->
-<!-- ============================================================== -->
+@section('page-title') الرئيسية @endsection
 <!-- ============================================================== -->
 <!-- Sales Chart and browser state-->
 <!-- ============================================================== -->

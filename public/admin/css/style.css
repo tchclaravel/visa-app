@@ -53,13 +53,14 @@ Global Styles
 @import '../scss/icons/font-awesome/css/font-awesome.min.css';
 @import '../css/spinners.css';
 @import '../css/animate.css';
+
 * {
   outline: none;
 }
 
 body {
   background: #fff;
-  font-family: "Montserrat", sans-serif;
+  font-family: 'DroidArabicKufiRegular' !important;
   margin: 0;
   overflow-x: hidden;
   color: #67757c;
@@ -506,7 +507,7 @@ html body .text-dark {
   color: #67757c;
 }
 html body .text-themecolor {
-  color: #20aee3;
+  color: #0673b3;
 }
 
 /*******************
@@ -925,7 +926,7 @@ Main sidebar
 }
 
 .fix-sidebar .left-sidebar {
-  position: fixed;
+  position:absolute;
 }
 
 /*******************
@@ -1024,19 +1025,20 @@ sidebar navigation
 }
 .sidebar-nav > ul > li > a.active {
   font-weight: 400;
-  color: #26c6da;
-  border-right: 3px solid #20aee3;
+  color: #0673b3;
+  border-right: 4px solid #0673b3;
 }
 .sidebar-nav > ul > li {
   margin-bottom: 8px;
   margin-top: 8px;
+  margin-right: 3px;
 }
 .sidebar-nav > ul > li.active > a {
-  color: #20aee3;
+  color: #0673b3;
   font-weight: 500;
 }
 .sidebar-nav > ul > li.active > a i {
-  color: #20aee3;
+  color: #0673b3;
 }
 .sidebar-nav .waves-effect {
   transition: none;
@@ -1072,7 +1074,7 @@ When click on sidebar toggler and also for tablet
   }
 
   .mini-sidebar.fix-sidebar .left-sidebar {
-    position: fixed;
+    position: absolute;
   }
 
   .mini-sidebar .sidebar-nav #sidebarnav > li:hover > ul {
@@ -1382,19 +1384,19 @@ File: scss
   font-size: 14px;
 }
 
-.mini-sidebar .top-navbar .navbar-header {
+/* .mini-sidebar .top-navbar .navbar-header {
   width: 70px;
   text-align: center;
   flex-shrink: 0;
   padding-right: 0px;
-}
+} */
 
-.logo-center .top-navbar .navbar-header {
+/* .logo-center .top-navbar .navbar-header {
   position: absolute;
   right: 0;
   left: 0;
   margin: 0 auto;
-}
+} */
 
 /*******************
 Notify
@@ -1477,6 +1479,7 @@ Notify
   padding: 0px;
 }
 .page-titles h3 {
+  font-family: 'DroidArabicKufiRegular' !important;
   margin-bottom: 0px;
   margin-top: 0px;
 }

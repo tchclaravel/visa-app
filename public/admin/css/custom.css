@@ -5,4 +5,37 @@ body{
     color:#0c1e34;
 }
 
+::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: rgb(163, 163, 163) !important;
+    font-size: 14px;
+
+}
+
+.validation_message{
+    font-size: 13px;
+    color: #f53302;
+}
+
 /* End General Tags */
+
+/* Header */
+
+header .navbar-header{
+    background: #0673b3 !important;
+}
+
+/* header .navbar-header .navbar-brand{
+    text-align: center;
+} */
+
+header .navbar-brand .main-logo{
+    display: block;
+    font-size: 25px;
+    font-weight: bold;
+    padding: 5px;
+    color: #fff;
+    /* margin: 5px; */
+    margin-right: 15px;
+}
+
+/* End Header */

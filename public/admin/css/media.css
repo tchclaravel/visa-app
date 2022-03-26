@@ -1,0 +1,28 @@
+/* Admin Layout */
+@media screen and (min-width: 992px){
+    .sidebar-nav  .user-menu{
+        display: none;
+    }
+
+    .sidebar-nav  .logout-menu{
+        display: none;
+    }
+
+}
+
+@media screen and (max-width: 992px){
+    header .main-logo{
+        margin-left: 33px;
+    }
+}
+/* end profile */
+
+
+
+@media screen and (max-width: 991px){
+    .navbar .u-pro{
+        display: none;
+    }
+}
+
+/* End Layout */
