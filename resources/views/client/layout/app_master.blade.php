@@ -16,7 +16,6 @@
     <body id="page-top" dir="rtl" style="background-image: url('{{asset('/app/template/design/body-background.jpg')}}');">
         <!-- Navigation-->
         @include('client.layout.include.header')
-
         <!-- Main Content -->
         <div class="container app-container">
             @yield('content')

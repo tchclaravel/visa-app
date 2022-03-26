@@ -8,7 +8,7 @@
 <div class="row appointment-data">
 
     <div class="d-flex justify-content-center v-cenetr">
-        @livewire('payment-form')
+        @livewire('client.payment-form')
     </div>
 
 

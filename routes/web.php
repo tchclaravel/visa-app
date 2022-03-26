@@ -43,9 +43,16 @@ Route::get('/confirm-request' , [VisaRequestController::class , 'requestSent'])-
 Route::get('/login' , [UserController::class , 'loginForm'])->name('user.login');
 Route::post('/login' , [UserController::class , 'login'])->name('user.login.post');
 Route::get('/logout' , [UserController::class , 'logout'])->name('user.logout');
-
 Route::get('/profile' , [UserController::class , 'profile'])->name('user.profile');
 Route::get('/request-detail/{id}' , [VisaRequestController::class , 'showRequest'])->name('client.request.show');
+
+
+
+// Admin Routes
+
+Route::get('/admin/index' , function(){
+    return view('admin.home');
+});
 
 
 // Route::get('/dashboard', function () {

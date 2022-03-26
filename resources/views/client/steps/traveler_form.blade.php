@@ -9,7 +9,7 @@
 
     <div class="d-flex justify-content-center v-cenetr">
         
-      @livewire('traveler-form')
+      @livewire('client.traveler-form')
 
     </div>
 

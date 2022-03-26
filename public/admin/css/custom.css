@@ -1,0 +1,8 @@
+/* General Tags */
+@import url(https://fontlibrary.org//face/droid-arabic-kufi);
+body{
+    font-family: 'DroidArabicKufiRegular' !important;
+    color:#0c1e34;
+}
+
+/* End General Tags */

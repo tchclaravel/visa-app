@@ -8,7 +8,7 @@
 <div class="row bank-transfer">
     
     <div class="d-flex justify-content-center v-cenetr">
-        @livewire('banks-form')
+        @livewire('client.banks-form')
     </div>
 
 
