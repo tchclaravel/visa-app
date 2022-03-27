@@ -4,6 +4,27 @@
 @section('page-title') الإعدادات @endsection
 
 
+<div class="card">
+    <div class="card-title">
+        البنوك
+    </div>
+    <!-- Tab panes -->
+    <div class="card-body">
+        هنا .......
+    </div>
+</div>
+
+
+
+<div class="card">
+    <div class="card-title">
+        المواعيد
+    </div>
+    <!-- Tab panes -->
+    <div class="card-body">
+        هنا .......
+    </div>
+</div>
 
 
 

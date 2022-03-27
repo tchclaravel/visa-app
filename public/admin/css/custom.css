@@ -1,8 +1,39 @@
+/* main colors
+
+#ffc800
+
+#0c1e34
+#033c59
+#005479
+#f5a302
+#ffba41
+#ffd35c
+
+
+#f57402
+
+*/
+
+
 /* General Tags */
 @import url(https://fontlibrary.org//face/droid-arabic-kufi);
 body{
     font-family: 'DroidArabicKufiRegular' !important;
     color:#0c1e34;
+}
+
+.custom-color{
+    background: #0673b3;
+}
+
+.custom-btn{
+    color: #fff;
+    background: #0673b3;
+}
+
+.custom-btn:hover{
+    color: #fff;
+    background: rgb(47, 126, 1);
 }
 
 ::placeholder { /* Chrome, Firefox, Opera, Safari 10.1+ */
@@ -12,10 +43,9 @@ body{
 }
 
 .validation_message{
-    font-size: 13px;
+    font-size: 12px;
     color: #f53302;
 }
-
 /* End General Tags */
 
 /* Header */
@@ -39,3 +69,20 @@ header .navbar-brand .main-logo{
 }
 
 /* End Header */
+
+
+/* Countries */
+.countries table{
+    color: rgb(110, 110, 110);
+}
+.countries table thead{
+    background: #0673b3;
+    color: #fff;
+}
+
+.countries table tbody{
+    font-weight: 500;
+    font-size: 16px;
+}
+
+/* End Countries*/

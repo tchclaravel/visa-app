@@ -1,12 +1,12 @@
 <?php
 
 use App\Http\Controllers\Admin\AdminHomeController;
-use App\Http\Controllers\Admin\AdminCityController;
-use App\Http\Controllers\Admin\AdminCountryController;
-use App\Http\Controllers\Admin\AdminSettingController;
-use App\Http\Controllers\Admin\AdminUserController;
-use App\Http\Controllers\Admin\AdminVisaController;
-use App\Http\Controllers\Admin\AdminVisaRequestController;
+use App\Http\Controllers\Admin\City\AdminCityController;
+use App\Http\Controllers\Admin\Country\AdminCountryController;
+use App\Http\Controllers\Admin\Setting\AdminSettingController;
+use App\Http\Controllers\Admin\User\AdminUserController;
+use App\Http\Controllers\Admin\Visa\AdminVisaController;
+use App\Http\Controllers\Admin\VisaRequest\AdminVisaRequestController;
 
 
 use App\Http\Controllers\Client\HomeController;
@@ -67,14 +67,27 @@ Route::prefix('admin')->group(function(){
 
     Route::get('/index' , [AdminHomeController::class , 'index'])->name('admin.index');
 
+    // Country Routes
     Route::get('/countries' , [AdminCountryController::class , 'index'])->name('admin.countries');
-    Route::post('/countries' , [AdminCountryController::class , 'store'])->name('admin.countries.store');
+    Route::post('/country/store' , [AdminCountryController::class , 'store'])->name('admin.countries.store');
+    Route::post('/country/delete/{id}' , [AdminCountryController::class , 'delete'])->name('admin.countries.delete');
+
+    // City Routes
+    Route::get('/cities' , [AdminCityController::class , 'index'])->name('admin.cities');
+    Route::post('/city/store' , [AdminCityController::class , 'store'])->name('admin.cities.store');
+    Route::post('/city/delete/{id}' , [AdminCityController::class , 'delete'])->name('admin.cities.delete');
+
+    // Visa Routes
+    Route::get('/visas' , [AdminVisaController::class , 'index'])->name('admin.visas');
+    Route::post('/visa/store' , [AdminVisaController::class , 'store'])->name('admin.visas.store');
+    Route::post('/visa/delete/{id}' , [AdminVisaController::class , 'delete'])->name('admin.visas.delete');
+
+    // User Routes
+    Route::get('/users' , [AdminUserController::class , 'index'])->name('admin.users');
+    Route::post('/user/delete/{id}' , [AdminUserController::class , 'delete'])->name('admin.users.delete');
 
 
     Route::get('/visa-requests' , [AdminVisaRequestController::class , 'index'])->name('admin.requests');
-    Route::get('/users' , [AdminUserController::class , 'index'])->name('admin.users');
-    Route::get('/visas' , [AdminVisaController::class , 'index'])->name('admin.visas');
-    Route::get('/cities' , [AdminCityController::class , 'index'])->name('admin.cities');
     Route::get('/settings' , [AdminSettingController::class , 'index'])->name('admin.settings');
 
 });

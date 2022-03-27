@@ -159,8 +159,17 @@ return [
     */
 
     'attributes' => [
+
+        /* [Client Section] */
+        // Travelers Form
         'fname' => 'الأسم الأول',
-        'lname' => 'أسم العائلة'
+        'lname' => 'أسم العائلة',
+
+
+        
+        /* [Admin Section] */
+        // Cities Form
+        'city_name' => 'اسم المدينة'
     ],
 
 ];

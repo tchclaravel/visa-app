@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\Admin;
+namespace App\Http\Controllers\Admin\Country;
 
 use App\Http\Controllers\Controller;
 use App\Models\Country;
@@ -12,7 +12,8 @@ class AdminCountryController extends Controller
 {
     
     public function index(){
-        return view('admin.country.index');
+        $countries = Country::all();
+        return view('admin.country.index', compact('countries'));
     }
 
     public function store(Request $request){
@@ -33,6 +34,19 @@ class AdminCountryController extends Controller
 
 
         return redirect()->back()->with($notification);
+
+    }
+
+
+    public function delete($id)
+    {
+        $country = Country::findOrFail($id);
+        $country->delete();
+
+        $notification = ['alert-type' => 'success' , 'message' => 'تم حذف السفارة بنجاح'];
+
+        return redirect()->back()->with($notification);
+
 
     }
 
