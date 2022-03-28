@@ -3,7 +3,7 @@
 @section('content')
 @section('page-title') الوجهات و المدن @endsection
 
-<div class="countries">
+<div class="cities">
     <div class="card">
         <!-- Tab panes -->
         <div class="card-body">

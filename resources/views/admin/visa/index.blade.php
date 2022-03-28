@@ -3,7 +3,7 @@
 @section('content')
 @section('page-title') التأشيرات @endsection
 
-<div class="countries">
+<div class="visas">
     <div class="card">
         <!-- Tab panes -->
         <div class="card-body">

@@ -11,7 +11,6 @@
                 @csrf
     
                 <div class="form-group col-md-4 d-inline-block mx-2">
-                    {{-- <label class="col-md-12">Full Name</label> --}}
                     @error('country_name') <span class="validation_message">{{ $message }}</span> @enderror
                     <div>
                         <input name="country_name" type="text" lang="en" placeholder="أكتب اسم السفارة باللغة الإنجليزية" class="form-control form-control-line">
@@ -19,7 +18,6 @@
                 </div>
     
                 <div class="form-group col-md-4 d-inline-block mx-2">
-                    {{-- <label class="col-md-12">Full Name</label> --}}
                     @error('country_name_ar') <span class="validation_message">{{ $message }}</span> @enderror
                     <div>
                         <input name="country_name_ar" type="text" placeholder="أكتب اسم السفارة باللغة العربية" class="form-control form-control-line">

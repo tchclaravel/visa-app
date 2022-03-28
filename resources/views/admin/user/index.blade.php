@@ -3,7 +3,7 @@
 @section('content')
 @section('page-title') المستخدمين @endsection
 
-<div class="countries">
+<div class="users">
     
     @if(count($users) > 0)
     <div class="table-responsive">

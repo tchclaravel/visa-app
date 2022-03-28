@@ -46,10 +46,24 @@ body{
     font-size: 12px;
     color: #f53302;
 }
+
+/* Countries */
+table{
+    color: rgb(110, 110, 110);
+}
+table thead{
+    background: #0673b3;
+    color: #fff;
+}
+
+table tbody{
+    color: rgb(110, 110, 110);
+    font-weight: 500;
+    font-size: 16px;
+}
 /* End General Tags */
 
 /* Header */
-
 header .navbar-header{
     background: #0673b3 !important;
 }
@@ -86,3 +100,31 @@ header .navbar-brand .main-logo{
 }
 
 /* End Countries*/
+
+
+
+/* Settings */
+
+.settings .card .card-title{
+    font-size: 16px;
+    color: rgb(122, 122, 122);
+    margin: 10px;
+    margin-bottom: 0;   
+}
+
+.settings .card hr{
+    margin-top: 10px;
+    color: #ccc;
+}
+
+.settings .appointments ul li{
+    list-style: none;
+    padding: 10px;
+    /* background: #f7f7f7; */
+    color: rgb(143, 143, 143);
+    border: 1px solid #cdf0ff;
+    border-radius: 5px;
+    margin: 5px;
+}
+
+/* End Settings */

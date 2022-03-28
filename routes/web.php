@@ -3,6 +3,9 @@
 use App\Http\Controllers\Admin\AdminHomeController;
 use App\Http\Controllers\Admin\City\AdminCityController;
 use App\Http\Controllers\Admin\Country\AdminCountryController;
+use App\Http\Controllers\Admin\Page\AdminPageController;
+use App\Http\Controllers\Admin\Setting\AdminAppointmentController;
+use App\Http\Controllers\Admin\Setting\AdminBankController;
 use App\Http\Controllers\Admin\Setting\AdminSettingController;
 use App\Http\Controllers\Admin\User\AdminUserController;
 use App\Http\Controllers\Admin\Visa\AdminVisaController;
@@ -86,9 +89,19 @@ Route::prefix('admin')->group(function(){
     Route::get('/users' , [AdminUserController::class , 'index'])->name('admin.users');
     Route::post('/user/delete/{id}' , [AdminUserController::class , 'delete'])->name('admin.users.delete');
 
+    // Setting Routes
+    Route::get('/settings' , [AdminSettingController::class , 'index'])->name('admin.settings');
+
+    Route::post('/appointment/store' , [AdminAppointmentController::class , 'store'])->name('admin.appointments.store');
+    Route::post('/appointment/delete/{id}' , [AdminAppointmentController::class , 'delete'])->name('admin.appointments.delete');
+
+    Route::post('/bank/store' , [AdminBankController::class , 'store'])->name('admin.banks.store');
+    Route::post('/bank/delete/{id}' , [AdminBankController::class , 'delete'])->name('admin.banks.delete');
+
+    Route::get('/{page_title}/update' , [AdminPageController::class , 'edit'])->name('admin.pages.edit');
+
 
     Route::get('/visa-requests' , [AdminVisaRequestController::class , 'index'])->name('admin.requests');
-    Route::get('/settings' , [AdminSettingController::class , 'index'])->name('admin.settings');
 
 });
 
