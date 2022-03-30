@@ -15,10 +15,10 @@ class PageFactory extends Factory
     public function definition()
     {
         return[
-            DB::table('pages')->insert([
-                ['page_title' => 'privacy_policy', 'page_content' => null],
-                ['page_title' => 'terms_of_use', 'page_content' => null],
-            ])
+            // DB::table('pages')->insert([
+            //     ['page_title' => 'privacy_policy', 'page_content' => null],
+            //     ['page_title' => 'terms_of_use', 'page_content' => null],
+            // ])
         ];
     }
 }

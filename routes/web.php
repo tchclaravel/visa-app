@@ -98,7 +98,8 @@ Route::prefix('admin')->group(function(){
     Route::post('/bank/store' , [AdminBankController::class , 'store'])->name('admin.banks.store');
     Route::post('/bank/delete/{id}' , [AdminBankController::class , 'delete'])->name('admin.banks.delete');
 
-    Route::get('/{page_title}/update' , [AdminPageController::class , 'edit'])->name('admin.pages.edit');
+    Route::get('/update/{page_title}' , [AdminPageController::class , 'edit'])->name('admin.pages.edit');
+    Route::post('/update/{page_title}/' , [AdminPageController::class , 'update'])->name('admin.pages.update');
 
 
     Route::get('/visa-requests' , [AdminVisaRequestController::class , 'index'])->name('admin.requests');

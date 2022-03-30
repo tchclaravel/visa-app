@@ -22,11 +22,11 @@
             <ul>
                 <li>
                     <span class="d-inline-block">سياسة الخصوصية</span>
-                    <a href="{{route('admin.pages.edit' , 'privacy_policy')}}" class="btn custom-btn btn-sm d-inline-block float-start" style="position: relative; bottom:3px;"> <i class="fa fa-edit"></i> تحديث</a>
+                    <a href="{{route('admin.pages.edit' , 'privacy_policy')}}" class="btn custom-btn btn-sm d-inline-block float-start" style="position: relative; bottom:3px;"> <i class="fa fa-edit"></i> تعديل</a>
                 </li>
                 <li>
                     <span class="d-inline-block"> شروط الإستخدام</span>
-                    <a href="{{route('admin.pages.edit' , 'terms_of_use')}}" class="btn custom-btn btn-sm d-inline-block float-start" style="position: relative; bottom:3px;"> <i class="fa fa-edit"></i> تحديث</a>
+                    <a href="{{route('admin.pages.edit' , 'terms_of_use')}}" class="btn custom-btn btn-sm d-inline-block float-start" style="position: relative; bottom:3px;"> <i class="fa fa-edit"></i> تعديل</a>
                 </li>
             </ul>
         </div>
