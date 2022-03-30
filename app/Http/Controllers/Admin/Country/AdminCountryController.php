@@ -38,6 +38,16 @@ class AdminCountryController extends Controller
     }
 
 
+    public function search(Request $request){
+
+        $results = Country::where('country_name_ar' , 'LIKE' , '%'.$request->input.'%')
+                ->orWhere('country_name' , 'LIKE' , '%'.$request->input.'%')->get();
+
+        return view('admin.country.search' , compact('results' , 'request'));
+    }
+
+
+
     public function delete($id)
     {
         $country = Country::findOrFail($id);
@@ -46,7 +56,6 @@ class AdminCountryController extends Controller
         $notification = ['alert-type' => 'success' , 'message' => 'تم حذف السفارة بنجاح'];
 
         return redirect()->back()->with($notification);
-
 
     }
 

@@ -3,9 +3,8 @@
 namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
-use Illuminate\Support\Facades\DB;
 
-class PageFactory extends Factory
+class AdminFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -14,8 +13,8 @@ class PageFactory extends Factory
      */
     public function definition()
     {
-        return[
-            
+        return [
+            //
         ];
     }
 }

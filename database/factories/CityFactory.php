@@ -14,8 +14,10 @@ class CityFactory extends Factory
     public function definition()
     {
         return [
-            'country_id' => 1,
-            'city_name'  => $this->faker->city()
+            'country_id' => 8,
+            'city_name'  => $this->faker->city(),
+            'city_name_ar'  => 'باللغة العربية',
+            'created_at' => now()
         ];
     }
 }

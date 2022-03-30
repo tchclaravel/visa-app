@@ -29,6 +29,8 @@
             <!-- toggle and nav items -->
             <!-- ============================================================== -->
             <ul class="navbar-nav me-auto">
+                <?php $route = Route::current() ?>
+
                 <li class="nav-item"> <a style="font-size: 40px; color:#0673b3;" class="nav-link nav-toggler hidden-md-up waves-effect waves-dark"
                         href="javascript:void(0)"><i class="fa fa-bars"></i></a> </li>
                 <!-- ============================================================== -->
@@ -37,9 +39,37 @@
                 <li class="nav-item hidden-xs-down search-box"> <a
                         class="nav-link hidden-sm-down waves-effect waves-dark" href="javascript:void(0)"><i
                             class="fa fa-search"></i></a>
-                    <form class="app-search">
-                        <input type="text" class="form-control" placeholder="Search & enter"> <a
-                            class="srh-btn"><i class="fa fa-times"></i></a></form>
+                    @if($route->getName() == 'admin.countries')
+                        <form class="app-search" method="GET" action="{{route('admin.countries.search')}}">
+                            <input name="input" type="text" class="form-control" placeholder="Search & enter"> <a
+                                class="srh-btn"><i class="fa fa-times"></i></a>
+                        </form>
+                    @elseif($route->getName() == 'admin.countries.search')
+                        <form class="app-search" method="GET" action="{{route('admin.countries.search')}}">
+                            <input name="input" type="text" class="form-control" placeholder="Search & enter"> <a
+                                class="srh-btn"><i class="fa fa-times"></i></a>
+                        </form>
+                    @elseif($route->getName() == 'admin.cities')
+                    <form class="app-search" method="GET" action="{{route('admin.cities.search')}}">
+                        <input name="input" type="text" class="form-control" placeholder="Search & enter"> <a
+                            class="srh-btn"><i class="fa fa-times"></i></a>
+                    </form>
+                    @elseif($route->getName() == 'admin.cities.search')
+                    <form class="app-search" method="GET" action="{{route('admin.cities.search')}}">
+                        <input name="input" type="text" class="form-control" placeholder="Search & enter"> <a
+                            class="srh-btn"><i class="fa fa-times"></i></a>
+                    </form>
+                    @elseif($route->getName() == 'admin.users')
+                    <form class="app-search" method="GET" action="{{route('admin.users.search')}}">
+                        <input name="input" type="text" class="form-control" placeholder="Search & enter"> <a
+                            class="srh-btn"><i class="fa fa-times"></i></a>
+                    </form>
+                    @elseif($route->getName() == 'admin.users.search')
+                    <form class="app-search" method="GET" action="{{route('admin.users.search')}}">
+                        <input name="input" type="text" class="form-control" placeholder="Search & enter"> <a
+                            class="srh-btn"><i class="fa fa-times"></i></a>
+                    </form>
+                    @endif
                 </li>
             </ul>
             <!-- ============================================================== -->
@@ -56,8 +86,7 @@
                         <span class="hidden-md-down">عبدالرحمن</span>
                     </a>
 
-                    <a class="nav-link dropdown-toggle waves-effect waves-dark profile-pic" href="#"
-                    id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    <a class="nav-link  waves-effect waves-dark profile-pic" href="{{route('admin.logout')}}">
                     <i class="fa fa-power-off fa-lg mt-4"></i>
                 </a>
 

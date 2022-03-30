@@ -15,6 +15,16 @@ class AdminUserController extends Controller
         return view('admin.user.index' , compact('users'));
     }
 
+
+    public function search(Request $request){
+
+        $results = User::where('account_id' , 'LIKE' , '%'.$request->input.'%')
+                ->orWhere('phone' , 'LIKE' , '%'.$request->input.'%')->get();
+
+        return view('admin.user.search' , compact('results' , 'request'));
+    }
+
+
     public function delete($id)
     {
         $user = User::findOrFail($id);

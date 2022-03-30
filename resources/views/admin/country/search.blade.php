@@ -1,39 +1,11 @@
 @extends('admin.layout.admin_master')
-@section('title') السفارات @endsection
+@section('title') السفارات - بحث @endsection
 @section('content')
-@section('page-title') السفارات @endsection
+@section('page-title')  السفارات - بحث "{{$request->input}}"  @endsection
 
 <div class="countries">
-    <div class="card">
-        <!-- Tab panes -->
-        <div class="card-body">
-            <form class="form-horizontal form-material mx-2" method="POST" action="{{route('admin.countries.store')}}">
-                @csrf
     
-                <div class="form-group col-md-4 d-inline-block mx-2">
-                    @error('country_name') <span class="validation_message">{{ $message }}</span> @enderror
-                    <div>
-                        <input name="country_name" type="text" lang="en" placeholder="أكتب اسم السفارة باللغة الإنجليزية" class="form-control form-control-line">
-                    </div>
-                </div>
-    
-                <div class="form-group col-md-4 d-inline-block mx-2">
-                    @error('country_name_ar') <span class="validation_message">{{ $message }}</span> @enderror
-                    <div>
-                        <input name="country_name_ar" type="text" placeholder="أكتب اسم السفارة باللغة العربية" class="form-control form-control-line">
-                    </div>
-                </div>
-    
-                <div class="form-group col-md-3 d-inline-block mx-2">
-                    <div>
-                        <button type="submit" class="btn btn-success"><i class="fa fa-plus"></i> إضافة</button>
-                    </div>
-                </div>
-            </form>
-        </div>
-    </div>
-    
-    @if(count($countries) > 0)
+    @if(count($results) > 0)
     <div class="table-responsive">
         <table class="table table-hover table-responsive">
             <thead>
@@ -48,7 +20,7 @@
             </thead>
             <tbody class="align-middle">
                 <?php $i = 1 ?>
-                @foreach($countries as $country)
+                @foreach($results as $country)
                 <tr>
                     <th scope="row" class="font-bold fs-5">{{$i++}}</th>
                     <td><i class="fa fa-flag fa-2x"></i></td>
@@ -86,6 +58,11 @@
             </tbody>
         </table>
     </div>
+
+    @else
+        <div class="alert custom-alert text-center">
+            لا توجد نتائج  بحث 
+        </div>
     @endif
 
 </div>

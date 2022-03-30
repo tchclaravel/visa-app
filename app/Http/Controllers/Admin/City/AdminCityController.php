@@ -53,6 +53,16 @@ class AdminCityController extends Controller
     }
 
 
+    
+    public function search(Request $request){
+
+        $results = City::where('city_name_ar' , 'LIKE' , '%'.$request->input.'%')
+                ->orWhere('city_name' , 'LIKE' , '%'.$request->input.'%')->get();
+
+        return view('admin.city.search' , compact('results' , 'request'));
+    }
+
+
     public function delete($id)
     {
         $country = City::findOrFail($id);

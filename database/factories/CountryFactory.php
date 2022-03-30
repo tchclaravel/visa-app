@@ -15,6 +15,8 @@ class CountryFactory extends Factory
     {
         return [
             'country_name' => $this->faker->country(),
+            'country_name_ar' => 'باللغة العربية',
+
         ];
     }
 }

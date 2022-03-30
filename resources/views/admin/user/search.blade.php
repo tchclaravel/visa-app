@@ -1,11 +1,11 @@
 @extends('admin.layout.admin_master')
-@section('title') المستخدمين @endsection
+@section('title') المستخدمين - بحث @endsection
 @section('content')
-@section('page-title') المستخدمين @endsection
+@section('page-title')  المستخدمين - بحث "{{$request->input}}"  @endsection
 
 <div class="users">
     
-    @if(count($users) > 0)
+    @if(count($results) > 0)
     <div class="table-responsive">
         <table class="table table-hover table-responsive">
             <thead>
@@ -19,7 +19,7 @@
             </thead>
             <tbody class="align-middle">
                 <?php $i = 1 ?>
-                @foreach($users as $user)
+                @foreach($results as $user)
                 <tr>
                     <th scope="row" class="font-bold fs-5">{{$i++}}</th>
                     <td>{{$user->account_id}}</td>
@@ -55,7 +55,6 @@
             </tbody>
         </table>
     </div>
-
     @else
 
     <div class="alert custom-alert text-center">
@@ -65,6 +64,7 @@
     @endif
 
 </div>
+
 
 
 
