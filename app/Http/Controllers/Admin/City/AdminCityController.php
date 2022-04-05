@@ -18,7 +18,7 @@ class AdminCityController extends Controller
         $countries = Country::all();
         $countries->pluck('country_name_ar' , 'id');
 
-        $cities = City::all();
+        $cities = City::latest()->paginate(10);
         return view('admin.city.index' , compact('countries' , 'cities'));
     }
 

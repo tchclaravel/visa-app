@@ -12,7 +12,7 @@ class AdminCountryController extends Controller
 {
     
     public function index(){
-        $countries = Country::all();
+        $countries = Country::latest()->paginate(10);
         return view('admin.country.index', compact('countries'));
     }
 

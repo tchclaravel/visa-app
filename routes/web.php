@@ -11,8 +11,7 @@ use App\Http\Controllers\Admin\Setting\AdminSettingController;
 use App\Http\Controllers\Admin\User\AdminUserController;
 use App\Http\Controllers\Admin\Visa\AdminVisaController;
 use App\Http\Controllers\Admin\VisaRequest\AdminVisaRequestController;
-
-
+use App\Http\Controllers\Client\ContactController;
 use App\Http\Controllers\Client\HomeController;
 use App\Http\Controllers\Client\PaymentsController;
 use App\Http\Controllers\Client\ShowPageController;
@@ -50,6 +49,16 @@ Route::get('/confirm-request' , [VisaRequestController::class , 'requestSent'])-
 Route::get('/bank-transfer' , [PaymentsController::class , 'bank'])->name('client.bank');
 Route::get('/e-payment' , [PaymentsController::class , 'ePayment'])->name('client.e-payment');
 
+
+// Contact Routes
+// Route::post('/contact' , [ContactController::class , 'sendMessage'])->name('client.contact');
+Route::post('/contact' , [ContactController::class , 'sendMessage'])->name('client.contact');
+
+Route::get('/test1' , function(){
+    return view('client.email.contact');
+});
+
+
 // User routes
 Route::get('/login' , [UserController::class , 'loginForm'])->name('user.login');
 Route::post('/login' , [UserController::class , 'login'])->name('user.login.post');
@@ -60,11 +69,12 @@ Route::get('/request-detail/{id}' , [VisaRequestController::class , 'showRequest
 
 
 
+
 /* ================= [Admin Routes] =================  */ 
 Route::prefix('admin')->group(function(){
 
     // General Routes
-    Route::middleware('guest')->group(function(){
+    Route::middleware('guest:admin')->group(function(){
         Route::get('/login' , [AdminAuthController::class , 'loginForm'])->name('admin.login')->middleware('guest');
         Route::post('/login' , [AdminAuthController::class , 'login'])->name('admin.login.post');
     });

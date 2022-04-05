@@ -11,6 +11,7 @@
             <thead>
                 <tr>
                     <th scope="col">#</th>
+                    <th scope="col"><i class="fa fa-globe fa-lg"></i></th>
                     <th scope="col">الأسم بالعربية</th>
                     <th scope="col">الأسم بالإنجليزية</th>
                     <th scope="col">السفارة</th>
@@ -23,6 +24,7 @@
                 @foreach($results as $city)
                 <tr>
                     <th scope="row" class="font-bold fs-5">{{$i++}}</th>
+                    <td><i class="fa fa-globe fa-2x"></i></td>
                     <td>{{$city->city_name_ar}}</td>
                     <td class="text-uppercase">{{$city->city_name}}</td>
                     <td>{{$city->country->country_name_ar}}</td>

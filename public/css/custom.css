@@ -123,6 +123,13 @@ h1,h2,h3,h4,h5,h6{
     background-color: #005479;
 }
   
+.contact_validation{
+    display: block;
+    color: rgb(255, 190, 190);
+    font-size: 13px;
+    margin-top: 4px;
+    margin-right: 4px;
+}
 
 /* <--- end general tags --->  */
 

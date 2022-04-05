@@ -50,7 +50,7 @@
                 <?php $i = 1 ?>
                 @foreach($countries as $country)
                 <tr>
-                    <th scope="row" class="font-bold fs-5">{{$i++}}</th>
+                    <th scope="row" class="font-bold fs-5">{{$countries->firstItem()+$loop->index}}</th>
                     <td><i class="fa fa-flag fa-2x"></i></td>
                     <td>{{$country->country_name_ar}}</td>
                     <td class="text-uppercase">{{$country->country_name}}</td>
@@ -85,6 +85,11 @@
                 @endforeach
             </tbody>
         </table>
+
+        <div class="mt-5 mb-5">
+            {!! $countries->links() !!}
+        </div>
+
     </div>
     @endif
 

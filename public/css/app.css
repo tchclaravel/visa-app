@@ -676,11 +676,11 @@ select {
 .-ml-px {
   margin-left: -1px;
 }
-.mb-5 {
-  margin-bottom: 1.25rem;
-}
 .mt-5 {
   margin-top: 1.25rem;
+}
+.mb-5 {
+  margin-bottom: 1.25rem;
 }
 .mt-1 {
   margin-top: 0.25rem;

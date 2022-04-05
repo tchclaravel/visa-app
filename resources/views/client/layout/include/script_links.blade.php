@@ -11,6 +11,53 @@
 <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
 <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
 
+{{-- Tostar Js --}}
+<script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js" integrity="sha512-VEd+nq25CkR676O+pLBnDW09R7VQX9Mdiij052gVCp5yVH3jGtH70Ho/UUv4mJDsEdTvqRCFZg0NKGiojGnUCw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+@if(Session::has('message'))
+    <script>
+
+        toastr.options = {
+            "closeButton": true,
+            "debug": false,
+            "newestOnTop": false,
+            "progressBar": true,
+            "positionClass": "toast-top-center",
+            "preventDuplicates": false,
+            "onclick": null,
+            "showDuration": "1200",
+            "hideDuration": "1000",
+            "timeOut": "5000",
+            "extendedTimeOut": "1000",
+            "showEasing": "swing",
+            "hideEasing": "linear",
+            "showMethod": "fadeIn",
+            "hideMethod": "fadeOut"
+        }
+
+        var type = "{{Session::get('alert-type' , 'info')}}";
+
+        switch(type){
+            case 'info':
+            toastr.info("{{Session::get('message')}}");
+            break;
+
+            case 'success':
+            toastr.success("{{Session::get('message')}}");
+            break;
+
+            case 'warning':
+            toastr.warning("{{Session::get('message')}}");
+            break;
+
+            case 'error':
+            toastr.error("{{Session::get('message')}}");
+            break;      
+        }
+
+    </script>
+@endif
+
+
 {{-- nice select --}}
 {{-- <script src="{{asset('js/jquery.js')}}"></script>
 <script src="{{asset('js/jquery.nice-select.min.js')}}"></script>

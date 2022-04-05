@@ -41,32 +41,32 @@
                             class="fa fa-search"></i></a>
                     @if($route->getName() == 'admin.countries')
                         <form class="app-search" method="GET" action="{{route('admin.countries.search')}}">
-                            <input name="input" type="text" class="form-control" placeholder="Search & enter"> <a
+                            <input name="input" type="text" class="form-control" placeholder="أبحث في السفارات (search & enter)"> <a
                                 class="srh-btn"><i class="fa fa-times"></i></a>
                         </form>
                     @elseif($route->getName() == 'admin.countries.search')
                         <form class="app-search" method="GET" action="{{route('admin.countries.search')}}">
-                            <input name="input" type="text" class="form-control" placeholder="Search & enter"> <a
+                            <input name="input" type="text" class="form-control" placeholder="أبحث في السفارات (search & enter)"> <a
                                 class="srh-btn"><i class="fa fa-times"></i></a>
                         </form>
                     @elseif($route->getName() == 'admin.cities')
                     <form class="app-search" method="GET" action="{{route('admin.cities.search')}}">
-                        <input name="input" type="text" class="form-control" placeholder="Search & enter"> <a
+                        <input name="input" type="text" class="form-control" placeholder="أبحث في الوجهات (search & enter)"> <a
                             class="srh-btn"><i class="fa fa-times"></i></a>
                     </form>
                     @elseif($route->getName() == 'admin.cities.search')
                     <form class="app-search" method="GET" action="{{route('admin.cities.search')}}">
-                        <input name="input" type="text" class="form-control" placeholder="Search & enter"> <a
+                        <input name="input" type="text" class="form-control" placeholder="أبحث في الوجهات (search & enter)"> <a
                             class="srh-btn"><i class="fa fa-times"></i></a>
                     </form>
                     @elseif($route->getName() == 'admin.users')
                     <form class="app-search" method="GET" action="{{route('admin.users.search')}}">
-                        <input name="input" type="text" class="form-control" placeholder="Search & enter"> <a
+                        <input name="input" type="text" class="form-control" placeholder="أبحث في المستخدمين (search & enter)"> <a
                             class="srh-btn"><i class="fa fa-times"></i></a>
                     </form>
                     @elseif($route->getName() == 'admin.users.search')
                     <form class="app-search" method="GET" action="{{route('admin.users.search')}}">
-                        <input name="input" type="text" class="form-control" placeholder="Search & enter"> <a
+                        <input name="input" type="text" class="form-control" placeholder="أبحث في المستخدمين (search & enter)"> <a
                             class="srh-btn"><i class="fa fa-times"></i></a>
                     </form>
                     @endif
@@ -83,7 +83,7 @@
                     <a class="nav-link dropdown-toggle waves-effect waves-dark profile-pic" href="#"
                         id="navbarDropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                         {{-- <img src="{{asset('/admin/assets/images/users/1.jpg')}}" alt="user" class="" /> --}}
-                        <span class="hidden-md-down">عبدالرحمن</span>
+                        <span class="hidden-md-down">{{auth()->guard('admin')->user()->username}}</span>
                     </a>
 
                     <a class="nav-link  waves-effect waves-dark profile-pic" href="{{route('admin.logout')}}">

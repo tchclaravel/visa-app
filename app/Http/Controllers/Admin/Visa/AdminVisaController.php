@@ -17,7 +17,7 @@ class AdminVisaController extends Controller
         $countries = Country::all();
         $countries->pluck('country_name_ar' , 'id');
 
-        $visas = Visa::all();
+        $visas = Visa::latest()->paginate(10);
 
         return view('admin.visa.index' , compact('countries' , 'visas'));
     }

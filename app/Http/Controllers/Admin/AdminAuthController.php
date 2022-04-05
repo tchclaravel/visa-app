@@ -11,11 +11,7 @@ class AdminAuthController extends Controller
 {
     
     public function loginForm()
-    {
-        if(Auth::guard('admin')->check()){
-            return redirect()->route('admin.index');
-        }
-        
+    {   
         return view('admin.login');
     }
 

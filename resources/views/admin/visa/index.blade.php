@@ -66,10 +66,9 @@
                 </tr>      
             </thead>
             <tbody class="align-middle">
-                <?php $i = 1 ?>
                 @foreach($visas as $visa)
                 <tr>
-                    <th scope="row" class="font-bold fs-5">{{$i++}}</th>
+                    <th scope="row" class="font-bold fs-5">{{$visas->firstItem()+$loop->index}}</th>
                     <td>{{$visa->country->country_name_ar}}</td>
                     <td>
                         @if($visa->visa_type == 'tourism')
@@ -86,31 +85,35 @@
                         <button type="button" class="btn btn-danger btn-sm" data-bs-toggle="modal" data-bs-target="#exampleModal"> <i class="fa fa-close"></i> حذف</button>
                     </td>
                 </tr>
+
+                <!-- Bootstrap Modal -->
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            سوف يتم حذف العنصر بصورة نهائية!
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">إلغاء</button>
+                            <form action="{{route('admin.visas.delete' , $visa->id)}}" method="POST">
+                                @csrf
+                                <button type="submit" class="btn custom-btn" data-bs-toggle="modal" data-bs-target="#exampleModal">تأكيد</button>
+                            </form>
+                        </div>
+
+                    </div>
+                    </div>
+                </div>
                 @endforeach
             </tbody>
         </table>
-    </div>
 
-    <!-- Bootstrap Modal -->
-    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-                سوف يتم حذف العنصر بصورة نهائية!
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">إلغاء</button>
-                <form action="{{route('admin.visas.delete' , $visa->id)}}" method="POST">
-                    @csrf
-                    <button type="submit" class="btn custom-btn" data-bs-toggle="modal" data-bs-target="#exampleModal">تأكيد</button>
-                </form>
-            </div>
-
-        </div>
-        </div>
+        <div class="mt-5 mb-5">
+            {!! $visas->links() !!}
+        </div>  
     </div>
     @endif
 

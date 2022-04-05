@@ -18,10 +18,9 @@
                 </tr>      
             </thead>
             <tbody class="align-middle">
-                <?php $i = 1 ?>
                 @foreach($users as $user)
                 <tr>
-                    <th scope="row" class="font-bold fs-5">{{$i++}}</th>
+                    <th scope="row" class="font-bold fs-5">{{$users->firstItem()+$loop->index}}</th>
                     <td>{{$user->account_id}}</td>
                     <td class="text-uppercase">{{$user->phone}}</td>
                     <td class="fs-6">{{$user->created_at->toDateString()}}</td>
@@ -54,6 +53,11 @@
                 @endforeach
             </tbody>
         </table>
+
+        <div class="mt-5 mb-5">
+            {!! $users->links() !!}
+        </div>
+        
     </div>
 
     @else
