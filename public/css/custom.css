@@ -131,6 +131,14 @@ h1,h2,h3,h4,h5,h6{
     margin-right: 4px;
 }
 
+.seo-page{
+    margin: 100px 30px;
+}
+
+.seo-page .main-title{
+    margin-right: -20px;
+}
+
 /* <--- end general tags --->  */
 
 

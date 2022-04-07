@@ -100,7 +100,7 @@
     </div>   
 
     <div class="col-lg-6">
-      <label for="address" class="form-label d-block">المدينة التي تقيم بها</label>
+      <label for="address" class="form-label d-block">مدينة إصدار الجواز</label>
       <select wire:model="address" name="address" class="form-control" id="address" aria-label="Default select example" class="scroll">
         <option value="">---</option>
         <option value="2">جدة </option>

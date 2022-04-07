@@ -9,15 +9,15 @@
 
     <div class="d-flex justify-content-center">
         <div class="row mt-5 mb-5">
-            <div class="card mx-auto shadow" style="background: rgb(255, 255, 246)">
+            <div class="card mx-auto shadow-sm" style="background: #fff">
                 <div class="card-body row">
                     <span class="col-md-5">رقم الطلب : {{$request->request_number}}</span>
                     <span class="col-md-5">رقم الحساب  : {{$request->user->account_id}}</span>
                     <span class="col-md-5">تاريخ الإنشاء : {{$request->created_at->toDateString()}}</span>
                     <span class="col-md-5">الحالة : {{$request->request_status == 'pending' ? 'بإنتظار المراجعة' : 'تم التأكيد'}}</span>
-                    <span class="col-md-5">السفارة : {{$request->country->country_name}}</span>
-                    <span class="col-md-5">الوجهة : {{$request->city->city_name}}</span>
-                    <span class="col-md-5">نوع التأشيرة : {{$request->visa->visa_type}}</span>
+                    <span class="col-md-5">السفارة : {{$request->country->country_name_ar}}</span>
+                    <span class="col-md-5">الوجهة : {{$request->city->city_name_ar}}</span>
+                    <span class="col-md-5">نوع التأشيرة : @if($request->visa->visa_type == 'tourism') {{'سياحية'}}  @elseif($request->visa->visa_type == 'study') {{'دراسية'}} @else {{'علاجية'}} @endif</span>
                     <span class="col-md-5">تاريخ السفر : {{$request->expected_date}}</span>
                     <span class="col-md-5">مكان المقابلة : 
                         @if($request->interview_place == 'Riyadh')
@@ -51,7 +51,8 @@
                                 <span class="col-md-5">الحالة الإجتماعية : {{$traveler->gender == 'single' ? 'أعزب' : 'متزوج'}}</span>
                                 <span class="col-md-5">رقم الجواز  : {{$traveler->passport_number}}</span>
                                 <span class="col-md-5">تاريخ إصدار الجواز : {{$traveler->passport_issuance}}</span>
-                                <span class="col-md-5">المدينة : {{$traveler->address}} </span>
+                                <span class="col-md-5">مدينة إصدار الجواز : {{$traveler->address}} </span>
+                                <span class="col-md-5"> </span>
                             </div>
                         @endforeach
                     @endif

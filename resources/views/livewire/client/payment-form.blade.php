@@ -24,7 +24,7 @@
             <h5 class="mt-2">إجمالي المبلغ</h5>
         </div>
         <div class="col-5 mr-2 mb-2">
-            <h4><span class="price">{{session('visa_request.total_price')}}</span><span class="sar">ريال سعودي</span></h3>
+            <h4><span class="price">{{session('visa_request.total_price')}}</span><span class="sar">ريال سعودي</span></h4>
         </div>
     </div>
 
@@ -33,11 +33,16 @@
               <label for="appointment" class="form-label d-block">أختر الموعد</label>
               <select wire:model="appointment" name="appointment" id="appointment" class="form-control" aria-label="Default select example">
                 <option value="">---</option>
-                <option value="1">أختر الموعد الذي يناسبك</option>
-                <option value="2">دعنا نتصل بك لتحديد الموعد</option>
+                @if(count($appointments) > 0)
+                  @foreach($appointments as $option)
+                    <option value="{{$option->id}}">{{$option->title}}</option>
+                  @endforeach
+                @endif
+                {{-- <option value="1">أختر الموعد الذي يناسبك</option> --}}
+                {{-- <option value="2">دعنا نتصل بك لتحديد الموعد</option>
                 <option value="3">اقرب موعد متاح (في السفارة)</option>
                 <option value="4">أقرب موعد متاح (في غضون أسبوعين)</option>
-                <option value="5">أقرب موعد متاح (في غضون 3 أسابيع)</option>
+                <option value="5">أقرب موعد متاح (في غضون 3 أسابيع)</option> --}}
               </select>
           </div>
 

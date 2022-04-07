@@ -35,9 +35,9 @@ class VisaRequestController extends Controller
             return redirect()->route('client.step_one');
         }
 
-        echo "<pre>";
-        print_r(session()->all());
-        echo "</pre>";
+        // echo "<pre>";
+        // print_r(session()->all());
+        // echo "</pre>";
         
         return view('client.steps.appointment_payment');
     }
@@ -45,9 +45,9 @@ class VisaRequestController extends Controller
     // Request sent page
     public function requestSent(){
 
-        echo "<pre>";
-        print_r(session()->all());
-        echo "</pre>";
+        // echo "<pre>";
+        // print_r(session()->all());
+        // echo "</pre>";
 
         if(session()->get('paid') == true){
             return view('client.steps.request_sent');

@@ -14,8 +14,8 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // \App\Models\Page::factory()->create(['page_title' => 'privacy_policy',]);
-        // \App\Models\Page::factory()->create(['page_title' => 'terms_of_use',]);
+        \App\Models\Page::factory()->create(['page_title' => 'privacy_policy',]);
+        \App\Models\Page::factory()->create(['page_title' => 'terms_of_use',]);
         \App\Models\Admin::factory()->create([
             'username' => 'Admin',
             'password' => Hash::make('AbdoPass@123'), // Password = AbdoPass@123

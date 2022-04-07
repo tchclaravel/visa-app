@@ -35,9 +35,9 @@ class TravelerController extends Controller
         // create session to store current traveler number
         $request->session()->put('current_traveler' , $tr_num);
 
-        echo "<pre>";
-        print_r(session()->all());
-        echo "</pre>";
+        // echo "<pre>";
+        // print_r(session()->all());
+        // echo "</pre>";
 
         return view('client.steps.traveler_form');
     }

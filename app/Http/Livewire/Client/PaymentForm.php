@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire\Client;
 use App\Custom\MyHelpers;
+use App\Models\Appointment;
 use App\Models\Traveler;
 use App\Models\VisaRequest;
 use App\Models\User;
@@ -10,6 +11,7 @@ use Livewire\Component;
 
 class PaymentForm extends Component
 {
+    public $appointments;
     public $payment_method;
     public $appointment;
 
@@ -30,7 +32,7 @@ class PaymentForm extends Component
 
     public function render()
     {
-        return view('livewire.client.payment-form');
+        return view('livewire.client.payment-form' , [$this->appointments = Appointment::all()]);
     }
 
 

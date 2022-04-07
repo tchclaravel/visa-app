@@ -18,6 +18,7 @@ use App\Http\Controllers\Client\ShowPageController;
 use App\Http\Controllers\Client\TravelerController;
 use App\Http\Controllers\Client\UserController;
 use App\Http\Controllers\Client\VisaRequestController;
+use App\Http\Controllers\PageController;
 use App\Http\Livewire\VisaRequestForm;
 use Illuminate\Support\Facades\Route;
 
@@ -34,13 +35,18 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () { return view('welcome');});
 
-
 /* ================= [Client Routes] =================  */ 
+
+// SEO Pages
+Route::get('/privacy_policy' , [PageController::class , 'privacyPolicy'])->name('client.privacy_policy');
+Route::get('/terms_of_use' , [PageController::class , 'termsOfUse'])->name('client.terms_of_use');
+
+
 Route::get('/home' , [HomeController::class , 'home'])->name('client.home');
-Route::get('/step-1' , [VisaRequestController::class , 'requestForm'])->name('client.step_one');
 // Route::post('/step-1' , [VisaRequestForm::class , 'storeRequest'])->name('client.step_one.store');
 
 // Step [1] && Step [2] && Step [3]
+Route::get('/step-1' , [VisaRequestController::class , 'requestForm'])->name('client.step_one');
 Route::get('/step-2' , [TravelerController::class , 'travelerForm'])->name('client.step_two');
 Route::get('/step-3' , [VisaRequestController::class , 'appointmentForm'])->name('client.step_three');
 Route::get('/confirm-request' , [VisaRequestController::class , 'requestSent'])->name('client.request_sent');

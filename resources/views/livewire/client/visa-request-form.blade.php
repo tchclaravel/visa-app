@@ -36,7 +36,7 @@
         <select wire:model="country_id" class="form-control" aria-label="Default select example">
           <option value="">---</option>
           @foreach($countries as $country)
-          <option value="{{$country->id}}">{{$country->country_name}}</option>
+          <option value="{{$country->id}}">{{$country->country_name_ar}}</option>
           {{-- <option value="1">السودان</option>
           <option value="2">السعودية </option>
           <option value="3">مريكا</option>
@@ -52,7 +52,7 @@
           <option value="">---</option>
           @if (count($cities) > 0)
             @foreach($cities as $city)
-              <option value="{{$city->id}}">{{$city->city_name}}</option>
+              <option value="{{$city->id}}">{{$city->city_name_ar}}</option>
             @endforeach
           @endif 
         </select>
@@ -65,7 +65,7 @@
         <option value="">---</option>
         @if (count($visas) > 0)
           @foreach($visas as $visa)
-            <option value="{{$visa->id}}" {{$visa->id == 2 ? 'selected' : ''}}>{{$visa->visa_type}}</option>
+            <option value="{{$visa->id}}" {{$visa->id == 2 ? 'selected' : ''}}>@if($visa->visa_type == 'tourism') {{'سياحية'}}  @elseif($visa->visa_type == 'study') {{'دراسية'}} @else {{'علاجية'}} @endif</option>
           @endforeach
         @endif 
         {{-- <option value="2">علاجية </option>

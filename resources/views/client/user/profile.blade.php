@@ -8,13 +8,9 @@
 <div class="row profile">
 
     @if(Session::has('success'))
-    <div class="toast show text-white border-1 mt-1 custom_toast"  role="alert" aria-live="assertive" aria-atomic="true">
-        <div class="d-flex">
-          <div class="toast-body">
-            {{session('success')}}  
-          </div>
-          <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
-        </div>
+    <div class="alert text-center alert-success alert-dismissible fade show col-md-6 mt-2 mx-auto" role="alert">
+        <strong><i class="fa fa-check"></i></strong> {{session('success')}}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>
     @endif
 

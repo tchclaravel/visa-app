@@ -36,7 +36,7 @@ class AdminAppointmentController extends Controller
 
         $notification = ['alert-type' => 'success' , 'message' => 'تم حذف صيغة الموعد بنجاح'];
 
-        return redirect()->back()->with($notification);
+        return redirect()->route('admin.settings')->with($notification);
 
 
     }

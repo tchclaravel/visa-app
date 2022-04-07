@@ -70,8 +70,8 @@ class MyHelpers{
         foreach($travelers as $row){
             $traveler = new Traveler();
             $traveler->request_id = $request->id;
-            $traveler->fname = $row['fname'];
-            $traveler->lname = $row['lname'];
+            $traveler->fname = strtoupper($row['fname']);
+            $traveler->lname = strtoupper($row['lname']);
             $traveler->passport_number = $row['passport_number'];
             $traveler->passport_issuance = $row['passport_issuance'];
             $traveler->passport_expiry = $row['passport_expiry'];

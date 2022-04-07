@@ -10,7 +10,7 @@
             <ul class="navbar-nav text-uppercase ms-auto py-4 py-lg-0">
                 @guest
                     <li class="nav-item"><a class="nav-link" href="{{route('user.login')}}">تسجيل دخول</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#contact">إتصل بنا</a></li>
+                    <li class="nav-item"><a class="nav-link" href="{{route('client.step_one')}}"> ابدأ الآن</a></li>
                 @endguest
                 @auth
                     <li class="nav-item"><a class="nav-link" href="{{route('user.profile')}}" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important; font-weight:600;">ID : {{Auth::user()->account_id}}</a></li> 
