@@ -20,42 +20,21 @@
     </div>
     @endif
 
-    {{-- @if(Session::has('error'))
-    <div class="toast show text-white border-1 mt-1 custom_toast error_toast"  role="alert" aria-live="assertive" aria-atomic="true">
-        <div class="d-flex">
-            <div class="toast-body">
-            {{session('error')}}  
-            </div>
-            <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
-        </div>
-    </div>
-
-    @elseif(Session::has('success'))
-    <div class="toast show text-white border-1 mt-1 custom_toast"  role="alert" aria-live="assertive" aria-atomic="true">
-        <div class="d-flex">
-            <div class="toast-body">
-                {{session('success')}}  
-            </div>
-            <button type="button" class="btn-close btn-close-white me-2 m-auto" data-bs-dismiss="toast" aria-label="Close"></button>
-        </div>
-    </div>
-    @endif --}}
-
     <div class="d-flex justify-content-center v-cenetr">
         <form class="row g-4 mb-5 mt-5 request-form" method="POST" action="{{route('user.login.post')}}">
             @csrf
-            <h4 class="text-center"> تسجيل الدخول</h5>
+            <h4 class="text-center">متابعة الطلبات السابقة</h5>
 
             <div class="col-12">
                 <label for="account_id" class="form-label"> رقم الحساب</label>
-                <input type="password" name="account_id" class="form-control" id="account_id" placeholder=" أكتب رقم الحساب هنا">
+                <input type="password" name="account_id" class="form-control" id="account_id" placeholder="لمتابعة الطلبات السابقة أكتب رقم الحساب هنا ..">
                 @error('account_id')
                 <span class="validation_message">{{$message}}</span>
                 @enderror
             </div>
 
             <div class="col-12 mb-2">
-              <button type="submit" class="btn btn-primary">تسجيل دخول</button>
+              <button type="submit" class="btn btn-primary">متابعة</button>
             </div>
 
         </form>

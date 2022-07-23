@@ -90,14 +90,18 @@
         </select>
     </div>
 
-    <div class="col-lg-6">
-      <label for="social_status" class="form-label d-block">الحالة الإجتماعية</label>
-      <select wire:model="social_status"class="form-control" name="social_status" id="social_status" aria-label="Default select example">
-        <option value="">---</option>
-        <option value="single">أعزب</option>
-        <option value="married">متزوج</option>
-      </select>
-    </div>   
+    @if(session('current_traveler') == 1)
+
+      <div class="col-lg-6">
+        <label for="social_status" class="form-label d-block">الحالة الإجتماعية</label>
+        <select wire:model="social_status"class="form-control" name="social_status" id="social_status" aria-label="Default select example">
+          <option value="">---</option>
+          <option value="single">أعزب</option>
+          <option value="married">متزوج</option>
+        </select>
+      </div>   
+
+    @endif
 
     <div class="col-lg-6">
       <label for="address" class="form-label d-block">مدينة إصدار الجواز</label>

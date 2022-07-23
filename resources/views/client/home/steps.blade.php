@@ -74,7 +74,7 @@
                     </div>
                 </div>
             </li>
-            <li>
+            {{-- <li>
                 <div class="timeline-image">
                     <div class="step-number bg-success">
                         <i class="fa fa-check mt-3"></i>
@@ -90,7 +90,7 @@
                         </p>
                     </div>
                 </div>
-            </li>
+            </li> --}}
         </ul>
     </div>
 </section>

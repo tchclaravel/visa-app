@@ -23,7 +23,7 @@ class CreateTravelersTable extends Migration
             $table->date('passport_issuance');
             $table->date('passport_expiry');
             $table->string('gender');
-            $table->string('social_status');
+            $table->string('social_status')->nullable();
             $table->string('address');
             $table->timestamps();
 

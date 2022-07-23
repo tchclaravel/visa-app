@@ -12,6 +12,7 @@
                 <li class="nav-item"><a class="nav-link" href="#features">المميزات</a></li>
                 <li class="nav-item"><a class="nav-link" href="#steps">الخطوات</a></li>
                 <li class="nav-item"><a class="nav-link" href="#contact">إتصل بنا</a></li>
+                <li class="nav-item" style="border: 1px solid #fff;"><a class="nav-link" href="{{route('user.login')}}">متابعة طلب سابق</a></li>
             </ul>
         </div>
     </div>

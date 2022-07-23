@@ -19,7 +19,7 @@ class TravelerForm extends Component
     public $passport_number;
     public $passport_issuance;
     public $passport_expiry;
-    public $social_status;
+    public $social_status = '';
     public $gender;
     public $address;
 
@@ -30,6 +30,15 @@ class TravelerForm extends Component
 
     // ];
 
+    public function soicalTraveler(){
+        if(session()->get('current_traveler') == 1){
+            return 'required';
+        }else{
+            return '';
+        }
+    }
+
+
     public function rules(){
         return [
             'fname' => ['required' , new EnglishOnly()],
@@ -38,10 +47,11 @@ class TravelerForm extends Component
             'passport_issuance' => 'required', 
             'passport_expiry' => 'required',
             'gender' => 'required',
-            'social_status' => 'required', 
+            'social_status' => $this->soicalTraveler(),
             'address' => 'required'
         ];
     }
+
 
     protected $messages = [
         'fname.required' => 'يرجى تعبئة حقل الأسم الأول',
