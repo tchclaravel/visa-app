@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNavApp">
     <div class="container">
-        <span class="nav_logo">تأشيرتك علينا</span>
+        <span class="nav_logo"> <a href="{{route('client.home')}}"> تأشيرتك علينا </a></span>
         {{-- <a class="navbar-brand" href="#page-top"><img src="{{asset('app/template/assets/img/navbar-logo.svg')}}" alt="..." /></a> --}}
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
             {{-- Menu --}}

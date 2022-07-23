@@ -31,6 +31,16 @@ body{
     background: #0673b3;
 }
 
+.pdf-btn{
+    background: #cb0606;
+    color: #fff;
+}
+
+.pdf-btn:hover{
+    background: #ac0606;
+    color: #fff;
+}
+
 .custom-alert{
     background-color: rgb(255, 255, 254);
     color: rgb(143, 143, 143);

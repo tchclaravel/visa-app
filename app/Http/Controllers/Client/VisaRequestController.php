@@ -70,5 +70,4 @@ class VisaRequestController extends Controller
         return view('client.user.request_detail' , compact('request' , 'travelers'));
     }
 
-
 }

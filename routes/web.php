@@ -10,6 +10,7 @@ use App\Http\Controllers\Admin\Setting\AdminBankController;
 use App\Http\Controllers\Admin\Setting\AdminSettingController;
 use App\Http\Controllers\Admin\User\AdminUserController;
 use App\Http\Controllers\Admin\Visa\AdminVisaController;
+use App\Http\Controllers\Admin\VisaRequest\AdminGeneratePdf;
 use App\Http\Controllers\Admin\VisaRequest\AdminVisaRequestController;
 use App\Http\Controllers\Client\ContactController;
 use App\Http\Controllers\Client\HomeController;
@@ -33,7 +34,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () { return view('welcome');});
+// Route::get('/', function () { return view('welcome');});
 
 /* ================= [Client Routes] =================  */ 
 
@@ -42,7 +43,7 @@ Route::get('/privacy_policy' , [PageController::class , 'privacyPolicy'])->name(
 Route::get('/terms_of_use' , [PageController::class , 'termsOfUse'])->name('client.terms_of_use');
 
 
-Route::get('/home' , [HomeController::class , 'home'])->name('client.home');
+Route::get('/' , [HomeController::class , 'home'])->name('client.home');
 // Route::post('/step-1' , [VisaRequestForm::class , 'storeRequest'])->name('client.step_one.store');
 
 // Step [1] && Step [2] && Step [3]
@@ -107,6 +108,7 @@ Route::prefix('admin')->group(function(){
         Route::get('/visas' , [AdminVisaController::class , 'index'])->name('admin.visas');
         Route::post('/visa/store' , [AdminVisaController::class , 'store'])->name('admin.visas.store');
         Route::post('/visa/delete/{id}' , [AdminVisaController::class , 'delete'])->name('admin.visas.delete');
+        
 
         // User Routes
         Route::get('/users' , [AdminUserController::class , 'index'])->name('admin.users');
@@ -128,6 +130,11 @@ Route::prefix('admin')->group(function(){
 
         // Visa Requests Routes
         Route::get('/visa-requests' , [AdminVisaRequestController::class , 'index'])->name('admin.requests');
+
+        // Visa Requests - Generate Pdf
+        Route::get('/insurance/generate-pdf/{request_number}' , [AdminGeneratePdf::class , 'insurance'])->name('admin.generate.insurance');
+        Route::get('/booking/generate-pdf/{request_number}' , [AdminGeneratePdf::class , 'booking'])->name('admin.generate.booking');
+        Route::get('/ticket/generate-pdf/{request_number}' , [AdminGeneratePdf::class , 'ticket'])->name('admin.generate.ticket');
 
     });
     

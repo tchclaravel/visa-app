@@ -50,10 +50,11 @@ class PaymentForm extends Component
             return redirect()->route('client.bank');
         }elseif($this->payment_method == 'e-payment'){
             return redirect()->route('client.e-payment');
-        }else{
+        }elseif($this->payment_method == 'cash'){
             session()->put('paid' , true);
             // Save Data in database
             MyHelpers::createData();
+            // $order = VisaRequest::where('request_number' , session()->get('request_number'))->first();
             return redirect()->route('client.request_sent');
         }
 

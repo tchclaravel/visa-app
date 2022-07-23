@@ -19,7 +19,8 @@
                 <span>
                     يمكنك متابعة هذا الطلب <br>
                     من حسابك الشخصي <a href="{{route('user.profile')}}">من هنا</a>
-                </span> 
+                </span>              
+
         </div>
     </div>
 

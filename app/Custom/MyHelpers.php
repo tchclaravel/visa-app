@@ -5,6 +5,7 @@ namespace App\Custom;
 use App\Models\User;
 use App\Models\VisaRequest;
 use App\Models\Traveler;
+use Illuminate\Support\Facades\Auth;
 
 class MyHelpers{
 
@@ -39,6 +40,8 @@ class MyHelpers{
         $user->phone = $visa_request['phone'];
         $user->save();
 
+        Auth::login($user);
+
 
         // Create visa request
         // From visa request session
@@ -53,7 +56,7 @@ class MyHelpers{
         $request->interview_place = $visa_request['interview_place'];
         // From Appointment session
         $request->appointment = $appointment['appointment'];
-        $request->appointment = $appointment['appointment'];
+        // $request->appointment = $appointment['appointment'];
 
         $request->payment_method = $appointment['payment_method'];
 

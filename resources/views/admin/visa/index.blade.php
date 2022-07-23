@@ -73,7 +73,7 @@
                     <td>
                         @if($visa->visa_type == 'tourism')
                             {{'سياحية'}}
-                        @elseif($visa->visa_type = 'study')
+                        @elseif($visa->visa_type == 'study')
                             {{'دراسية'}}
                         @else
                             {{'علاجية'}}
