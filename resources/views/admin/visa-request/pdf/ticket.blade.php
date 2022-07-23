@@ -2603,8 +2603,8 @@
             <div class="t m0 xf hb y15 ff1 fs6 fc0 sc0 ls0 ws0">the flight leaves.</div>
             <div class="t m0 x10 hc y16 ff4 fs9 fc0 sc0 ls0 ws0">Your travel information</div>
             <div class="t m0 x3 h3 y17 ff1 fs2 fc0 sc0 ls0 ws0">All times shown are local for each city</div>
-            <div class="t m0 x11 hd y18 ff1 fs1 fc4 sc0 ls0 ws0">Departing » From<span class="_ _0"> </span><span class="ff2">Bahrain, Bahrain</span></div>
-            <div class="t m0 x12 he y19 ff2 fs2 fc0 sc0 ls0 ws0">Leg <span class="_ _1"></span>1<span class="_ _1"></span>of<span class="_ _1"></span>4<span class="ff4"> | Bahrain<span class="_ _1"> </span> (BAH) <span class="_ _1"> </span>to<span class="_ _1"> </span>Dubai<span class="_ _1"> </span> 
+            <div class="t m0 x11 hd y18 ff1 fs1 fc4 sc0 ls0 ws0">Departing » From<span class="_ _0"> </span><span class="ff2">Riyadh, Riyadh</span></div>
+            <div class="t m0 x12 he y19 ff2 fs2 fc0 sc0 ls0 ws0">Leg <span class="_ _1"></span>1<span class="_ _1"></span>of<span class="_ _1"></span>4<span class="ff4"> | Riyadh<span class="_ _1"> </span> (KSA) <span class="_ _1"> </span>to<span class="_ _1"> </span>Dubai<span class="_ _1"> </span> 
                 (DXB) | Operated by Emirates (equipment owner - Emirates)
             </span>
             </div>
@@ -2613,23 +2613,23 @@
             <div class="t m0 x13 he y1c ff2 fs2 fc0 sc0 ls0 ws0">Economy</div>
             <div class="t m0 x13 he y1d ff2 fs2 fc0 sc0 ls0 ws0">Saver</div>
             <div class="t m0 x14 hf y1a ff2 fsa fc0 sc0 ls0 ws0">Check-in Opens</div>
-            <div class="t m0 x14 hb y1e ff1 fs6 fc0 sc0 ls0 ws0">15Aug2018</div>
-            <div class="t m0 x14 h10 y1f ff2 fsb fc0 sc0 ls0 ws0">19:50</div>
+            <div class="t m0 x14 hb y1e ff1 fs6 fc0 sc0 ls0 ws0">{{\Carbon\Carbon::parse($order->expected_date)->translatedFormat('j')}}{{\Carbon\Carbon::parse($order->expected_date)->translatedFormat('F')}}{{\Carbon\Carbon::parse($order->expected_date)->year}}</div>
+            <div class="t m0 x14 h10 y1f ff2 fsb fc0 sc0 ls0 ws0">{{$attendance_time}}:30</div>
             <div class="t m0 x15 hf y1a ff2 fsa fc0 sc0 ls0 ws0">Departure</div>
-            <div class="t m0 x15 hb y1e ff1 fs6 fc0 sc0 ls0 ws0">15Aug2018</div>
-            <div class="t m0 x15 h10 y1f ff2 fsb fc0 sc0 ls0 ws0">22:50</div>
-            <div class="t m0 x16 h11 y20 ff5 fsc fc0 sc0 ls0 ws0">BAHRAIN</div>
-            <div class="t m0 x16 hf y21 ff2 fsa fc0 sc0 ls0 ws0">Departing BAH, Bahrain International Airport</div>
+            <div class="t m0 x15 hb y1e ff1 fs6 fc0 sc0 ls0 ws0">{{\Carbon\Carbon::parse($order->expected_date)->translatedFormat('j')}}{{\Carbon\Carbon::parse($order->expected_date)->translatedFormat('F')}}{{\Carbon\Carbon::parse($order->expected_date)->year}}</div>
+            <div class="t m0 x15 h10 y1f ff2 fsb fc0 sc0 ls0 ws0">{{$departure_time}}:30</div>
+            <div class="t m0 x16 h11 y20 ff5 fsc fc0 sc0 ls0 ws0">RIYADH</div>
+            <div class="t m0 x16 hf y21 ff2 fsa fc0 sc0 ls0 ws0">Departing KSA, Riyadh International Airport</div>
             <div class="t m0 x13 hf y22 ff2 fsa fc0 sc0 ls0 ws0">Seat<span class="_ _2"> </span>Status</div>
             <div class="t m0 x14 h12 y23 ff2 fs3 fc5 sc0 ls0 ws0">Confirmed</div>
             <div class="t m0 x15 hf y22 ff2 fsa fc0 sc0 ls0 ws0">Arrival</div>
-            <div class="t m0 x15 hb y24 ff1 fs6 fc0 sc0 ls0 ws0">16Aug2018</div>
-            <div class="t m0 x15 h10 y25 ff2 fsb fc0 sc0 ls0 ws0">01:15</div>
+            <div class="t m0 x15 hb y24 ff1 fs6 fc0 sc0 ls0 ws0">{{\Carbon\Carbon::parse($order->expected_date)->translatedFormat('j')}}{{\Carbon\Carbon::parse($order->expected_date)->translatedFormat('F')}}{{\Carbon\Carbon::parse($order->expected_date)->year}}</div>
+            <div class="t m0 x15 h10 y25 ff2 fsb fc0 sc0 ls0 ws0">{{$arrival_time}}:30</div>
             <div class="t m0 x16 h11 y26 ff5 fsc fc0 sc0 ls0 ws0">DUBAI</div>
             <div class="t m0 x16 hf y27 ff2 fsa fc0 sc0 ls0 ws0">Arriving DXB, Dubai International Airport</div>
             <div class="t m0 x16 hf y28 ff2 fsa fc0 sc0 ls0 ws0">Terminal 3</div>
-            <div class="t m0 x17 he y29 ff4 fs2 fc0 sc0 ls0 ws0">Coupon validity: not before <span class="ff2 fc3">15Aug2018</span> / not after <span class="ff2 fc3">15Aug2018<span class="_ _3"> </span></span> Baggage 30Kgs</div>
-            <div class="t m0 x12 he y2a ff2 fs2 fc0 sc0 ls0 ws0">Leg <span class="_ _1"></span>2<span class="_ _1"></span>of<span class="_ _1"></span>4<span class="ff4"> | Dubai<span class="_ _1"> </span> (DXB) <span class="_ _1"> </span>to<span class="_ _1"> </span>Bangkok<span class="_ _1"> </span> (BKK)
+            <div class="t m0 x17 he y29 ff4 fs2 fc0 sc0 ls0 ws0">Coupon validity: not before <span class="ff2 fc3">{{\Carbon\Carbon::parse($leg2)->translatedFormat('j')}}{{\Carbon\Carbon::parse($leg2)->translatedFormat('F')}}{{\Carbon\Carbon::parse($leg2)->year}}</span> / not after <span class="ff2 fc3">{{\Carbon\Carbon::parse($leg2)->translatedFormat('j')}}{{\Carbon\Carbon::parse($leg2)->translatedFormat('F')}}{{\Carbon\Carbon::parse($leg2)->year}}<span class="_ _3"> </span></span> Baggage 30Kgs</div>
+            <div class="t m0 x12 he y2a ff2 fs2 fc0 sc0 ls0 ws0">Leg <span class="_ _1"></span>2<span class="_ _1"></span>of<span class="_ _1"></span>4<span class="ff4"> | Dubai<span class="_ _1"> </span> (DXB) <span class="_ _1"> </span>to<span class="_ _1"> </span>{{ucfirst($order->city->city_name)}}<span class="_ _1"> </span> (BKK)
                 | Operated by Emirates (equipment owner - Emirates)</span>
             </div>
             <div class="t m0 x13 hf y2b ff2 fsa fc0 sc0 ls0 ws0">Flight</div>
@@ -2637,20 +2637,20 @@
             <div class="t m0 x13 he y2d ff2 fs2 fc0 sc0 ls0 ws0">Economy</div>
             <div class="t m0 x13 he y2e ff2 fs2 fc0 sc0 ls0 ws0">Saver</div>
             <div class="t m0 x14 hf y2b ff2 fsa fc0 sc0 ls0 ws0">Check-in Opens</div>
-            <div class="t m0 x14 hb y2f ff1 fs6 fc0 sc0 ls0 ws0">16Aug2018</div>
-            <div class="t m0 x14 h10 y30 ff2 fsb fc0 sc0 ls0 ws0">08:45</div>
+            <div class="t m0 x14 hb y2f ff1 fs6 fc0 sc0 ls0 ws0">{{\Carbon\Carbon::parse($leg2)->translatedFormat('j')}}{{\Carbon\Carbon::parse($leg2)->translatedFormat('F')}}{{\Carbon\Carbon::parse($leg2)->year}}</div>
+            <div class="t m0 x14 h10 y30 ff2 fsb fc0 sc0 ls0 ws0">{{'0'.rand(1,5).':'.'30'}}</div>
             <div class="t m0 x15 hf y2b ff2 fsa fc0 sc0 ls0 ws0">Departure</div>
-            <div class="t m0 x15 hb y2f ff1 fs6 fc0 sc0 ls0 ws0">16Aug2018</div>
-            <div class="t m0 x15 h10 y30 ff2 fsb fc0 sc0 ls0 ws0">11:45</div>
+            <div class="t m0 x15 hb y2f ff1 fs6 fc0 sc0 ls0 ws0">{{\Carbon\Carbon::parse($leg2)->translatedFormat('j')}}{{\Carbon\Carbon::parse($leg2)->translatedFormat('F')}}{{\Carbon\Carbon::parse($leg2)->year}}</div>
+            <div class="t m0 x15 h10 y30 ff2 fsb fc0 sc0 ls0 ws0">{{'0'.rand(6,8).':'.'30'}}</div>
             <div class="t m0 x16 h11 y31 ff5 fsc fc0 sc0 ls0 ws0">DUBAI</div>
             <div class="t m0 x16 hf y32 ff2 fsa fc0 sc0 ls0 ws0">Departing DXB, Dubai International Airport</div>
             <div class="t m0 x16 hf y33 ff2 fsa fc0 sc0 ls0 ws0">Terminal 3</div>
             <div class="t m0 x13 hf y34 ff2 fsa fc0 sc0 ls0 ws0">Seat<span class="_ _2"> </span>Status</div>
             <div class="t m0 x14 h12 y35 ff2 fs3 fc5 sc0 ls0 ws0">Confirmed</div>
             <div class="t m0 x15 hf y34 ff2 fsa fc0 sc0 ls0 ws0">Arrival</div>
-            <div class="t m0 x15 hb y36 ff1 fs6 fc0 sc0 ls0 ws0">16Aug2018</div>
-            <div class="t m0 x15 h10 y37 ff2 fsb fc0 sc0 ls0 ws0">21:25</div>
-            <div class="t m0 x16 h11 y38 ff5 fsc fc0 sc0 ls0 ws0">BANGKOK</div>
+            <div class="t m0 x15 hb y36 ff1 fs6 fc0 sc0 ls0 ws0">{{\Carbon\Carbon::parse($leg2)->translatedFormat('j')}}{{\Carbon\Carbon::parse($leg2)->translatedFormat('F')}}{{\Carbon\Carbon::parse($leg2)->year}}</div>
+            <div class="t m0 x15 h10 y37 ff2 fsb fc0 sc0 ls0 ws0">{{rand(10,12).':'.'30'}}</div>
+            <div class="t m0 x16 h11 y38 ff5 fsc fc0 sc0 ls0 ws0">{{strtoupper($order->city->city_name)}}</div>
             <div class="t m0 x16 hf y39 ff2 fsa fc0 sc0 ls0 ws0">Arriving BKK, Suvarnabhumi International Airport</div>
             <div class="t m0 x17 he y3a ff4 fs2 fc0 sc0 ls0 ws0">Coupon validity: not before <span class="ff2 fc3">16Aug2018</span> / not after <span class="ff2 fc3">16Aug2018<span class="_ _3"> </span></span> Baggage 30Kgs</div>
             <a class="l" href="http://www.emirates.com/english/flying/index.aspx">
@@ -2688,8 +2688,8 @@
             <div class="t m0 x6 h4 y4 ff1 fs3 fc1 sc0 ls0 ws0">Page 2 of 3</div>
             <div class="t m0 x10 hc y3b ff4 fs9 fc0 sc0 ls0 ws0">Your travel information</div>
             <div class="t m0 x3 h3 y3c ff1 fs2 fc0 sc0 ls0 ws0">All times shown are local for each city</div>
-            <div class="t m0 x11 hd y3d ff1 fs1 fc4 sc0 ls0 ws0">Departing » From<span class="_ _0"> </span><span class="ff2">Bangkok, Thailand</span></div>
-            <div class="t m0 x12 he y3e ff2 fs2 fc0 sc0 ls0 ws0">Leg <span class="_ _1"></span>3<span class="_ _1"></span>of<span class="_ _1"></span>4<span class="ff4"> | Bangkok<span class="_ _1"> </span> (BKK) <span class="_ _1"> </span>to<span class="_ _1"> </span>Dubai<span class="_ _1"> </span> (DXB)
+            <div class="t m0 x11 hd y3d ff1 fs1 fc4 sc0 ls0 ws0">Departing » From<span class="_ _0"> </span><span class="ff2">{{ucfirst($order->city->city_name)}}, {{ucfirst($order->country->country_name)}}</span></div>
+            <div class="t m0 x12 he y3e ff2 fs2 fc0 sc0 ls0 ws0">Leg <span class="_ _1"></span>3<span class="_ _1"></span>of<span class="_ _1"></span>4<span class="ff4"> | {{ucfirst($order->city->city_name)}}<span class="_ _1"> </span> (BKK) <span class="_ _1"> </span>to<span class="_ _1"> </span>Dubai<span class="_ _1"> </span> (DXB)
                 | Operated by Emirates (equipment owner - Emirates)</span>
             </div>
             <div class="t m0 x13 hf y3f ff2 fsa fc0 sc0 ls0 ws0">Flight</div>
@@ -2697,23 +2697,23 @@
             <div class="t m0 x13 he y41 ff2 fs2 fc0 sc0 ls0 ws0">Economy</div>
             <div class="t m0 x13 he y42 ff2 fs2 fc0 sc0 ls0 ws0">Saver</div>
             <div class="t m0 x14 hf y3f ff2 fsa fc0 sc0 ls0 ws0">Check-in Opens</div>
-            <div class="t m0 x14 hb y43 ff1 fs6 fc0 sc0 ls0 ws0">26Aug2018</div>
-            <div class="t m0 x14 h10 y44 ff2 fsb fc0 sc0 ls0 ws0">12:50</div>
+            <div class="t m0 x14 hb y43 ff1 fs6 fc0 sc0 ls0 ws0">{{\Carbon\Carbon::parse($leg3)->translatedFormat('j')}}{{\Carbon\Carbon::parse($leg3)->translatedFormat('F')}}{{\Carbon\Carbon::parse($leg3)->year}}</div>
+            <div class="t m0 x14 h10 y44 ff2 fsb fc0 sc0 ls0 ws0">{{'0'.rand(5,6).':'.'30'}}</div>
             <div class="t m0 x15 hf y3f ff2 fsa fc0 sc0 ls0 ws0">Departure</div>
-            <div class="t m0 x15 hb y43 ff1 fs6 fc0 sc0 ls0 ws0">26Aug2018</div>
-            <div class="t m0 x15 h10 y44 ff2 fsb fc0 sc0 ls0 ws0">15:50</div>
-            <div class="t m0 x16 h11 y45 ff5 fsc fc0 sc0 ls0 ws0">BANGKOK</div>
+            <div class="t m0 x15 hb y43 ff1 fs6 fc0 sc0 ls0 ws0">{{\Carbon\Carbon::parse($leg3)->translatedFormat('j')}}{{\Carbon\Carbon::parse($leg3)->translatedFormat('F')}}{{\Carbon\Carbon::parse($leg3)->year}}</div>
+            <div class="t m0 x15 h10 y44 ff2 fsb fc0 sc0 ls0 ws0">{{'0'.rand(8,9).':'.'30'}}</div>
+            <div class="t m0 x16 h11 y45 ff5 fsc fc0 sc0 ls0 ws0">{{strtoupper($order->city->city_name)}}</div>
             <div class="t m0 x16 hf y46 ff2 fsa fc0 sc0 ls0 ws0">Departing BKK, Suvarnabhumi International Airport</div>
             <div class="t m0 x13 hf y47 ff2 fsa fc0 sc0 ls0 ws0">Seat<span class="_ _2"> </span>Status</div>
             <div class="t m0 x14 h12 y48 ff2 fs3 fc5 sc0 ls0 ws0">Confirmed</div>
             <div class="t m0 x15 hf y47 ff2 fsa fc0 sc0 ls0 ws0">Arrival</div>
-            <div class="t m0 x15 hb y49 ff1 fs6 fc0 sc0 ls0 ws0">26Aug2018</div>
-            <div class="t m0 x15 h10 y4a ff2 fsb fc0 sc0 ls0 ws0">19:00</div>
+            <div class="t m0 x15 hb y49 ff1 fs6 fc0 sc0 ls0 ws0">{{\Carbon\Carbon::parse($leg3)->translatedFormat('j')}}{{\Carbon\Carbon::parse($leg3)->translatedFormat('F')}}{{\Carbon\Carbon::parse($leg3)->year}}</div>
+            <div class="t m0 x15 h10 y4a ff2 fsb fc0 sc0 ls0 ws0">{{rand(11,13).':'.'30'}}</div>
             <div class="t m0 x16 h11 y4b ff5 fsc fc0 sc0 ls0 ws0">DUBAI</div>
             <div class="t m0 x16 hf y4c ff2 fsa fc0 sc0 ls0 ws0">Arriving DXB, Dubai International Airport</div>
             <div class="t m0 x16 hf y4d ff2 fsa fc0 sc0 ls0 ws0">Terminal 3</div>
-            <div class="t m0 x17 he y4e ff4 fs2 fc0 sc0 ls0 ws0">Coupon validity: not before <span class="ff2 fc3">26Aug2018</span> / not after <span class="ff2 fc3">26Aug2018<span class="_ _3"> </span></span> Baggage 30Kgs</div>
-            <div class="t m0 x12 he y4f ff2 fs2 fc0 sc0 ls0 ws0">Leg <span class="_ _1"></span>4<span class="_ _1"></span>of<span class="_ _1"></span>4<span class="ff4"> | Dubai<span class="_ _1"> </span> (DXB) <span class="_ _1"> </span>to<span class="_ _1"> </span>Bahrain<span class="_ _1"> </span> (BAH)
+            <div class="t m0 x17 he y4e ff4 fs2 fc0 sc0 ls0 ws0">Coupon validity: not before <span class="ff2 fc3">{{\Carbon\Carbon::parse($leg3)->translatedFormat('j')}}{{\Carbon\Carbon::parse($leg3)->translatedFormat('F')}}{{\Carbon\Carbon::parse($leg3)->year}}</span> / not after <span class="ff2 fc3">{{\Carbon\Carbon::parse($leg3)->translatedFormat('j')}}{{\Carbon\Carbon::parse($leg3)->translatedFormat('F')}}{{\Carbon\Carbon::parse($leg3)->year}}<span class="_ _3"> </span></span> Baggage 30Kgs</div>
+            <div class="t m0 x12 he y4f ff2 fs2 fc0 sc0 ls0 ws0">Leg <span class="_ _1"></span>4<span class="_ _1"></span>of<span class="_ _1"></span>4<span class="ff4"> | Dubai<span class="_ _1"> </span> (DXB) <span class="_ _1"> </span>to<span class="_ _1"> </span>Riyadh<span class="_ _1"> </span> (KSA)
                 | Operated by Emirates (equipment owner - Emirates)</span>
             </div>
             <div class="t m0 x13 hf y50 ff2 fsa fc0 sc0 ls0 ws0">Flight</div>
@@ -2721,22 +2721,22 @@
             <div class="t m0 x13 he y52 ff2 fs2 fc0 sc0 ls0 ws0">Economy</div>
             <div class="t m0 x13 he y53 ff2 fs2 fc0 sc0 ls0 ws0">Saver</div>
             <div class="t m0 x14 hf y50 ff2 fsa fc0 sc0 ls0 ws0">Check-in Opens</div>
-            <div class="t m0 x14 hb y54 ff1 fs6 fc0 sc0 ls0 ws0">26Aug2018</div>
-            <div class="t m0 x14 h10 y55 ff2 fsb fc0 sc0 ls0 ws0">18:15</div>
+            <div class="t m0 x14 hb y54 ff1 fs6 fc0 sc0 ls0 ws0">{{\Carbon\Carbon::parse($leg3)->translatedFormat('j')}}{{\Carbon\Carbon::parse($leg3)->translatedFormat('F')}}{{\Carbon\Carbon::parse($leg3)->year}}</div>
+            <div class="t m0 x14 h10 y55 ff2 fsb fc0 sc0 ls0 ws0">{{'0' . rand(1,3).':'.'30'}}</div>
             <div class="t m0 x15 hf y50 ff2 fsa fc0 sc0 ls0 ws0">Departure</div>
-            <div class="t m0 x15 hb y54 ff1 fs6 fc0 sc0 ls0 ws0">26Aug2018</div>
-            <div class="t m0 x15 h10 y55 ff2 fsb fc0 sc0 ls0 ws0">21:15</div>
+            <div class="t m0 x15 hb y54 ff1 fs6 fc0 sc0 ls0 ws0">{{\Carbon\Carbon::parse($leg3)->translatedFormat('j')}}{{\Carbon\Carbon::parse($leg3)->translatedFormat('F')}}{{\Carbon\Carbon::parse($leg3)->year}}</div>
+            <div class="t m0 x15 h10 y55 ff2 fsb fc0 sc0 ls0 ws0">{{'0' . rand(5,6).':'.'30'}}</div>
             <div class="t m0 x16 h11 y56 ff5 fsc fc0 sc0 ls0 ws0">DUBAI</div>
             <div class="t m0 x16 hf y57 ff2 fsa fc0 sc0 ls0 ws0">Departing DXB, Dubai International Airport</div>
             <div class="t m0 x16 hf y58 ff2 fsa fc0 sc0 ls0 ws0">Terminal 3</div>
             <div class="t m0 x13 hf y59 ff2 fsa fc0 sc0 ls0 ws0">Seat<span class="_ _2"> </span>Status</div>
             <div class="t m0 x14 h12 y5a ff2 fs3 fc5 sc0 ls0 ws0">Confirmed</div>
             <div class="t m0 x15 hf y59 ff2 fsa fc0 sc0 ls0 ws0">Arrival</div>
-            <div class="t m0 x15 hb y5b ff1 fs6 fc0 sc0 ls0 ws0">26Aug2018</div>
-            <div class="t m0 x15 h10 y5c ff2 fsb fc0 sc0 ls0 ws0">21:25</div>
-            <div class="t m0 x16 h11 y5d ff5 fsc fc0 sc0 ls0 ws0">BAHRAIN</div>
-            <div class="t m0 x16 hf y5e ff2 fsa fc0 sc0 ls0 ws0">Arriving BAH, Bahrain International Airport</div>
-            <div class="t m0 x17 he y5f ff4 fs2 fc0 sc0 ls0 ws0">Coupon validity: not before <span class="ff2 fc3">26Aug2018</span> / not after <span class="ff2 fc3">26Aug2018<span class="_ _3"> </span></span> Baggage 30Kgs</div>
+            <div class="t m0 x15 hb y5b ff1 fs6 fc0 sc0 ls0 ws0">{{\Carbon\Carbon::parse($leg3)->translatedFormat('j')}}{{\Carbon\Carbon::parse($leg3)->translatedFormat('F')}}{{\Carbon\Carbon::parse($leg3)->year}}</div>
+            <div class="t m0 x15 h10 y5c ff2 fsb fc0 sc0 ls0 ws0">{{rand(10,12).':'.'30'}}</div>
+            <div class="t m0 x16 h11 y5d ff5 fsc fc0 sc0 ls0 ws0">RIYADH</div>
+            <div class="t m0 x16 hf y5e ff2 fsa fc0 sc0 ls0 ws0">Arriving KSA, Riyadh International Airport</div>
+            <div class="t m0 x17 he y5f ff4 fs2 fc0 sc0 ls0 ws0">Coupon validity: not before <span class="ff2 fc3">{{\Carbon\Carbon::parse($leg3)->translatedFormat('j')}}{{\Carbon\Carbon::parse($leg3)->translatedFormat('F')}}{{\Carbon\Carbon::parse($leg3)->year}}</span> / not after <span class="ff2 fc3">{{\Carbon\Carbon::parse($leg3)->translatedFormat('j')}}{{\Carbon\Carbon::parse($leg3)->translatedFormat('F')}}{{\Carbon\Carbon::parse($leg3)->year}}<span class="_ _3"> </span></span> Baggage 30Kgs</div>
             <div class="t m0 x8 h13 y60 ff6 fs9 fc0 sc0 ls0 ws0">Fare inf<span class="_ _4"></span>ormation</div>
             <div class="t m0 x8 h14 y61 ff2 fs7 fc0 sc0 ls0 ws0">Fare</div>
             <div class="t m0 x8 he y62 ff2 fs2 fc0 sc0 ls0 ws0">BHD41</div>
@@ -2752,7 +2752,7 @@
             <div class="t m0 x1b h14 y61 ff2 fs7 fc0 sc0 ls0 ws0">Form of payment</div>
             <div class="t m0 x1b he y62 ff2 fs2 fc0 sc0 ls0 ws0">CREDIT CARD</div>
             <div class="t m0 x8 h14 y66 ff2 fs7 fc0 sc0 ls0 ws0">Fare calculation</div>
-            <div class="t m0 x8 he y67 ff2 fs2 fc0 sc0 ls0 ws0">BAH EK X/DXB EK BKK Q BAHBKK35.00 18.61TXMAPBH1 EKX/DXB EK BAH Q BKKBAH35.00 18.61TXMAPBH1 NUC107.22 END ROE.3761</div>
+            <div class="t m0 x8 he y67 ff2 fs2 fc0 sc0 ls0 ws0">KSA EK X/DXB EK BKK Q BAHBKK35.00 18.61TXMAPBH1 EKX/DXB EK KSA Q BKKBAH35.00 18.61TXMAPBH1 NUC107.22 END ROE.3761</div>
             <div class="t m0 x8 h14 y68 ff2 fs7 fc0 sc0 ls0 ws0">Additional information</div>
             <div class="t m0 x8 he y69 ff2 fs2 fc0 sc0 ls0 ws0">NON-END/SAVER/REWARD UPGDS*ALLOWED WITH RESTRICTIONS</div>
             <a class="l" href="http://www.emirates.com/english/flying/index.aspx">

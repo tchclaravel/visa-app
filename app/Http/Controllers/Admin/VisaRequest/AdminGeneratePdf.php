@@ -57,7 +57,75 @@ class AdminGeneratePdf extends Controller
 
         $ticket_number = rand(100 , 999).' '.rand(10000 , 99999). rand(10000 , 99999);
 
-        return view('admin.visa-request.pdf.ticket' , compact('order' , 'traveler' , 'ticket_number'));
+        $attendance_time = rand(00 , 23);
+
+        // Calculate Departure time
+        switch ($attendance_time) {
+            case 21:
+                $departure_time = 00;
+                break;
+            case 22:
+                $departure_time = 01;
+                break;
+            case 23:
+                $departure_time = 02;
+                break;
+
+            default:
+                $departure_time = $attendance_time + 3;
+                break;
+        }
+
+        // Calculate Arrival time 
+        switch ($departure_time) {
+            case 22:
+                $arrival_time = 00;
+                break;
+            case 23:
+                $arrival_time = 01;
+                break;
+
+            case 24:
+                $arrival_time = 02;
+                break;
+
+            default:
+                $arrival_time = $departure_time + 2;
+                break;
+        }
+
+        // Add 0 left time to become awesome
+        if($attendance_time < 10){
+            $attendance_time = '0'.$attendance_time;
+        }
+
+        if($departure_time < 10){
+            $departure_time = '0'.$departure_time;
+        }
+
+        if($arrival_time < 10){
+            $arrival_time = '0'.$arrival_time;
+        }
+
+
+        // leg 2 
+        $leg2 = Carbon::parse($order->expected_date)->addDays(2);
+        $leg3 = Carbon::parse($order->expected_date)->addWeeks(2);
+
+
+
+        return view('admin.visa-request.pdf.ticket' , compact(
+            'order' ,
+            'traveler' ,
+            'ticket_number' ,
+            'attendance_time' ,
+            'departure_time' ,
+            'arrival_time' ,
+            'leg2',
+            'leg3'
+        ));
+
+
     }
 
 

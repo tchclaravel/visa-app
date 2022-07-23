@@ -85,7 +85,7 @@
     @else
 
     <div class="alert custom-alert text-center">
-        لا يوجد مستخدمين 
+        لا توجد طلبات 
     </div>
 
     @endif
