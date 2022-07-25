@@ -104,7 +104,7 @@
     @guest
       <div class="col-12">
         <label for="phone" class="form-label">رقم الجوال</label>
-        <input wire:model="phone" name="phone" type="text" class="form-control" id="phone" placeholder="رقم الجوال هنا">
+        <input wire:model.lazy="phone" name="phone" type="number" class="form-control" id="phone" placeholder="مثلا 0591234421">
       </div>
     @endguest
 

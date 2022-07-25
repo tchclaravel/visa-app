@@ -130,6 +130,7 @@ Route::prefix('admin')->group(function(){
 
         // Visa Requests Routes
         Route::get('/visa-requests' , [AdminVisaRequestController::class , 'index'])->name('admin.requests');
+        Route::get('/visa-requests/{id}' , [AdminVisaRequestController::class , 'showDetail'])->name('admin.requests.show');
 
         // Visa Requests - Generate Pdf
         Route::get('/insurance/generate-pdf/{request_number}' , [AdminGeneratePdf::class , 'insurance'])->name('admin.generate.insurance');

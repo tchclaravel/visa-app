@@ -14,6 +14,7 @@
                 @endguest
                 @auth
                     <li class="nav-item"><a class="nav-link" href="{{route('user.profile')}}" style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important; font-weight:600;">ID : {{Auth::user()->account_id}}</a></li> 
+                    <li class="nav-item"><a class="nav-link" href="{{route('client.step_one')}}"><i class="fa fa-plus"></i> طلب جديد</a></li> 
                     <li class="nav-item"><a class="nav-link" href="{{route('user.logout')}}">تسجيل الخروج</a></li> 
                 @endauth
             </ul>

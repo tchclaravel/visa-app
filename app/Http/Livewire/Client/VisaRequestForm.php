@@ -6,6 +6,7 @@ use App\Models\City;
 use App\Models\Country;
 use App\Models\Visa;
 use Illuminate\Support\Arr;
+use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
 
 class VisaRequestForm extends Component
@@ -31,14 +32,26 @@ class VisaRequestForm extends Component
     public $visas = [];
 
 
-    public $rules = [
-        'country_id' => 'required',
-        'city_id' => 'required',
-        'visa_type' => 'required',
-        'travelers_number' => 'required',
-        'expected_date' => 'required',
-        'interview_place' => 'required',
-    ];
+    public function phoneValidation(){
+        if(Auth::check()){
+            return '';
+        }else{
+            return 'required|numeric|digits:10';
+        }
+    }
+    
+
+    public function rules(){
+        return [
+            'country_id' => 'required',
+            'city_id' => 'required',
+            'visa_type' => 'required',
+            'travelers_number' => 'required',
+            'expected_date' => 'required',
+            'interview_place' => 'required',
+            'phone' => $this->phoneValidation(),
+        ];
+    }
 
     protected $messages = [
         'country_id.required' => 'يرجى تعبئة حقل السفارة',
@@ -48,6 +61,8 @@ class VisaRequestForm extends Component
         'expected_date.required' => 'يرجى تعبئة حقل تاريخ السفر',
         'interview_place.required' => 'يرجى تعبئة حقل مكان المقابلة',
         'phone.required' => 'يرجى تعبئة حقل رقم الجوال',
+        'phone.numeric' => 'يجب ان يتكون رقم الجوال من أرقام فقط!',
+        'phone.digits' => 'يجب ان يتكون رقم الجوال عن 10 أرقام ',
     ];
 
 

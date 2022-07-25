@@ -36,6 +36,18 @@ input::-webkit-input-placeholder {
 }
 
 
+/* Hide arrows in number input : Chrome, Safari, Edge, Opera */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+
 body *{
     font-family: 'DroidArabicKufiRegular' !important;
 }
@@ -467,7 +479,7 @@ header.masthead .sub-head{
 
 /* start request detail */
 .request-detail .card{
-    width: 60%;
+    /* width: 60%; */
     font-size: 14px;
     color: rgb(92, 92, 92);
 }

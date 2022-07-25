@@ -18,10 +18,9 @@
                     <th scope="col"> عدد المسافرين </th>
                     <th scope="col"> الوجهة </th>
                     <th scope="col"> نوع التأشيرة </th>
-                    <th scope="col"> تاريخ السفر </th>
-                    <th scope="col"> مكان المقابلة </th>
                     {{-- <th scope="col"> وسيلة الدفع </th> --}}
                     <th scope="col"> تاريخ الإنشاء </th>
+                    <th scope="col"> التفاصيل </th>
                     <th scope="col"> PDF </th>
                 </tr>      
             </thead>
@@ -32,7 +31,7 @@
                     <td>{{$order->user->account_id}}</td>
                     <td>{{$order->request_number}}</td>
                     <td>{{$order->country->country_name_ar}}</td>
-                    <td>{{$order->travelers_number}}</td>
+                    <td class="text-center">{{$order->travelers_number}}</td>
                     <td>{{$order->city->city_name_ar}}</td>
                     <td>
                         @if($order->visa->visa_type == 'tourism')
@@ -44,10 +43,7 @@
                         @endif
                     </td>
                     <td>{{$order->expected_date}}</td>
-                    <td>{{$order->interview_place}}</td>
-                    {{-- <td>{{$order->payment_method}}</td> --}}
-                    <td class="fs-6">{{$order->created_at->toDateString()}}</td>
-
+                    <td class="text-center"><a href="{{route('admin.requests.show' , $order->id)}}" class="btn btn-sm btn-primary" target="_blank"><i class="fa fa-list"></i></a></td>
                     <td class="text-center">
                         <button type="button" class="btn pdf-btn btn-sm" data-bs-toggle="modal" data-bs-target="{{'#generatePdf' . $order->request_number}}"> <i class="fa fa-file-pdf"></i> إنشاء </button>
                     </td>

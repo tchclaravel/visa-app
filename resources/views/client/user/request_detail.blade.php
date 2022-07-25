@@ -9,7 +9,7 @@
 
     <div class="d-flex justify-content-center">
         <div class="row mt-5 mb-5">
-            <div class="card mx-auto shadow-sm" style="background: #fff">
+            <div class="card col-md-8 mx-auto shadow-sm" style="background: #fff">
                 <div class="card-body row">
                     <span class="col-md-5">رقم الطلب : {{$request->request_number}}</span>
                     <span class="col-md-5">رقم الحساب  : {{$request->user->account_id}}</span>
@@ -51,6 +51,7 @@
                                 <span class="col-md-5">الحالة الإجتماعية : {{$traveler->gender == 'single' ? 'أعزب' : 'متزوج'}}</span>
                                 <span class="col-md-5">رقم الجواز  : {{$traveler->passport_number}}</span>
                                 <span class="col-md-5">تاريخ إصدار الجواز : {{$traveler->passport_issuance}}</span>
+                                <span class="col-md-5">تاريخ إنتهاء الجواز : {{$traveler->passport_expiry}}</span>
                                 <span class="col-md-5">مدينة إصدار الجواز : {{$traveler->address}} </span>
                                 <span class="col-md-5"> </span>
                             </div>
