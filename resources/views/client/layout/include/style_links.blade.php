@@ -19,6 +19,7 @@
 {{-- nice select --}}
 {{-- <link rel="stylesheet" href="{{asset('css/nice-select.css')}}"> --}}
 
+<script src="https://kit.fontawesome.com/b418761e9f.js" crossorigin="anonymous"></script>
 <!-- Custom Css -->
 <link rel="stylesheet" href="{{asset('css/custom.css')}}">
 <link rel="stylesheet" href="{{asset('css/media.css')}}">

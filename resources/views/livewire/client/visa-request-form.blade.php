@@ -37,10 +37,6 @@
           <option value="">---</option>
           @foreach($countries as $country)
           <option value="{{$country->id}}">{{$country->country_name_ar}}</option>
-          {{-- <option value="1">السودان</option>
-          <option value="2">السعودية </option>
-          <option value="3">مريكا</option>
-          <option value="4">كندا</option> --}}
           @endforeach
         </select>
     </div>
@@ -77,12 +73,10 @@
     <div class="col-lg-6 select">
       <label for="travelers_number" class="form-label d-block">عدد المسافرين</label>
       <select wire:model="travelers_number" class="form-control" name="travelers_number"  id="travelers_number" class="scroll" aria-label="Default select example">
-        <option value="">---</option>
-        <option value="1">1</option>
-        <option value="2">2 </option>
-        <option value="3">3</option>
-        <option value="4">4</option>
-        <option value="5">5</option>
+          <option value="0" selected>---</option>
+          @for($i=1 ; $i <= 10 ; $i++)
+          <option value="{{$i}}">{{$i}}</option>
+          @endfor
       </select>
     </div>
 

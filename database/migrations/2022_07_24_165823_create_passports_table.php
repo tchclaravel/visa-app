@@ -20,7 +20,7 @@ class CreatePassportsTable extends Migration
             $table->timestamps();
 
             // Constraint
-            $table->foreign('request_id')->references('id')->on('inprocess_requests')
+            $table->foreign('request_id')->references('id')->on('visa_requests')
             ->onUpdate('cascade')->onDelete('cascade');
             
         });

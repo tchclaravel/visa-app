@@ -43,19 +43,6 @@
       </div>
     @endif
 
-    {{-- <div>
-      <ul class="validation_message">
-          @error('fname') <li>{{ $message }}</li> @enderror
-          @error('lname') <li>{{ $message }}</li> @enderror
-          @error('passport_number') <li>{{ $message }}</li> @enderror
-          @error('passport_issuance') <li>{{ $message }}</li> @enderror
-          @error('passport_expiry') <li>{{ $message }}</li> @enderror
-          @error('gender') <li>{{ $message }}</li> @enderror
-          @error('social_status') <li>{{ $message }}</li> @enderror
-          @error('address') <li>{{ $message }}</li> @enderror
-      </ul>
-    </div> --}}
-
     <div class="col-12 col-lg-6">
       <label for="fname" class="form-label">الأسم الأول</label>
       <input wire:model.debounce.500ms="fname" name="fname" type="text" class="form-control" id="fname" placeholder="الأسم الأول بالإنجليزية من الجواز">
@@ -118,7 +105,6 @@
     </div>
 
     <div class="col-12 mb-2">
-        {{-- <button type="submit" class="btn btn-secondary">رجوع</button> --}}
         <button type="submit" class="btn btn-primary">التالي</button>
     </div>
     

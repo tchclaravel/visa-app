@@ -27,6 +27,8 @@ class VisaRequestController extends Controller
 
         return view('client.steps.request_form');
     }
+
+
     
     // Step three => Appointment Form
     public function appointmentForm(){

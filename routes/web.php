@@ -14,6 +14,7 @@ use App\Http\Controllers\Admin\VisaRequest\AdminGeneratePdf;
 use App\Http\Controllers\Admin\VisaRequest\AdminVisaRequestController;
 use App\Http\Controllers\Client\ContactController;
 use App\Http\Controllers\Client\HomeController;
+use App\Http\Controllers\Client\PassportController;
 use App\Http\Controllers\Client\PaymentsController;
 use App\Http\Controllers\Client\ShowPageController;
 use App\Http\Controllers\Client\TravelerController;
@@ -46,11 +47,19 @@ Route::get('/terms_of_use' , [PageController::class , 'termsOfUse'])->name('clie
 Route::get('/' , [HomeController::class , 'home'])->name('client.home');
 // Route::post('/step-1' , [VisaRequestForm::class , 'storeRequest'])->name('client.step_one.store');
 
-// Step [1] && Step [2] && Step [3]
+// Step [1] && Step [2] && Step [3] choiceStep
 Route::get('/step-1' , [VisaRequestController::class , 'requestForm'])->name('client.step_one');
 Route::get('/step-2' , [TravelerController::class , 'travelerForm'])->name('client.step_two');
 Route::get('/step-3' , [VisaRequestController::class , 'appointmentForm'])->name('client.step_three');
 Route::get('/confirm-request' , [VisaRequestController::class , 'requestSent'])->name('client.request_sent');
+
+
+Route::get('/choice-step' , [PassportController::class , 'choiceStep'])->name('client.choice_step');
+Route::get('/send-passports' , [PassportController::class , 'passportForm'])->name('client.passport_form');
+Route::post('/send-passports' , [PassportController::class , 'sendPassport'])->name('client.send_passport');
+
+
+
 
 // Payment methods routes
 Route::get('/bank-transfer' , [PaymentsController::class , 'bank'])->name('client.bank');
