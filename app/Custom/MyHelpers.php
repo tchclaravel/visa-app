@@ -2,6 +2,7 @@
 
 namespace App\Custom;
 
+use App\Models\Passport;
 use App\Models\User;
 use App\Models\VisaRequest;
 use App\Models\Traveler;
@@ -34,11 +35,16 @@ class MyHelpers{
         $visa_request = session()->get('visa_request');
         $appointment = session()->get('appointment');
 
-        // Create new account
-        $user = new User();
-        $user->account_id = MyHelpers::uniqueAccountNumber();
-        $user->phone = $visa_request['phone'];
-        $user->save();
+        $user = '';
+        if(Auth::check()){
+            $user = Auth::user();
+        }else{
+            // Create new account
+            $user = new User();
+            $user->account_id = MyHelpers::uniqueAccountNumber();
+            $user->phone = $visa_request['phone'];
+            $user->save();
+        }
 
         Auth::login($user);
 
@@ -51,7 +57,7 @@ class MyHelpers{
         $request->city_id = $visa_request['city_id'];
         $request->visa_type = $visa_request['visa_type'];
         $request->expected_date = $visa_request['expected_date'];
-        $request->travelers_number = sizeof(session()->get('travelers'));
+        $request->travelers_number = $visa_request['travelers_number'];
         $request->total_price = $visa_request['total_price'];
         $request->interview_place = $visa_request['interview_place'];
         // From Appointment session
@@ -70,19 +76,53 @@ class MyHelpers{
         // Create travelers
         $travelers = session()->get('travelers');
 
-        foreach($travelers as $row){
-            $traveler = new Traveler();
-            $traveler->request_id = $request->id;
-            $traveler->fname = strtoupper($row['fname']);
-            $traveler->lname = strtoupper($row['lname']);
-            $traveler->passport_number = $row['passport_number'];
-            $traveler->passport_issuance = $row['passport_issuance'];
-            $traveler->passport_expiry = $row['passport_expiry'];
-            $traveler->gender = $row['gender'];
-            $traveler->social_status = $row['social_status'];
-            $traveler->address = $row['address'];
-            $traveler->created_at = now();
-            $traveler->save();
+        // Passport images paths
+        $passports = session()->get('passports');
+
+        // Send Passports Or Create Travalers Data depend on value of travelers session
+        if(is_null($travelers)){
+            for($i = 1; $i <= $visa_request['travelers_number']; $i++){
+                $traveler = new Traveler();
+                $traveler->request_id = $request->id;
+                $traveler->fname = 'Fname Traveler'.$i;
+                $traveler->lname = 'Lname Traveler'.$i;
+                $traveler->passport_number = '012345678912345';
+                $traveler->passport_issuance = now();
+                $traveler->passport_expiry = now();
+                $traveler->gender = '---';
+                $traveler->social_status = '---';
+                $traveler->address = '---';
+                $traveler->created_at = now();
+                $traveler->save();
+            }
+        }else{
+            foreach($travelers as $row){
+                $traveler = new Traveler();
+                $traveler->request_id = $request->id;
+                $traveler->fname = strtoupper($row['fname']);
+                $traveler->lname = strtoupper($row['lname']);
+                $traveler->passport_number = $row['passport_number'];
+                $traveler->passport_issuance = $row['passport_issuance'];
+                $traveler->passport_expiry = $row['passport_expiry'];
+                $traveler->gender = $row['gender'];
+                $traveler->social_status = $row['social_status'];
+                $traveler->address = $row['address'];
+                $traveler->created_at = now();
+                $traveler->save();
+            }
+        }
+
+
+        if(is_null($travelers)){
+
+            for($i = 1; $i <= $visa_request['travelers_number']; $i++){
+                $passport = new Passport();
+                $passport->request_id = $request->id;
+                $passport->photo = $passports['photo'.$i];
+                $passport->created_at = now();
+                $passport->save();
+            }
+
         }
                 
     }

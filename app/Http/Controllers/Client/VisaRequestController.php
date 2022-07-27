@@ -24,6 +24,7 @@ class VisaRequestController extends Controller
         Session::forget('paid');
         Session::forget('appointment');
         Session::forget('request_number');
+        Session::forget('passports');
 
         return view('client.steps.request_form');
     }
@@ -37,9 +38,9 @@ class VisaRequestController extends Controller
             return redirect()->route('client.step_one');
         }
 
-        // echo "<pre>";
-        // print_r(session()->all());
-        // echo "</pre>";
+        echo "<pre>";
+        print_r(session()->all());
+        echo "</pre>";
         
         return view('client.steps.appointment_payment');
     }

@@ -3,8 +3,10 @@
 namespace App\Http\Controllers\Client;
 
 use App\Http\Controllers\Controller;
+use App\Models\Passport;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
+use Image;
 
 class PassportController extends Controller
 {
@@ -26,25 +28,50 @@ class PassportController extends Controller
 
 
     // Validation thow passport field
-    public function passportValidation(){
-        $passports = session()->get('visa_request.travelers_number');
+    // public function passportValidation(){
+    //     $passports = session()->get('visa_request.travelers_number');
 
-        for($i=1; $i<= $passports; $i++){
-           echo "'passport".$i."'" . "=>" . "'required'" . ",";
-        }
+    //     for($i=1; $i<= $passports; $i++){
+    //        echo "'passport".$i."'" . "=>" . "'required'" . ",";
+    //     }
 
-    }
+    // }
 
 
 
     public function sendPassport(Request $request){
 
+        $passports_num = session()->get('visa_request.travelers_number');
+
+        $validation = []; // validation rules
+        $messages = []; // Custoum message
+
+        for($i=1; $i<= $passports_num; $i++){
+           $validation['passport'.$i] = 'required|mimes:jpg,png,jpeg';
+           $messages['passport'.$i.'.required'] = 'يرجى إرفاق جواز المسافر ('.$i.')';
+           $messages['passport'.$i.'.mimes'] = 'يجب ان تكون صيغة الملف PNG,JPG,JPEG';
+        }
+
+        Validator::make($request->all() , $validation , $messages)->validate();
+
+        // Move file to path & store path in array
+        for($i=1; $i<= $passports_num; $i++){
+            if($file = $request->file('passport'.$i)){
+                $file_name = uniqid() . '.' . $file->getClientOriginalExtension();           
+                Image::make($file)->resize(300,260)->save('images/passports/' . $file_name);
+                $path_name = 'images/passports/' . $file_name;
+                $passports['photo'.$i] = $path_name;              
+            }
+        }
+
+        // Store path in session
+        session()->put('passports',$passports);
+        session()->put('step_number',2);
+        session()->put('travelers', null);
+        return redirect()->route('client.step_three');
+
         // $this->passportValidation();
 
-        Validator::make($request->all() , [
-            // 'required',
-            $this->passportValidation() => 'required'
-        ])->validate();
 
         
     }
