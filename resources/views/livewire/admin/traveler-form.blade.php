@@ -1,30 +1,5 @@
-<form class="row g-4 request-form" method="POST" wire:submit.prevent="submitForm">
+<form class="row g-4 col-md-8 my-4" method="POST" wire:submit.prevent="submitForm">
     @csrf
-      <nav aria-label="breadcrumb">
-          <ol class="breadcrumb">
-            <li class="breadcrumb-item"><span>بيانات الرحلة</span></li>
-            <li class="breadcrumb-item"><span class="badge bg-secondary">بيانات المسافرين</span></></li>
-            <li class="breadcrumb-item"><span>تحديد الموعد</span></li>
-          </ol>
-        </nav>
-
-    @if(Session::has('visa_request.travelers_number'))
-        <div style="color:#f57402; font-size: 22px;">مسافر <span style="font-size: 22px; font-weight:bold;">({{session('current_traveler')}})</span></div>
-    @endif
-
-    <div class="row notify-user">
-        <div class="col-sm-9">
-            <span>قم بالضغط على الصورة لتوضيح الخانات المطلوبة على الجواز</span>
-        </div>
-
-        <div class="col">
-            <div class="portfolio-item">
-                <a class="portfolio-link" data-bs-toggle="modal" href="#portfolioModal1">
-                    <img class="img-fluid" src="{{asset('app/template/design/passport.jpeg')}}" alt="..." />
-                </a>
-            </div>
-        </div>
-    </div>
 
     {{-- Display errors validations --}}
     @if ($errors->any())
@@ -71,18 +46,14 @@
         </select>
     </div>
 
-    @if(session('current_traveler') == 1)
-
-      <div class="col-lg-6">
-        <label for="social_status" class="form-label d-block">الحالة الإجتماعية</label>
-        <select wire:model="social_status"class="form-control" name="social_status" id="social_status" aria-label="Default select example">
-          <option value="">---</option>
-          <option value="single">أعزب</option>
-          <option value="married">متزوج</option>
-        </select>
-      </div>   
-
-    @endif
+    <div class="col-lg-6">
+    <label for="social_status" class="form-label d-block">الحالة الإجتماعية</label>
+    <select wire:model="social_status"class="form-control" name="social_status" id="social_status" aria-label="Default select example">
+        <option value="">---</option>
+        <option value="single">أعزب</option>
+        <option value="married">متزوج</option>
+    </select>
+    </div>   
 
     <div class="col-lg-6">
       <label for="address" class="form-label d-block">مدينة إصدار الجواز</label>

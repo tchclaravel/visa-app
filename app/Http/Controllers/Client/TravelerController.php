@@ -16,11 +16,6 @@ class TravelerController extends Controller
     // Step two => Traveler Form
     public function travelerForm(Request $request){
 
-        // Prevent access step tow directly
-        // if(url()->previous() != '\step-1'){
-        //     return redirect()->route('client.home');
-        // }
-
         if($request->session()->get('step_number') != 1){
             return redirect()->route('client.step_one');
         }

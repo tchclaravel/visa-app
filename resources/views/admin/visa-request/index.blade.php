@@ -5,7 +5,7 @@
 
 
 <div class="orders">
-    
+    <a href="{{route('admin.requests.uncomplete')}}" class="btn text-white my-2" style="background: orange"><i class="fa fa-clock"></i> الطلبات غير المكتملة</a>
     @if(count($orders) > 0)
     <div class="table-responsive">
         <table class="table table-hover table-responsive">
@@ -19,9 +19,11 @@
                     <th scope="col"> الوجهة </th>
                     <th scope="col"> نوع التأشيرة </th>
                     {{-- <th scope="col"> وسيلة الدفع </th> --}}
-                    <th scope="col"> تاريخ الإنشاء </th>
+                    <th scope="col"> تاريخ السفر </th>
                     <th scope="col"> التفاصيل </th>
-                    <th scope="col"> PDF </th>
+                    <th scope="col" class="text-center"> PDF </th>
+                    <th scope="col" class="text-center"> واتساب </th>
+
                 </tr>      
             </thead>
             <tbody class="align-middle">
@@ -46,6 +48,9 @@
                     <td class="text-center"><a href="{{route('admin.requests.show' , $order->id)}}" class="btn btn-sm btn-primary" target="_blank"><i class="fa fa-list"></i></a></td>
                     <td class="text-center">
                         <button type="button" class="btn pdf-btn btn-sm" data-bs-toggle="modal" data-bs-target="{{'#generatePdf' . $order->request_number}}"> <i class="fa fa-file-pdf"></i> إنشاء </button>
+                    </td>
+                    <td class="text-center">
+                        <a class="btn text-white btn-sm" style="background: #43c554;" target="_blank" href="https://wa.me/{{ltrim($order->user->phone , '0')}}"> <i class="fa fa-whatsapp"></i> مراسلة </a>
                     </td>
                 </tr>
 

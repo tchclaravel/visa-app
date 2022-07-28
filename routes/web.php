@@ -140,6 +140,9 @@ Route::prefix('admin')->group(function(){
         // Visa Requests Routes
         Route::get('/visa-requests' , [AdminVisaRequestController::class , 'index'])->name('admin.requests');
         Route::get('/visa-requests/{id}' , [AdminVisaRequestController::class , 'showDetail'])->name('admin.requests.show');
+        Route::get('/visa-request/uncomplete' , [AdminVisaRequestController::class , 'unComplete'])->name('admin.requests.uncomplete');
+        Route::get('/visa-request/uncomplete/{order_id}' , [AdminVisaRequestController::class , 'unCompleteRequest'])->name('admin.requests.uncomplete-request');
+        Route::get('/visa-request/traveler-form/{traveler_id}' , [AdminVisaRequestController::class , 'travelerForm'])->name('admin.requests.traveler-form');
 
         // Visa Requests - Generate Pdf
         Route::get('/insurance/generate-pdf/{request_number}' , [AdminGeneratePdf::class , 'insurance'])->name('admin.generate.insurance');

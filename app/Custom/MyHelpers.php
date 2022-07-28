@@ -35,6 +35,10 @@ class MyHelpers{
         $visa_request = session()->get('visa_request');
         $appointment = session()->get('appointment');
 
+        // Create travelers
+        $travelers = session()->get('travelers');
+
+
         $user = '';
         if(Auth::check()){
             $user = Auth::user();
@@ -71,10 +75,10 @@ class MyHelpers{
         $request->request_number = $request_number;
         $request->request_status = 'pending';
         $request->created_at = now();
+        if(is_null($travelers)){
+            $request->is_complete = 0;
+        }
         $request->save();
-
-        // Create travelers
-        $travelers = session()->get('travelers');
 
         // Passport images paths
         $passports = session()->get('passports');
@@ -84,8 +88,8 @@ class MyHelpers{
             for($i = 1; $i <= $visa_request['travelers_number']; $i++){
                 $traveler = new Traveler();
                 $traveler->request_id = $request->id;
-                $traveler->fname = 'Fname Traveler'.$i;
-                $traveler->lname = 'Lname Traveler'.$i;
+                $traveler->fname = 'fname_traveler'.$i;
+                $traveler->lname = 'lname_traveler'.$i;
                 $traveler->passport_number = '012345678912345';
                 $traveler->passport_issuance = now();
                 $traveler->passport_expiry = now();

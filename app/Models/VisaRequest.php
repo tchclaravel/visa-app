@@ -21,7 +21,8 @@ class VisaRequest extends Model
         'request_status',
         'appointment',
         'payment_method',
-        'request_number'
+        'request_number',
+        'is_complete',
     ];
 
 

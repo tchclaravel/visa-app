@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Client;
 use App\Http\Controllers\Controller;
 use App\Models\Passport;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
 use Image;
 
@@ -41,6 +42,23 @@ class PassportController extends Controller
 
     public function sendPassport(Request $request){
 
+
+        // $img = $request->image;
+        // $folderPath = "uploads/";
+        
+        // $image_parts = explode(";base64,", $img);
+        // $image_type_aux = explode("image/", $image_parts[0]);
+        // $image_type = $image_type_aux[1];
+        
+        // $image_base64 = base64_decode($image_parts[1]);
+        // $fileName = uniqid() . '.png';
+        
+        // $file = $folderPath . $fileName;
+        // Storage::put($file, $image_base64);
+        
+        // dd('Image uploaded successfully: '.$fileName);
+
+
         $passports_num = session()->get('visa_request.travelers_number');
 
         $validation = []; // validation rules
@@ -58,7 +76,7 @@ class PassportController extends Controller
         for($i=1; $i<= $passports_num; $i++){
             if($file = $request->file('passport'.$i)){
                 $file_name = uniqid() . '.' . $file->getClientOriginalExtension();           
-                Image::make($file)->resize(300,260)->save('images/passports/' . $file_name);
+                Image::make($file)->resize(650,450)->save('images/passports/' . $file_name);
                 $path_name = 'images/passports/' . $file_name;
                 $passports['photo'.$i] = $path_name;              
             }

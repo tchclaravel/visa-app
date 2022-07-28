@@ -9,13 +9,17 @@
 <style>
     label{
         font-size: 20px;
+        color: #535353;
+    }
+    h3{
+        font-size: 20px;
         color: #f57402;
     }
 </style>
 
 <div class="row">
     
-    <div class="mx-auto" style="width: 500px">
+    <div class="mx-auto" style="width: 700px">
     
         <div class="row g-4 mb-5 mt-5 mx-auto" style="border: none">
 
@@ -35,12 +39,25 @@
 
                 {{-- @php $i = 1; @endphp --}}
 
+                <h3>قم بإرفاق الصورة <span style="background:red; padding:0 5px; color:#fff;">أو</span> تصوير الجواز</h3>
+
                 @for ($i = 1; $i <= $passports ; $i++)
-                <div class="col-lg-12">
+                <div class="col-lg-6">
                     <label for="passport" class="form-label d-block">جواز المسافر ({{$i}})</label>
-                    <input type="file" name="passport{{$i}}" class="form-control" id="passport">
+                    <input type="file" name="passport{{$i}}" accept="image/*" capture="camera" class="form-control" id="passport">
                 </div>
                 {{-- @php $passports-- @endphp --}}
+                {{-- <div class="col-lg-6">
+                    <div class="col-md-6" style="margin:12px auto">
+                        <div id="my_camera"></div>
+                        <br/>
+                        <input type="button" class="btn btn-secondary" value="تصوير الجواز" onClick="take_snapshot()">
+                        <input type="hidden" name="image{{$i}}" class="image-tag">
+                    </div>
+                    <div class="col-md-6 mx-auto">
+                        <div id="results">....</div>
+                    </div>
+                </div> --}}
                 @endfor
             
                 <div class="col-12 mb-2">
@@ -52,6 +69,23 @@
         </div>
     </div>
 
-
 </div>
+
+<script language="JavaScript">
+    Webcam.set({
+        width: 490,
+        height: 350,
+        image_format: 'jpeg',
+        jpeg_quality: 90
+    });
+    
+    Webcam.attach( '#my_camera' );
+    
+    function take_snapshot() {
+        Webcam.snap( function(data_uri) {
+            $(".image-tag").val(data_uri);
+            document.getElementById('results').innerHTML = '<img src="'+data_uri+'"/>';
+        } );
+    }
+</script>
 @endsection

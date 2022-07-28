@@ -27,6 +27,7 @@ class CreateVisaRequestsTable extends Migration
             $table->decimal('total_price'); 
             $table->string('payment_method'); 
             $table->string('request_number');
+            $table->tinyInteger('is_complete')->default(1);
             $table->timestamps();
 
 
