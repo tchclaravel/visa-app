@@ -20,44 +20,18 @@ class PassportController extends Controller
 
     // Passport form
     public function passportForm(){
+        echo "<pre>";
+        print_r(session()->all());
+        echo "</pre>";
+        
         $passports = session()->get('visa_request.travelers_number');
 
         // dd($passports);
-
         return view('client.steps.passport_form' , compact('passports'));
     }
 
 
-    // Validation thow passport field
-    // public function passportValidation(){
-    //     $passports = session()->get('visa_request.travelers_number');
-
-    //     for($i=1; $i<= $passports; $i++){
-    //        echo "'passport".$i."'" . "=>" . "'required'" . ",";
-    //     }
-
-    // }
-
-
-
     public function sendPassport(Request $request){
-
-
-        // $img = $request->image;
-        // $folderPath = "uploads/";
-        
-        // $image_parts = explode(";base64,", $img);
-        // $image_type_aux = explode("image/", $image_parts[0]);
-        // $image_type = $image_type_aux[1];
-        
-        // $image_base64 = base64_decode($image_parts[1]);
-        // $fileName = uniqid() . '.png';
-        
-        // $file = $folderPath . $fileName;
-        // Storage::put($file, $image_base64);
-        
-        // dd('Image uploaded successfully: '.$fileName);
-
 
         $passports_num = session()->get('visa_request.travelers_number');
 
@@ -87,8 +61,6 @@ class PassportController extends Controller
         session()->put('step_number',2);
         session()->put('travelers', null);
         return redirect()->route('client.step_three');
-
-        // $this->passportValidation();
 
 
         

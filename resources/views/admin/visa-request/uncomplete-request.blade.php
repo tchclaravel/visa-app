@@ -5,26 +5,24 @@
 
 
 <div class="orders col-md-8">
-    @php $i = 1;$count = count($passports);  @endphp
-
-    @if( $count > 0)
-            @php 
-                $i = 1;
-                session()->put('passports_number' , $count);
-                session()->put('current_traveler'.$order->id , 1);
-                $current = session()->get('current_traveler'.$order->id);
-            @endphp
+    @if( count($passports) > 0)
+            @php $i = 1; @endphp
 
             @foreach ($passports as $passport)
                 <div class="row mx-auto my-3">
-                    <div style="color:#c97200; font-size: 22px;">مسافر <span style="font-size: 22px; font-weight:bold;">({{$i}})</span></div>
+                    <div style="color:#666666; font-size: 22px;">مسافر <span style="font-size: 22px; font-weight:bold;">({{$i}})</span></div>
                     <hr style="color: #ccc">
-                    <div class="col-md-6">
+                    <div class="col-md-4">
                         <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="{{'#showPassport' . $passport->id}}"> <i class="fa fa-photo"></i> جواز ({{$i}}) </button>
                     </div>
-                    @php $traveler = \App\Models\Traveler::where('fname', 'fname_traveler'.$current++)->first(); @endphp
-                    <div class="col-md-6">
+                    @php $traveler = \App\Models\Traveler::where('passport_id', $passport->id)->first(); @endphp
+                    <div class="col-md-4">
                         <a href="{{route('admin.requests.traveler-form' , $traveler->id)}}" class="btn btn-success"><i class="fa fa-pencil"></i> تعبئة البيانات</a>
+                    </div>
+                    <div class="col-md-4">
+                        @if($traveler->passport->status == 1)
+                            <i class="fa fa-check" style="font-size: 40px; color:#54bb00;"></i>
+                        @endif
                     </div>
                     <!-- Bootstrap Modal -->
                     <div class="modal fade" id="{{'showPassport' . $passport->id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">

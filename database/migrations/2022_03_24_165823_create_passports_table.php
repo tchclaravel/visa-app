@@ -17,6 +17,7 @@ class CreatePassportsTable extends Migration
             $table->id();
             $table->unsignedBigInteger('request_id');
             $table->string('photo');
+            $table->tinyInteger('status');
             $table->timestamps();
 
             // Constraint

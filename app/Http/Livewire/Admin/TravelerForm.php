@@ -3,7 +3,9 @@
 namespace App\Http\Livewire\Admin;
 
 use App\Http\Requests\TravelerRequest;
+use App\Models\Passport;
 use App\Models\Traveler;
+use App\Models\VisaRequest;
 use App\Rules\EnglishOnly;
 use App\Rules\UniquePassport;
 use Illuminate\Contracts\Validation\Rule;
@@ -97,14 +99,23 @@ class TravelerForm extends Component
         $traveler_new = Traveler::findOrFail(session()->get('traveler_id'));
 
         $traveler_new->update($traveler);
+        $traveler_new->passport->update(['status' => 1]);
 
-        $notification = ['alert-type' => 'success' , 'message' => 'تمت تعبئة بيانات المسافرين بنجاح'];
+        // Check if order has no passport not fill
+        $passports = Passport::where('request_id' , $order_id)->where('status' , 0)->first();
+
+        // dd($passports);
+        if(is_null($passports)){
+            // Update Request Status for move to compeleted requests
+            VisaRequest::where('id' , $order_id)->update(['is_complete' => 1]);
+        }
+
+        $notification = ['alert-type' => 'success' , 'message' => 'تمت تعبئة بيانات المسافر بنجاح'];
 
         Session::forget('traveler_id');
-        Session::forget('current_traveler'.$order_id);
         Session::forget('order_id');
 
-        return redirect()->route('admin.requests.uncomplete')->with($notification);
+        return redirect()->route('admin.requests.uncomplete-request' , $order_id)->with($notification);
         
     }
 

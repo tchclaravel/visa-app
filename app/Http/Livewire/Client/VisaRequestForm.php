@@ -71,6 +71,11 @@ class VisaRequestForm extends Component
         $this->validateOnly($propertyName);
     }
 
+    public function mount() 
+    {  
+        $this->travelers_number = 1; 
+    }
+
 
     public function render()
     {
@@ -117,12 +122,12 @@ class VisaRequestForm extends Component
             [case:flase => start to excute mutli step traveler form] 
         */
 
-        if($visa_request['travelers_number'] == 1){
-            session()->put('visa_request' , Arr::except($visa_request , 'travelers_number'));
-            // update step number in session
-            session()->put('step_number' , 1);
-            return redirect()->route('client.choice_step');
-        }
+        // if($visa_request['travelers_number'] == 1){
+        //     session()->put('visa_request' , Arr::except($visa_request , 'travelers_number'));
+        //     // update step number in session
+        //     session()->put('step_number' , 1);
+        //     return redirect()->route('client.choice_step');
+        // }
 
         session()->put('visa_request' , $visa_request);
         // update step number in session

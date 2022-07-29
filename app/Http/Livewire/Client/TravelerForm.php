@@ -10,9 +10,13 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Validation\Rule as ValidationRule;
 use Livewire\Component;
+use Livewire\WithFileUploads;
+use Image;
 
 class TravelerForm extends Component
 {
+
+    use WithFileUploads;
 
     public $fname;
     public $lname;
@@ -22,6 +26,7 @@ class TravelerForm extends Component
     public $social_status = '';
     public $gender;
     public $address;
+    public $passport;
 
     public $tr_num = 1;
 
@@ -48,7 +53,8 @@ class TravelerForm extends Component
             'passport_expiry' => 'required',
             'gender' => 'required',
             'social_status' => $this->soicalTraveler(),
-            'address' => 'required'
+            'address' => 'required',
+            'passport' => 'required|mimes:jpg,png,jpeg'
         ];
     }
 
@@ -63,6 +69,8 @@ class TravelerForm extends Component
         'gender.required' => 'يرُجى تعبئة حقل النوع',
         'social_status.required' => 'يرجى تعبئة حقل الحالة الإجتماعية ',
         'address.required' => 'يرجى تعبئة حقل المدينة التي تقيم بها',
+        'passport.required' => 'يرجى إرفاق صورة الجواز',
+        'passport.mimes' => 'يجب ان تكون صيغة الملف PNG,JPG,JPEG',
     ];
 
 
@@ -88,9 +96,33 @@ class TravelerForm extends Component
         $traveler['passport_expiry']    = $this->passport_expiry ;
         $traveler['gender']             = $this->gender ;
         $traveler['social_status']      = $this->social_status ;
-        $traveler['address']            = $this->address ;
+        $traveler['address']            = $this->address;
+        $traveler['passport']           = $this->passport;
 
         session()->put('current_traveler' , 1);
+
+        // Move file to path & store path in array
+        // if($file = $this->passport->file('passport')){
+        //     $file_name = uniqid() . '.' . $file->getClientOriginalExtension();           
+        //     Image::make($file)->resize(650,450)->save('images/passports/' . $file_name);
+        //     $path_name = 'images/passports/' . $file_name;
+        //     session()->push('passports' , $path_name);
+        // }
+
+            $this->validate([
+                'passport' => 'image|max:1024', // 1MB Max
+            ]);
+     
+            $this->passport->store( 'passports' , 'images');
+        // $file_name = uniqid() . '.' . $this->passport->getClientOriginalExtension();
+        // $path_name = 'images/passports/' . $file_name;
+           
+        // $this->passport->store('images', $file_name);
+        // session()->push('passports' , $path_name);
+
+
+        // Store path in session
+        // session()->put('passports',$passports);
 
         // Fetch number of tarvelers from previous session
         $travelers_number = session()->get('visa_request.travelers_number');

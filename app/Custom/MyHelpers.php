@@ -10,6 +10,7 @@ use Illuminate\Support\Facades\Auth;
 
 class MyHelpers{
 
+
     public static function uniqueAccountNumber(){
         do{
             $code = random_int(10000000 , 99999999);
@@ -83,11 +84,36 @@ class MyHelpers{
         // Passport images paths
         $passports = session()->get('passports');
 
+        // Create Passports
+        // if(is_null($travelers)){
+
+        //     for($i = 1; $i <= $visa_request['travelers_number']; $i++){
+        //         $passport = new Passport();
+        //         $passport->request_id = $request->id;
+        //         $passport->photo = $passports['photo'.$i];
+        //         $passport->status = 0;
+        //         $passport->created_at = now();
+        //         $passport->save();
+        //     }
+
+        // }
+
         // Send Passports Or Create Travalers Data depend on value of travelers session
         if(is_null($travelers)){
             for($i = 1; $i <= $visa_request['travelers_number']; $i++){
+
+                // Create Traveler Passport
+                $passport = new Passport();
+                $passport->request_id = $request->id;
+                $passport->photo = $passports['photo'.$i];
+                $passport->status = 0;
+                $passport->created_at = now();
+                $passport->save();
+
+                // Create Traveler Data
                 $traveler = new Traveler();
                 $traveler->request_id = $request->id;
+                $traveler->passport_id = $passport->id;
                 $traveler->fname = 'fname_traveler'.$i;
                 $traveler->lname = 'lname_traveler'.$i;
                 $traveler->passport_number = '012345678912345';
@@ -100,7 +126,18 @@ class MyHelpers{
                 $traveler->save();
             }
         }else{
+
+            $i = 0;
             foreach($travelers as $row){
+
+                // Create Traveler Passport
+                $passport = new Passport();
+                $passport->request_id = $request->id;
+                $passport->photo = $passports[$i++];
+                $passport->status = 1;
+                $passport->created_at = now();
+                $passport->save();
+                // Create Traveler Data
                 $traveler = new Traveler();
                 $traveler->request_id = $request->id;
                 $traveler->fname = strtoupper($row['fname']);
@@ -114,19 +151,6 @@ class MyHelpers{
                 $traveler->created_at = now();
                 $traveler->save();
             }
-        }
-
-
-        if(is_null($travelers)){
-
-            for($i = 1; $i <= $visa_request['travelers_number']; $i++){
-                $passport = new Passport();
-                $passport->request_id = $request->id;
-                $passport->photo = $passports['photo'.$i];
-                $passport->created_at = now();
-                $passport->save();
-            }
-
         }
                 
     }

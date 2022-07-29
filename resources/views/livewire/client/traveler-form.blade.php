@@ -1,4 +1,4 @@
-<form class="row g-4 request-form" method="POST" wire:submit.prevent="submitForm">
+<form class="row g-4 request-form" method="POST" wire:submit.prevent="submitForm" enctype="multipart/form-data">
     @csrf
       <nav aria-label="breadcrumb">
           <ol class="breadcrumb">
@@ -8,7 +8,7 @@
           </ol>
         </nav>
 
-    @if(Session::has('visa_request.travelers_number'))
+    @if(Session::has('visa_request.travelers_number') && session()->get('visa_request.travelers_number') > 1)
         <div style="color:#f57402; font-size: 22px;">مسافر <span style="font-size: 22px; font-weight:bold;">({{session('current_traveler')}})</span></div>
     @endif
 
@@ -97,6 +97,13 @@
         <option value="8">تبوك</option>
       </select>
     </div>
+
+
+    
+    <div class="col-lg-6">
+      <label for="social_status" class="form-label d-block">صورة الجواز</label>
+      <input type="file" wire:model="passport" class="form-control">
+    </div>   
 
     <div class="col-12 mb-2">
         <button type="submit" class="btn btn-primary">التالي</button>

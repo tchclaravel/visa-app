@@ -9,7 +9,7 @@ class Passport extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['request_id' , 'photo'];
+    protected $fillable = ['request_id' , 'photo' , 'status'];
 
     public function request(){
         return $this->belongsTo(VisaRequest::class , 'request_id');

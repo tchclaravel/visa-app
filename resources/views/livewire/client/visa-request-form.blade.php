@@ -73,7 +73,7 @@
     <div class="col-lg-6 select">
       <label for="travelers_number" class="form-label d-block">عدد المسافرين</label>
       <select wire:model="travelers_number" class="form-control" name="travelers_number"  id="travelers_number" class="scroll" aria-label="Default select example">
-          <option value="0" selected>---</option>
+          {{-- <option value="0" selected>---</option> --}}
           @for($i=1 ; $i <= 10 ; $i++)
           <option value="{{$i}}">{{$i}}</option>
           @endfor

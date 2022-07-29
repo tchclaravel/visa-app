@@ -53,6 +53,15 @@ class VisaRequestController extends Controller
         // echo "</pre>";
 
         if(session()->get('paid') == true){
+            
+            // Reset all sessions
+            Session::forget('travelers');
+            Session::forget('step_number');
+            Session::forget('visa_request');
+            Session::forget('current_traveler');
+            Session::forget('appointment');
+            Session::forget('passports');
+
             return view('client.steps.request_sent');
         }
 

@@ -11,6 +11,7 @@ class Traveler extends Model
 
     protected $fillable = [
         'request_id',
+        'passport_id',
         'fname',
         'lname',
         'passport_number', 
@@ -24,6 +25,10 @@ class Traveler extends Model
 
     public function request(){
         return $this->belongsTo(VisaRequest::class , 'request_id');
+    }
+
+    public function passport(){
+        return $this->belongsTo(Passport::class , 'passport_id');
     }
 
 

@@ -17,6 +17,7 @@ class CreateTravelersTable extends Migration
         Schema::create('travelers', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('request_id');
+            $table->unsignedBigInteger('passport_id');
             $table->string('fname');
             $table->string('lname');
             $table->string('passport_number');
@@ -29,6 +30,10 @@ class CreateTravelersTable extends Migration
 
             // Constraint
             $table->foreign('request_id')->references('id')->on('visa_requests')
+            ->onUpdate('cascade')->onDelete('cascade');
+
+            // Constraint
+            $table->foreign('passport_id')->references('id')->on('passports')
             ->onUpdate('cascade')->onDelete('cascade');
             
         });
