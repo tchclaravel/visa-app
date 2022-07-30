@@ -34,6 +34,11 @@ class AdminVisaRequestController extends Controller
         $order = VisaRequest::findOrFail($order_id);
         $passports = Passport::where('request_id' , $order_id)->get();
 
+        if($order->is_complete == 1){
+            $notification = ['alert-type' => 'success' , 'message' => 'تمت تعبئة بيانات الطلب بنجاح'];
+            return redirect()->route('admin.requests')->with($notification);
+        }
+
         session()->put('order_id' , $order_id);
 
         return view('admin.visa-request.uncomplete-request' , compact('order', 'passports'));

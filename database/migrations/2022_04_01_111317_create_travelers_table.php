@@ -17,7 +17,7 @@ class CreateTravelersTable extends Migration
         Schema::create('travelers', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('request_id');
-            $table->unsignedBigInteger('passport_id');
+            $table->unsignedBigInteger('passport_id')->nullable();
             $table->string('fname');
             $table->string('lname');
             $table->string('passport_number');

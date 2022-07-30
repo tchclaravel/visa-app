@@ -39,7 +39,7 @@
 
                 {{-- @php $i = 1; @endphp --}}
 
-                <h3>قم بإرفاق الصورة <span style="background:red; padding:0 5px; color:#fff;">أو</span> تصوير الجواز</h3>
+                <h3>قم بإرفاق صور الجوازات</h3>
 
                 @if($passports == 1)
                     <div class="col-lg-6">

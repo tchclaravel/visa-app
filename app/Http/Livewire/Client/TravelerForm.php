@@ -7,6 +7,7 @@ use App\Rules\EnglishOnly;
 use App\Rules\UniquePassport;
 use Illuminate\Contracts\Validation\Rule;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Validation\Rule as ValidationRule;
 use Livewire\Component;
@@ -26,7 +27,7 @@ class TravelerForm extends Component
     public $social_status = '';
     public $gender;
     public $address;
-    public $passport;
+    // public $passport;
 
     public $tr_num = 1;
 
@@ -48,13 +49,13 @@ class TravelerForm extends Component
         return [
             'fname' => ['required' , new EnglishOnly()],
             'lname' => ['required' , new EnglishOnly()],
-            'passport_number' => ['required' , new UniquePassport()], 
+            'passport_number' => ['required' , new UniquePassport() , 'unique:travelers'], 
             'passport_issuance' => 'required', 
             'passport_expiry' => 'required',
             'gender' => 'required',
             'social_status' => $this->soicalTraveler(),
             'address' => 'required',
-            'passport' => 'required|mimes:jpg,png,jpeg'
+            // 'passport' => 'required|mimes:jpg,png,jpeg'
         ];
     }
 
@@ -69,8 +70,8 @@ class TravelerForm extends Component
         'gender.required' => 'يرُجى تعبئة حقل النوع',
         'social_status.required' => 'يرجى تعبئة حقل الحالة الإجتماعية ',
         'address.required' => 'يرجى تعبئة حقل المدينة التي تقيم بها',
-        'passport.required' => 'يرجى إرفاق صورة الجواز',
-        'passport.mimes' => 'يجب ان تكون صيغة الملف PNG,JPG,JPEG',
+        // 'passport.required' => 'يرجى إرفاق صورة الجواز',
+        // 'passport.mimes' => 'يجب ان تكون صيغة الملف PNG,JPG,JPEG',
     ];
 
 
@@ -97,23 +98,29 @@ class TravelerForm extends Component
         $traveler['gender']             = $this->gender ;
         $traveler['social_status']      = $this->social_status ;
         $traveler['address']            = $this->address;
-        $traveler['passport']           = $this->passport;
+        // $traveler['passport']           = $this->passport;
 
         session()->put('current_traveler' , 1);
 
         // Move file to path & store path in array
         // if($file = $this->passport->file('passport')){
-        //     $file_name = uniqid() . '.' . $file->getClientOriginalExtension();           
-        //     Image::make($file)->resize(650,450)->save('images/passports/' . $file_name);
-        //     $path_name = 'images/passports/' . $file_name;
-        //     session()->push('passports' , $path_name);
+            // $file_name = uniqid() . '.' . $this->passport->getClientOriginalExtension();           
+            // $img = Image::make($this->passport)->resize(650,450)->encode('jpg');
+            // $img->store('images\passports');
+
+            // $img = $this->passport;
+            // $img->move('images\passports' , $file_name);
+
+
+            // $img->save('app\images\passports');
+            // Storage::put('app\images\passports' , $img);
+            // $img->save('images/passports/');
+            // Image::save($image )
+            // Storage::put('images/passports/' , $img);
+            // $path_name = 'images/passports/' . $file_name;
+            // session()->push('passports' , $path_name);
         // }
 
-            $this->validate([
-                'passport' => 'image|max:1024', // 1MB Max
-            ]);
-     
-            $this->passport->store( 'passports' , 'images');
         // $file_name = uniqid() . '.' . $this->passport->getClientOriginalExtension();
         // $path_name = 'images/passports/' . $file_name;
            
@@ -141,10 +148,6 @@ class TravelerForm extends Component
             // dynamic way to get current traveler number to display in traveler form
             $this->tr_num = sizeof(session()->get('travelers')) + 1;
             session()->now('current_traveler', $this->tr_num);
-
-            // $this->reset();
-            // return redirect()->back()->with('current_traveler');
-            // return redirect()->back()->with('current_traveler');
             return redirect(request()->header('Referer'));
 
 

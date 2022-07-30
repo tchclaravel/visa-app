@@ -29,6 +29,20 @@ class MyHelpers{
     } 
 
 
+    public static function setTravelerNum(){
+
+        $passports = session()->get('passports');
+        $travelers = session()->get('travelers');
+
+        if(is_null($travelers)){
+            return sizeof($passports);
+        }else{
+            return sizeof($travelers);
+        }
+
+    }
+
+
 
     public static function createData(){
         
@@ -62,7 +76,7 @@ class MyHelpers{
         $request->city_id = $visa_request['city_id'];
         $request->visa_type = $visa_request['visa_type'];
         $request->expected_date = $visa_request['expected_date'];
-        $request->travelers_number = $visa_request['travelers_number'];
+        $request->travelers_number = MyHelpers::setTravelerNum();
         $request->total_price = $visa_request['total_price'];
         $request->interview_place = $visa_request['interview_place'];
         // From Appointment session
@@ -131,15 +145,16 @@ class MyHelpers{
             foreach($travelers as $row){
 
                 // Create Traveler Passport
-                $passport = new Passport();
-                $passport->request_id = $request->id;
-                $passport->photo = $passports[$i++];
-                $passport->status = 1;
-                $passport->created_at = now();
-                $passport->save();
+                // $passport = new Passport();
+                // $passport->request_id = $request->id;
+                // $passport->photo = $passports[$i++];
+                // $passport->status = 1;
+                // $passport->created_at = now();
+                // $passport->save();
                 // Create Traveler Data
                 $traveler = new Traveler();
                 $traveler->request_id = $request->id;
+                $traveler->passport_id = null;
                 $traveler->fname = strtoupper($row['fname']);
                 $traveler->lname = strtoupper($row['lname']);
                 $traveler->passport_number = $row['passport_number'];

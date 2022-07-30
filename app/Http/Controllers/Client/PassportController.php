@@ -14,6 +14,11 @@ class PassportController extends Controller
     
     // Step to choice way to fill traveler form
     public function choiceStep(){
+        
+        if(session()->get('step_number') != 1){
+            return redirect()->route('client.step_one');
+        }
+
         return view('client.steps.choice_step');
     }
 
@@ -23,6 +28,10 @@ class PassportController extends Controller
         echo "<pre>";
         print_r(session()->all());
         echo "</pre>";
+
+        if(session()->get('step_number') != 1){
+            return redirect()->route('client.step_one');
+        }
         
         $passports = session()->get('visa_request.travelers_number');
 

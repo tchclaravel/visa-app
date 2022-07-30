@@ -34,23 +34,28 @@ class VisaRequestController extends Controller
     // Step three => Appointment Form
     public function appointmentForm(){
 
-        if(session()->get('step_number') != 2){
-            return redirect()->route('client.step_one');
-        }
-
         echo "<pre>";
         print_r(session()->all());
         echo "</pre>";
+
+        // Load Page if user come from traveler-form or back from payments page
+        if(session()->get('step_number') != 2){
+            if(session()->get('step_number') == 3){
+                return view('client.steps.appointment_payment');
+            }
+            return redirect()->route('client.step_one');
+        }else{
+            return view('client.steps.appointment_payment');
+        }
         
-        return view('client.steps.appointment_payment');
     }
    
     // Request sent page
     public function requestSent(){
 
-        // echo "<pre>";
-        // print_r(session()->all());
-        // echo "</pre>";
+        echo "<pre>";
+        print_r(session()->all());
+        echo "</pre>";
 
         if(session()->get('paid') == true){
             
@@ -72,11 +77,6 @@ class VisaRequestController extends Controller
     // Show request details
     public function showRequest($id){
         $request = ModelsVisaRequest::findOrFail($id);
-        // We Stop here [we need create foreign key in travelers refer to request ]        
-        if(!$request){
-            return redirect()->route('client.home');
-        }
-
         $travelers = Traveler::where('request_id' , $request->id)->get();
 
         return view('client.user.request_detail' , compact('request' , 'travelers'));
