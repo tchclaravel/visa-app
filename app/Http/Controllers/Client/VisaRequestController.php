@@ -24,6 +24,7 @@ class VisaRequestController extends Controller
         Session::forget('paid');
         Session::forget('appointment');
         Session::forget('request_number');
+        Session::forget('account_id');
         Session::forget('passports');
 
         return view('client.steps.request_form');
@@ -53,9 +54,9 @@ class VisaRequestController extends Controller
     // Request sent page
     public function requestSent(){
 
-        echo "<pre>";
-        print_r(session()->all());
-        echo "</pre>";
+        // echo "<pre>";
+        // print_r(session()->all());
+        // echo "</pre>";
 
         if(session()->get('paid') == true){
             

@@ -33,7 +33,7 @@ class UserController extends Controller
 
         if($account){
             Auth::login($account);
-            return redirect()->route('user.profile')->with('success' , 'تم تسجيل الدخول بنجاح');       
+            return redirect()->route('user.profile');       
         }
 
         return redirect()->route('user.login')->with('error' , 'رقم الحساب الذي ادخلته غير موجود');       
@@ -50,7 +50,7 @@ class UserController extends Controller
     public function logout(){
         Session::flush();
         Auth::logout();
-        return redirect()->route('user.login')->with('success' , 'تم تسجيل الخروج بنجاح');
+        return redirect()->route('user.login');
     }
     
 

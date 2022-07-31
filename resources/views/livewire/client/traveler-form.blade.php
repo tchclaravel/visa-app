@@ -1,9 +1,9 @@
-<form class="row g-4 request-form" method="POST" wire:submit.prevent="submitForm" enctype="multipart/form-data">
+<form class="row g-4 request-form col-md-6" method="POST" wire:submit.prevent="submitForm" enctype="multipart/form-data">
     @csrf
       <nav aria-label="breadcrumb">
           <ol class="breadcrumb">
             <li class="breadcrumb-item"><span>بيانات الرحلة</span></li>
-            <li class="breadcrumb-item"><span class="badge bg-secondary">بيانات المسافرين</span></></li>
+            <li class="breadcrumb-item"><span class="badge">بيانات المسافرين</span></></li>
             <li class="breadcrumb-item"><span>تحديد الموعد</span></li>
           </ol>
         </nav>

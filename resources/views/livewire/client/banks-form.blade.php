@@ -1,4 +1,5 @@
-<form class="row g-4 mb-5 mt-5 request-form" wire:submit.prevent="storeBank">
+<form class="row g-4 mb-5 mt-5 request-form col-md-6" wire:submit.prevent="storeBank">
+    @csrf
     <h4 class="text-center">حوالة بنكية</h5>
     {{-- <div class="col-lg-12 cover mb-2">
         <img src="{{asset('app/template/design/banks.jpg')}}" class="img-fluid" alt="banks">
@@ -25,7 +26,7 @@
     @endif
 
     <div class="col-12">
-        <label for="bank" class="form-label d-block" style="color: #f5a302">يمكنك الدفع عن طريق الحوالة البنكية إلى أحد البنوك التالية</label>
+        <label for="bank" class="form-label d-block" style="color: #383838">يمكنك الدفع عن طريق الحوالة البنكية إلى أحد البنوك التالية</label>
         <select wire:model="bank" id="bank" class="form-control" aria-label="Default select example">
             <option value="" selected>أختر البنك </option>
             @foreach($banks as $bank)

@@ -16,7 +16,7 @@
                     <i style="font-size:80px" class="fa fa-user d-block mx-auto my-2"></i>
                     <span>تعبئة البيانات بنفسي </span>
                 </a>
-                <a href="{{route('client.passport_form')}}" class="btn btn-primary col-md-5 mx-1" style="height: 150px">
+                <a href="{{route('client.passport_form')}}" class="btn col-md-5 mx-1 text-white" style="height: 150px; background:#ff3b3f;">
                     <i style="font-size:80px" class="fa fa-image d-block mx-auto my-2"></i>
                     <span>إرسال صورة الجواز</span> 
                 </a>

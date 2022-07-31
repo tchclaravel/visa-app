@@ -17,7 +17,7 @@
         <!-- Navigation-->
         @include('client.layout.include.header')
         <!-- Main Content -->
-        <div class="container app-container">
+        <div class="container app-container" style="background: url({{asset('app/template/assets/img/website-background.jpg')}})">
             @yield('content')
         </div>
 

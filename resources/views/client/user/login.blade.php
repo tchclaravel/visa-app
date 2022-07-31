@@ -7,21 +7,15 @@
 @section('content')
 <div class="row login">
 
-    @if(Session::has('success'))
-    <div class="alert text-center alert-success alert-dismissible fade show col-md-6 mt-2 mx-auto" role="alert">
-        {{session('success')}}
-        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-    </div>
-
-    @elseif(Session::has('error'))
+    @if(Session::has('error'))
     <div class="alert text-center alert-warning alert-dismissible fade show col-md-6 mt-2 mx-auto" role="alert">
         {{session('error')}}
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>
     @endif
 
-    <div class="d-flex justify-content-center v-cenetr">
-        <form class="row g-4 mb-5 mt-5 request-form" method="POST" action="{{route('user.login.post')}}">
+    <div class="justify-content-center">
+        <form class="row g-4 mb-5 mt-5 col-md-6 request-form" method="POST" action="{{route('user.login.post')}}">
             @csrf
             <h4 class="text-center">متابعة الطلبات السابقة</h5>
 

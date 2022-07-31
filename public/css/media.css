@@ -1,5 +1,7 @@
 /* home page*/
 
+
+
 @media screen and (max-width: 768px){
 
     .features-icons .col-md-4{
@@ -98,12 +100,6 @@
 
 
 /* start flight data  */
-
-@media screen and (max-width: 992px){
-    .flight-data{
-        min-height: 1300px;
-    } 
-}
 
 @media screen and (max-width: 1200px){
 

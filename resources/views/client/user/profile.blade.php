@@ -7,13 +7,6 @@
 @section('content')
 <div class="row profile">
 
-    @if(Session::has('success'))
-    <div class="alert text-center alert-success alert-dismissible fade show col-md-6 mt-2 mx-auto" role="alert">
-        <strong><i class="fa fa-check"></i></strong> {{session('success')}}
-        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-    </div>
-    @endif
-
     <h4 class="text-center my-5"> كل الطلبات </h5>
 
     <div class="table-responsive table-responsive-md table-responsive-sm d-flex justify-content-center">

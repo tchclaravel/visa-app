@@ -22,6 +22,7 @@ body{
     font-family: 'DroidArabicKufiRegular';
     color:#0c1e34;
     background: #efefef;
+    min-height: 650px;
     /* background-image: url("/../app/template/design/body-background.jpg"); */
 }
 
@@ -52,8 +53,9 @@ body *{
 }
 
 .app-container{
-    min-height: 700px;
+    min-height: 520px;
     position: relative;
+    /* background-image: ; */
 }
 
 .v-cenetr{
@@ -96,17 +98,17 @@ h1,h2,h3,h4,h5,h6{
 }
 
 .btn-primary:hover{
-    background-color: #f5a302;
+    background-color: #414141;
 }
 
 .total-price h5{
-    color: #f57402
+    color: #ff3b3f;
 }
 
 .total-price h4{
-    background: #f57402;
+    background: #ff3b3f;
     color: #fff;
-    width: 75%;
+    /* width: 75%; */
     text-align: center;
 }
 
@@ -223,29 +225,27 @@ header.masthead .sub-head{
 /* request form */
 .request-form .breadcrumb .badge{
     /* color: #005479; */
-    /* background: #9fc203; */
+    background: #ee3000;
 }
 
 .request-form{
-    border: 1px dashed #033c59;
+    background-color: #fff;
+    border: 1px double #ee3000;
     border-radius: 5px;
     padding: 10px 5px;
-    width: 50%;
-    margin-top: 150px;
-    margin-bottom: 100px;
-
+    margin: 400px auto;
 
 }
 
 .request-form .btn-primary {
     color: #fff;
-    background-color: #005479;
-    border-color: #01425e;
+    background-color: #ee3000;
+    border-color: #fff;
   }
   .request-form .btn-primary:hover {
     color: #fff;
-    background-color: #016ead;
-    border-color: #01425e;
+    background-color: #2b2b2b;
+    border-color: #ffffff;
   }
   .request-form .btn-check:focus + .btn-primary, .btn-primary:focus {
     color: #fff;
@@ -269,17 +269,6 @@ header.masthead .sub-head{
 
 
 /* start request form page  */
-
-.flight-data{
-    min-height: 1000px;
-}
-
-/* .flight-data .total_price{
-    margin: 3px;
-    padding: 5px;
-    background: #ffd35c;
-    color: #005479;
-} */
 
 .validation_message{
     font-size: 13px;
@@ -362,9 +351,6 @@ header.masthead .sub-head{
 
 
 /* start bank transfer */
-.bank-transfer{
-    min-height: 1000px;
-}
 
 .bank-transfer .total-price h4{
     margin-top: 10px;
@@ -392,13 +378,13 @@ header.masthead .sub-head{
 
 .bank-transfer .bank-detail h5{
     margin-top: 5px;
-    color: #024eb3;
+    color: #ff3b3f;
 }
 
 .bank-transfer .bank-detail span{
     display: block;
     padding: 5px;
-    background: rgb(243, 243, 243);
+    background: #caebf2;
     margin: 5px;
     font-size: 14px;
 }
@@ -408,7 +394,8 @@ header.masthead .sub-head{
 
 /* start confirm request */
 .confirm-request .success{
-    border: 1px dotted #033c59;
+    margin: 100px auto;
+    border: 1px dotted #ff3b3f;
     border-radius: 5px;
     padding: 20px 5px;
     text-align: center !important;
@@ -433,8 +420,8 @@ header.masthead .sub-head{
 
 .confirm-request .success h1{
     margin: 3px 0;
-    background: #ffda75;
-    color: #033c59;
+    background: #ee3000;
+    color: #fff;
     padding: 3px 20px;
     margin: 5px auto;
     width: auto;

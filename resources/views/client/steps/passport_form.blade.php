@@ -9,7 +9,7 @@
 <style>
     label{
         font-size: 20px;
-        color: #535353;
+        color: #a9a9a9;
     }
     h3{
         font-size: 20px;

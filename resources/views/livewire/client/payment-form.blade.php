@@ -1,10 +1,10 @@
-<form class="row g-4 mb-5 mt-5 request-form" wire:submit="storePayment">
+<form class="row g-4 mb-5 mt-5 request-form col-md-6" wire:submit.prevent="storePayment">
     @csrf
       <nav aria-label="breadcrumb">
           <ol class="breadcrumb">
             <li class="breadcrumb-item"><span>بيانات الرحلة</span></li>
             <li class="breadcrumb-item"><span>بيانات المسافرين</span></></li>
-            <li class="breadcrumb-item"><span class="badge bg-secondary">تحديد الموعد</span></li>
+            <li class="breadcrumb-item"><span class="badge">تحديد الموعد</span></li>
           </ol>
         </nav>
 

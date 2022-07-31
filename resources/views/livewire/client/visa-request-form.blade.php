@@ -2,7 +2,7 @@
     @csrf
     <nav aria-label="breadcrumb">
       <ol class="breadcrumb">
-        <li class="breadcrumb-item"><span class="badge bg-secondary">بيانات الرحلة</span></li>
+        <li class="breadcrumb-item"><span class="badge">بيانات الرحلة</span></li>
         <li class="breadcrumb-item"><span>بيانات المسافرين</span></></li>
         <li class="breadcrumb-item"><span>تحديد الموعد</span></li>
       </ol>

@@ -7,7 +7,7 @@
 @section('content')
 <div class="row bank-transfer">
     
-    <div class="d-flex justify-content-center v-cenetr">
+    <div class="justify-content-center">
         
         <form class="row g-4 mb-5 mt-5 request-form" method="GET" action="#">
             <h4 class="text-center"> هنا توجد بوابة الدفع </h5>

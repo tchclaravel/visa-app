@@ -87,6 +87,7 @@ class MyHelpers{
 
         $request_number = MyHelpers::uniqueRequestNumber();
         session()->put('request_number' , $request_number);
+        session()->put('account_id' , $user->account_id);
         $request->request_number = $request_number;
         $request->request_status = 'pending';
         $request->created_at = now();

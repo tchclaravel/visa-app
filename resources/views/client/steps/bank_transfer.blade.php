@@ -7,7 +7,7 @@
 @section('content')
 <div class="row bank-transfer">
     
-    <div class="d-flex justify-content-center v-cenetr">
+    <div class="justify-content-center">
         @livewire('client.banks-form')
     </div>
 

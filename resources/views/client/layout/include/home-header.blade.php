@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-dark fixed-top" id="mainNav">
     <div class="container">
-        <span class="nav_logo"> <a href="{{route('client.home')}}"> بدايات الأعمال </a></span>
+        <span class="nav_logo"> <a href="{{route('client.home')}}"><img class="mt-1" style="height: 40px; width:40px;" src="{{asset('app/template/assets/img/logo.png')}}" alt=""> بدايات الأعمال</a></span>
         {{-- <a class="navbar-brand" href="#page-top"><img src="{{asset('app/template/assets/img/navbar-logo.svg')}}" alt="..." /></a> --}}
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
             {{-- Menu --}}
