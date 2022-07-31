@@ -2,7 +2,7 @@
 <section class="page-section" id="steps">
     <div class="container">
         <div class="text-center">
-            <h2 class="section-heading" style="color:#f5a302;">خطوات بسيطة و سهلة</h2>
+            <h2 class="section-heading" style="color:#707070;">خطوات بسيطة و سهلة</h2>
             <h3 class="section-subheading text-muted" style="font-style: normal">نص تجريبي نص تجريبي نص تجريبي</h3>
         </div>
         <ul class="timeline">

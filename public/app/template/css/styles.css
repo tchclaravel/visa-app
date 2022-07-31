@@ -236,7 +236,7 @@ sup {
 }
 
 a {
-  color: #f5a302;
+  color: #fff;
   text-decoration: underline;
 }
 a:hover {
@@ -11318,7 +11318,7 @@ p {
 #mainNav {
   padding-top: 1rem;
   padding-bottom: 1rem;
-  background-color: #033c59;
+  background-color: #ff3b3f;
 }
 #mainNav .navbar-toggler {
   padding: 0.75rem;
@@ -11345,7 +11345,8 @@ p {
 }
 #mainNav .navbar-nav .nav-item .nav-link.active, #mainNav .navbar-nav .nav-item .nav-link:hover {
 
-  color: #ffd35c;
+  color: #fefefe;
+  font-weight: bold;
 
   
 }
@@ -11356,7 +11357,7 @@ p {
   position: relative;
   padding-top: 1rem;
   padding-bottom: 1rem;
-  background-color: #033c59;
+  background-color: #ff3b3f;
 }
 #mainNavApp .navbar-toggler {
   padding: 0.75rem;
@@ -11383,7 +11384,8 @@ p {
 }
 #mainNavApp .navbar-nav .nav-item .nav-link.active, #mainNavApp .navbar-nav .nav-item .nav-link:hover {
 
-  color: #ffd35c;
+  color: #caebf2;
+  font-weight: 500;
 
   
 }
@@ -11407,7 +11409,7 @@ p {
   #mainNav.navbar-shrink {
     padding-top: 1rem;
     padding-bottom: 1rem;
-    background-color: #033c59;
+    background-color: #ff3b3f;
   }
   #mainNav.navbar-shrink .navbar-brand {
     font-size: 1.25em;
@@ -11428,7 +11430,7 @@ p {
   #mainNavApp {
     padding-top: 1rem;
     padding-bottom: 1rem;
-    background-color: #033c59;
+    background-color: #ff3b3f;
   }
   #mainNavApp .navbar-brand {
     font-size: 1.5em;
@@ -11441,7 +11443,7 @@ p {
   #mainNavApp.navbar-shrink {
     padding-top: 1rem;
     padding-bottom: 1rem;
-    background-color: #033c59;
+    background-color: #ff3b3f;
   }
   #mainNavApp.navbar-shrink .navbar-brand {
     font-size: 1.25em;

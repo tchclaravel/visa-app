@@ -2,7 +2,7 @@
 <section class="page-section" id="features">
     <div class="container">
         <div class="text-center">
-            <h2 class="section-heading text-uppercase" style="color:#f5a302;">المميزات</h2>
+            <h2 class="section-heading text-uppercase" style="color:#ff3b3f;">المميزات</h2>
             <h3 class="section-subheading text-muted" style="font-style: normal"> لماذا يجب إستخدام تأشيرتك علينا؟</h3>
         </div>
         <div class="row text-center features-icons">

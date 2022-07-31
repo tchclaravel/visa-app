@@ -3,7 +3,7 @@
     <div class="container">
         <div class="text-center">
             <h2 class="section-heading text-uppercase">إتـصل بــنا</h2>
-            <h3 class="section-subheading text-muted" style="font-style: normal; ">
+            <h3 class="section-subheading" style="font-style: normal; color:#fff;">
                 إترك رسالة و سوف نقوم بالرد عليك في أقرب وقت ممكن
             </h3>
         </div>

@@ -11,7 +11,7 @@
         @include('client.layout.include.style_links')
 
     </head>
-    <body id="page-top" dir="rtl" style="background-image: url('{{asset('/app/template/design/body-background.jpg')}}');">
+    <body id="page-top" dir="rtl">
         <!-- Navigation-->
         @include('client.layout.include.home-header')
 
