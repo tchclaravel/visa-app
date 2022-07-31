@@ -9,12 +9,7 @@ use Illuminate\Support\Facades\Session;
 class HomeController extends Controller
 {
     // HOME PAGE
-    public function home(){
-
-        // session('travelers')->unset();
-        // session('step_number')->unset();
-        // session('visa_request')->unset();
-        
+    public function home(){        
         return view('client.home');
     }
     

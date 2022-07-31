@@ -11,7 +11,7 @@
       <!-- small box -->
       <div class="small-box" style="background:#3498db">
         <div class="inner">
-          <h3>150</h3>
+          <h3>{{$orders}}</h3>
 
           <p> الطلبات </p>
         </div>
@@ -26,7 +26,7 @@
       <!-- small box -->
       <div class="small-box" style="background:#2ecc71">
         <div class="inner">
-          <h3>240</h3>
+          <h3>{{$users}}</h3>
 
           <p>المستخدمين</p>
         </div>
@@ -41,7 +41,7 @@
       <!-- small box -->
       <div class="small-box" style="background:#f39c12">
         <div class="inner">
-          <h3>44</h3>
+          <h3>{{$visas}}</h3>
 
           <p>التأشيرات</p>
         </div>
@@ -56,7 +56,7 @@
       <!-- small box -->
       <div class="small-box" style="background:#9b59b6">
         <div class="inner">
-          <h3>145</h3>
+          <h3>{{$cities}}</h3>
 
           <p> الوجهات</p>
         </div>
@@ -71,7 +71,7 @@
         <!-- small box -->
         <div class="small-box" style="background:#cea558">
             <div class="inner">
-            <h3>80</h3>
+            <h3>{{$countries}}</h3>
     
             <p>السفارات</p>
             </div>

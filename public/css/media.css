@@ -113,13 +113,6 @@
 
 
 /* start travel data  */
-@media screen and (max-width: 992px){
-
-    .traveler-data{
-        min-height: 1400px;
-    }
-
-}
 
 @media screen and (max-width: 768px){
 

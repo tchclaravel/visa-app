@@ -25,9 +25,6 @@ class PassportController extends Controller
 
     // Passport form
     public function passportForm(){
-        echo "<pre>";
-        print_r(session()->all());
-        echo "</pre>";
 
         if(session()->get('step_number') != 1){
             return redirect()->route('client.step_one');

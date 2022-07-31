@@ -42,7 +42,7 @@
                     @if(count($travelers) > 0)
                         <?php $i = 1 ?>
                         @foreach($travelers as $traveler)
-                            <h6 class="mt-5 mb-3"> المسافر <span class="badge bg-dark p-1">{{$i++}}</span></h6>
+                            <h6 class="mt-5 mb-3"> المسافر <span class="badge p-1" style="background: #ee3000;">{{$i++}}</span></h6>
                             <hr>
                             <div class="row col-12 travelers mx-auto">
                                 <span class="col-md-5">الأسم الأول : {{$traveler->fname}}</span>

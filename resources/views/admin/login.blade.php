@@ -53,7 +53,10 @@
         <div class="row">
             <div class="logo">
                 <div class="text-center">
-                    <span class="bg-primary">تأشيرتك علينا</span>
+                    <span class="bg-primary">
+                        <img class="mt-1" style="height: 50px; width:50px;" src="{{asset('app/template/assets/img/logo.png')}}" alt="">
+                         بدايات الأعمال
+                    </span>
                 </div>
             </div>
             <div class="card col-md-6">

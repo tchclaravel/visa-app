@@ -7,7 +7,7 @@
 <div class="row traveler-data">
     {{-- <h4 class="form-title">بيانات الرحلة</h4> --}}
 
-    <div class="d-flex justify-content-center v-cenetr">
+    <div class="justify-content-center">
         
       @livewire('client.traveler-form')
 

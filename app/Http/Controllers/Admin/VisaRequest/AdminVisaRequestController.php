@@ -47,11 +47,6 @@ class AdminVisaRequestController extends Controller
 
 
     public function travelerForm($traveler_id){
-        echo "<pre>";
-        print_r(session()->all());
-        echo "</pre>";
-        // $request = VisaRequest::findOrFail($order_id);
-
         session()->put('traveler_id' , $traveler_id);
 
         return view('admin.visa-request.traveler-form');

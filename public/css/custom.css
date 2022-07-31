@@ -233,7 +233,7 @@ header.masthead .sub-head{
     border: 1px double #ee3000;
     border-radius: 5px;
     padding: 10px 5px;
-    margin: 400px auto;
+    margin: 100px auto;
 
 }
 
@@ -294,9 +294,6 @@ header.masthead .sub-head{
 
 
 /* traveler data */
-.traveler-data{
-    min-height: 1000px;
-}
 
 .traveler-data .notify-user{
     /* background: #fffebc; */
@@ -475,7 +472,7 @@ header.masthead .sub-head{
 
 .request-detail .card span{
     padding: 10px;
-    border: 1px solid rgb(235, 235, 235);
+    border: 1px solid #ffded5;
     border-radius: 5px;
     margin: 5px auto;
 }

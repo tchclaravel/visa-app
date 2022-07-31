@@ -39,27 +39,30 @@ use Illuminate\Support\Facades\Route;
 
 /* ================= [Client Routes] =================  */ 
 
+
+// Protected Routes in client part
+Route::middleware('auth')->group(function(){
+    Route::get('/profile' , [UserController::class , 'profile'])->name('user.profile');
+    Route::get('/request-detail/{id}' , [VisaRequestController::class , 'showRequest'])->name('client.request.show');
+    Route::get('/logout' , [UserController::class , 'logout'])->name('user.logout');
+
+});
+
 // SEO Pages
 Route::get('/privacy_policy' , [PageController::class , 'privacyPolicy'])->name('client.privacy_policy');
 Route::get('/terms_of_use' , [PageController::class , 'termsOfUse'])->name('client.terms_of_use');
 
 
 Route::get('/' , [HomeController::class , 'home'])->name('client.home');
-// Route::post('/step-1' , [VisaRequestForm::class , 'storeRequest'])->name('client.step_one.store');
-
 // Step [1] && Step [2] && Step [3] choiceStep
 Route::get('/step-1' , [VisaRequestController::class , 'requestForm'])->name('client.step_one');
 Route::get('/step-2' , [TravelerController::class , 'travelerForm'])->name('client.step_two');
 Route::get('/step-3' , [VisaRequestController::class , 'appointmentForm'])->name('client.step_three');
 Route::get('/confirm-request' , [VisaRequestController::class , 'requestSent'])->name('client.request_sent');
 
-
 Route::get('/choice-step' , [PassportController::class , 'choiceStep'])->name('client.choice_step');
 Route::get('/send-passports' , [PassportController::class , 'passportForm'])->name('client.passport_form');
 Route::post('/send-passports' , [PassportController::class , 'sendPassport'])->name('client.send_passport');
-
-
-
 
 // Payment methods routes
 Route::get('/bank-transfer' , [PaymentsController::class , 'bank'])->name('client.bank');
@@ -70,17 +73,9 @@ Route::get('/e-payment' , [PaymentsController::class , 'ePayment'])->name('clien
 // Route::post('/contact' , [ContactController::class , 'sendMessage'])->name('client.contact');
 Route::post('/contact' , [ContactController::class , 'sendMessage'])->name('client.contact');
 
-Route::get('/test1' , function(){
-    return view('client.email.contact');
-});
-
-
 // User routes
-Route::get('/login' , [UserController::class , 'loginForm'])->name('user.login');
+Route::get('/login' , [UserController::class , 'loginForm'])->name('user.login')->middleware('guest');
 Route::post('/login' , [UserController::class , 'login'])->name('user.login.post');
-Route::get('/logout' , [UserController::class , 'logout'])->name('user.logout');
-Route::get('/profile' , [UserController::class , 'profile'])->name('user.profile');
-Route::get('/request-detail/{id}' , [VisaRequestController::class , 'showRequest'])->name('client.request.show');
 
 
 
