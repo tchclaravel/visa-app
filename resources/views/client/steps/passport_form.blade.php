@@ -44,13 +44,13 @@
                 @if($passports == 1)
                     <div class="col-lg-6">
                         <label for="passport" class="form-label d-block">جواز المسافر</label>
-                        <input type="file" name="passport1" accept="image/*" capture="camera" class="form-control" id="passport">
+                        <input type="file" name="passport1" class="form-control" id="passport" accept="image/*"  capture>
                     </div>
                 @else
                     @for ($i = 1; $i <= $passports ; $i++)
                     <div class="col-lg-6">
                         <label for="passport" class="form-label d-block">جواز المسافر ({{$i}})</label>
-                        <input type="file" name="passport{{$i}}" accept="image/*" capture="camera" class="form-control" id="passport">
+                        <input type="file" name="passport{{$i}}" class="form-control" id="passport" accept="image/*"  capture>
                     </div>
                     @endfor
                 @endif

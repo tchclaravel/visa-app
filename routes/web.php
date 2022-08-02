@@ -140,9 +140,9 @@ Route::prefix('admin')->group(function(){
         Route::get('/visa-request/traveler-form/{traveler_id}' , [AdminVisaRequestController::class , 'travelerForm'])->name('admin.requests.traveler-form');
 
         // Visa Requests - Generate Pdf
-        Route::get('/insurance/generate-pdf/{request_number}' , [AdminGeneratePdf::class , 'insurance'])->name('admin.generate.insurance');
-        Route::get('/booking/generate-pdf/{request_number}' , [AdminGeneratePdf::class , 'booking'])->name('admin.generate.booking');
-        Route::get('/ticket/generate-pdf/{request_number}' , [AdminGeneratePdf::class , 'ticket'])->name('admin.generate.ticket');
+        Route::get('/insurance/generate-pdf/{request_number}/{traveler_id}' , [AdminGeneratePdf::class , 'insurance'])->name('admin.generate.insurance');
+        Route::get('/booking/generate-pdf/{request_number}/{traveler_id}' , [AdminGeneratePdf::class , 'booking'])->name('admin.generate.booking');
+        Route::get('/ticket/generate-pdf/{request_number}/{traveler_id}' , [AdminGeneratePdf::class , 'ticket'])->name('admin.generate.ticket');
 
     });
     

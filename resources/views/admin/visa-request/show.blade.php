@@ -35,7 +35,32 @@
                                 <span class="col-md-5">Passport Issuance: {{$traveler->passport_issuance}}</span>
                                 <span class="col-md-5">Passport Expiry: {{$traveler->passport_expiry}}</span>
                                 <span class="col-md-5">Address: {{$traveler->address}} </span>
-                                <span class="col-md-5"> </span>
+                                <span class="col-md-11"> 
+                                    <button type="button" class="btn pdf-btn btn-sm" data-bs-toggle="modal" data-bs-target="{{'#generatePdf' . $traveler->id}}"> <i class="fa fa-file-pdf"></i> إنشاء PDF </button>
+                                </span>
+                            </div>
+
+
+
+
+                            <!-- Bootstrap Modal -->
+                            <div class="modal fade" id="{{'generatePdf' . $traveler->id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body">
+                                        <a class="btn pdf-btn" target="_blank" href="{{route('admin.generate.insurance' , ['request_number' => $request->request_number,'traveler_id' => $traveler->id])}}"><i class="fa fa-file-pdf"></i> التأمين الصحي</a>
+                                        <a class="btn pdf-btn" target="_blank" href="{{route('admin.generate.ticket' , ['request_number' => $request->request_number,'traveler_id' => $traveler->id])}}"><i class="fa fa-file-pdf"></i> تذكرة الطيران </a>
+                                        <a class="btn pdf-btn" target="_blank" href="{{route('admin.generate.booking' , ['request_number' => $request->request_number,'traveler_id' => $traveler->id])}}"><i class="fa fa-file-pdf"></i> حجز الفندق </a>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">إلغاء</button>
+                                    </div>
+
+                                </div>
+                                </div>
                             </div>
                         @endforeach
                     @endif

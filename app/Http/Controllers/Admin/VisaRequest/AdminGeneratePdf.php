@@ -11,21 +11,23 @@ use Illuminate\Http\Request;
 class AdminGeneratePdf extends Controller
 {
     
-    public function insurance($request_number){
-
+    public function insurance($request_number , $traveler_id){
         $order = VisaRequest::where('request_number' , $request_number)->first();
-        $traveler = Traveler::where('request_id' , $order->id)->first();
+        $traveler = Traveler::where('id' , $traveler_id)->first();
         $contract_id = rand(10000 , 99999) . rand(1000 , 9999);
         $membership_number = rand(1000 , 9999) . rand(1000 , 9999);
         $dob = rand(1970,1990);
 
-        return view('admin.visa-request.pdf.insurance' , compact('order' , 'traveler' , 'contract_id' , 'membership_number' , 'dob'));
+        $ex_date = Carbon::parse($order->expected_date)->addMonth();
+
+        return view('admin.visa-request.pdf.insurance' , compact('order' , 'traveler' , 'contract_id' , 'membership_number' , 'dob' , 'ex_date'));
     }
 
 
-    public function booking($request_number){
+    public function booking($request_number , $traveler_id){
         $order = VisaRequest::where('request_number' , $request_number)->first();
-        $traveler = Traveler::where('request_id' , $order->id)->first();
+        $traveler = Traveler::where('id' , $traveler_id)->first();
+        $seconde_traveler = Traveler::where('request_id' , $order->id)->where('id' , '!=' , $traveler->id)->first();
 
         $check_out = Carbon::parse($order->expected_date)->addWeeks(2);
 
@@ -47,13 +49,15 @@ class AdminGeneratePdf extends Controller
         $total_sar = number_format($tax_sar);
         $final_sar =  number_format($tax_final_sar);
 
-        return view('admin.visa-request.pdf.booking' , compact('order' , 'traveler' , 'nights' , 'check_out' , 'price_eur' , 'price_sar' , 'total_eur' , 'total_sar' , 'final_sar'));
+        return view('admin.visa-request.pdf.booking' , compact('order' , 'traveler' , 'nights' , 'check_out' , 'price_eur' , 'price_sar' , 'total_eur' , 'total_sar' , 'final_sar' , 'seconde_traveler'));
     }
 
 
-    public function ticket($request_number){
+
+
+    public function ticket($request_number , $traveler_id){
         $order = VisaRequest::where('request_number' , $request_number)->first();
-        $traveler = Traveler::where('request_id' , $order->id)->first();
+        $traveler = Traveler::where('id' , $traveler_id)->first();
 
         $ticket_number = rand(100 , 999).' '.rand(10000 , 99999). rand(10000 , 99999);
 

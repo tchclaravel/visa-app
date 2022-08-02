@@ -2737,24 +2737,6 @@
             <div class="t m0 x16 h11 y5d ff5 fsc fc0 sc0 ls0 ws0">RIYADH</div>
             <div class="t m0 x16 hf y5e ff2 fsa fc0 sc0 ls0 ws0">Arriving KSA, Riyadh International Airport</div>
             <div class="t m0 x17 he y5f ff4 fs2 fc0 sc0 ls0 ws0">Coupon validity: not before <span class="ff2 fc3">{{\Carbon\Carbon::parse($leg3)->translatedFormat('j')}}{{\Carbon\Carbon::parse($leg3)->translatedFormat('F')}}{{\Carbon\Carbon::parse($leg3)->year}}</span> / not after <span class="ff2 fc3">{{\Carbon\Carbon::parse($leg3)->translatedFormat('j')}}{{\Carbon\Carbon::parse($leg3)->translatedFormat('F')}}{{\Carbon\Carbon::parse($leg3)->year}}<span class="_ _3"> </span></span> Baggage 30Kgs</div>
-            <div class="t m0 x8 h13 y60 ff6 fs9 fc0 sc0 ls0 ws0">Fare inf<span class="_ _4"></span>ormation</div>
-            <div class="t m0 x8 h14 y61 ff2 fs7 fc0 sc0 ls0 ws0">Fare</div>
-            <div class="t m0 x8 he y62 ff2 fs2 fc0 sc0 ls0 ws0">BHD41</div>
-            <div class="t m0 x18 h14 y61 ff2 fs7 fc0 sc0 ls0 ws0">Equivalent fare</div>
-            <div class="t m0 x18 he y62 ff2 fs2 fc0 sc0 ls0 ws0">-</div>
-            <div class="t m0 x19 h14 y61 ff2 fs7 fc0 sc0 ls0 ws0">Taxes / Fees / Charges (TFC)</div>
-            <div class="t m0 x19 he y62 ff2 fs2 fc0 sc0 ls0 ws0">139.400-YQ BHD7.000-BH</div>
-            <div class="t m0 x19 he y63 ff2 fs2 fc0 sc0 ls0 ws0">BHD0.200-HM BHD7.200-F6</div>
-            <div class="t m0 x19 he y64 ff2 fs2 fc0 sc0 ls0 ws0">BHD1.200-ZR BHD0.800-E7</div>
-            <div class="t m0 x19 he y65 ff2 fs2 fc0 sc0 ls0 ws0">BHD0.400-G8 BHD8.000-TS</div>
-            <div class="t m0 x1a h14 y61 ff2 fs7 fc0 sc0 ls0 ws0">Total fare (Incl. TFC)</div>
-            <div class="t m0 x1a he y62 ff2 fs2 fc0 sc0 ls0 ws0">BHD205.2</div>
-            <div class="t m0 x1b h14 y61 ff2 fs7 fc0 sc0 ls0 ws0">Form of payment</div>
-            <div class="t m0 x1b he y62 ff2 fs2 fc0 sc0 ls0 ws0">CREDIT CARD</div>
-            <div class="t m0 x8 h14 y66 ff2 fs7 fc0 sc0 ls0 ws0">Fare calculation</div>
-            <div class="t m0 x8 he y67 ff2 fs2 fc0 sc0 ls0 ws0">KSA EK X/DXB EK BKK Q BAHBKK35.00 18.61TXMAPBH1 EKX/DXB EK KSA Q BKKBAH35.00 18.61TXMAPBH1 NUC107.22 END ROE.3761</div>
-            <div class="t m0 x8 h14 y68 ff2 fs7 fc0 sc0 ls0 ws0">Additional information</div>
-            <div class="t m0 x8 he y69 ff2 fs2 fc0 sc0 ls0 ws0">NON-END/SAVER/REWARD UPGDS*ALLOWED WITH RESTRICTIONS</div>
             <a class="l" href="http://www.emirates.com/english/flying/index.aspx">
                 <div class="d m1" style="border-style:none;position:absolute;left:239.523000px;bottom:9.048000px;width:73.781000px;height:6.937000px;background-color:rgba(255,255,255,0.000001);"></div>
             </a>

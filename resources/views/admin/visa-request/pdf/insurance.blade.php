@@ -1930,7 +1930,7 @@
                     <div class="t m0 x7 h4 y21 ff2 fs1 fc0 sc0 ls0 ws0">: </div>
                 </div>
                 <div class="c x8 y20 w4 hf">
-                    <div class="t m0 x9 h7 y22 ff4 fs0 fc0 sc0 ls3 ws0">{{$traveler->passport_expiry}}</div>
+                    <div class="t m0 x9 h7 y22 ff4 fs0 fc0 sc0 ls3 ws0">{{$ex_date->toDateString()}}</div>
                 </div>
                 <div class="t m0 x1 h4 y23 ff2 fs1 fc0 sc0 ls0 ws0"> </div>
                 <div class="t m0 x2 h4 y24 ff2 fs1 fc0 sc0 ls0 ws0">All other terms<span class="_ _0"></span> and conditions are as per<span class="_ _0"></span> Bupa Arabia p<span class="_ _0"></span>olicy. </div>

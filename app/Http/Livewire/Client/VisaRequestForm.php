@@ -62,7 +62,7 @@ class VisaRequestForm extends Component
         'interview_place.required' => 'يرجى تعبئة حقل مكان المقابلة',
         'phone.required' => 'يرجى تعبئة حقل رقم الجوال',
         'phone.numeric' => 'يجب ان يتكون رقم الجوال من أرقام فقط!',
-        'phone.digits' => 'يجب ان يتكون رقم الجوال عن 10 أرقام ',
+        'phone.digits' => 'يجب ان يتكون رقم الجوال من 10 أرقام ',
     ];
 
 

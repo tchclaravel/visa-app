@@ -24,7 +24,7 @@
 
     <div class="col-12">
       <label for="passport_number" class="form-label">رقم الجواز</label>
-      <input wire:model="passport_number" name="passport_number" type="text" class="form-control" id="passport_number" placeholder="أكتب رقم الجواز">
+      <input wire:model.debounce.500ms="passport_number" name="passport_number" type="text" class="form-control" id="passport_number" placeholder="أكتب رقم الجواز">
     </div>
 
     <div class="col-12 col-lg-6">

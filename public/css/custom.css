@@ -47,6 +47,10 @@ input[type=number] {
   -moz-appearance: textfield;
 }
 
+.traveler-data input[type=date]{
+    direction:ltr;text-align:left;
+}
+
 
 body *{
     font-family: 'DroidArabicKufiRegular' !important;

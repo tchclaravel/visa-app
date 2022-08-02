@@ -55,17 +55,17 @@
 
     <div class="col-12">
       <label for="passport_number" class="form-label">رقم الجواز</label>
-      <input wire:model="passport_number" name="passport_number" type="text" class="form-control" id="passport_number" placeholder="أكتب رقم الجواز">
+      <input wire:model.debounce.500ms="passport_number" name="passport_number" type="text" class="form-control" id="passport_number" placeholder="أكتب رقم الجواز">
     </div>
 
     <div class="col-12 col-lg-6">
       <label for="passport_issuance" class="form-label">تاريخ إستخراج الجواز</label>
-      <input wire:model="passport_issuance" name="passport_issuance" type="date" class="form-control" id="	passport_issuance" placeholder="تاريخ إستخراج الجواز">
+      <input wire:model="passport_issuance" name="passport_issuance" type="date" class="form-control" id="passport_issuance">
     </div>
 
     <div class="col-12 col-lg-6">
       <label for="passport_expiry" class="form-label">تاريخ إنتهاء الجواز</label>
-      <input wire:model="passport_expiry" name="passport_expiry" type="date" class="form-control" id="passport_expiry" placeholder="تاريخ إنتهاء الجواز">
+      <input wire:model="passport_expiry" name="passport_expiry" type="date" class="form-control" id="passport_expiry">
     </div>
 
     <div class="col-lg-6">

@@ -1,7 +1,29 @@
+/* navbar => track order button order */
+@media screen and (max-width: 992px){
+
+    .navbar .track-order-mobile{
+        display: inline-block;
+    }
+    .navbar .track-order-desktop{
+        display: none;
+    }
+}
+
+@media screen and (min-width: 992px){
+
+    .navbar .track-order-mobile{
+        display: none;
+    }
+    .navbar .track-order-desktop{
+        display:inline-block;
+    }
+}
+
+
+/* end navbar => track order button order */
+
+
 /* home page*/
-
-
-
 @media screen and (max-width: 768px){
 
     .features-icons .col-md-4{
