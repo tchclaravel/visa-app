@@ -106,10 +106,10 @@
 
 
     
-    {{-- <div class="col-lg-6">
+    <div class="col-lg-6">
       <label for="social_status" class="form-label d-block">صورة الجواز</label>
-      <input type="file" wire:model="passport" class="form-control">
-    </div>    --}}
+      <input type="file"  class="form-control">
+    </div>   
 
     <div class="col-12 mb-2">
         <button type="submit" class="btn btn-primary">التالي</button>
