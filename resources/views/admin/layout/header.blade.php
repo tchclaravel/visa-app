@@ -8,7 +8,10 @@
                 <!-- Logo icon --><b>
                     <!--You can put here icon as well // <i class="wi wi-sunset"></i> //-->
                     <!-- Dark Logo icon -->
-                    <span class="main-logo d-block">تأشيرتك علينا</span>
+                    <span class="main-logo d-block">
+                        <img class="mt-1" style="height: 40px; width:40px;" src="{{asset('app/template/assets/img/logo.png')}}" alt="">
+                        بدايات الأعمال
+                    </span>
                     {{-- <img src="{{asset('/admin/assets/images/logo-icon.png')}}" alt="homepage" class="dark-logo" /> --}}
                     <!-- Light Logo icon -->
                     {{-- <img src="{{asset('/admin/assets/images/logo-light-icon.png')}}" alt="homepage" class="light-logo" /> --}}

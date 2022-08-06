@@ -2574,7 +2574,7 @@
                 <div class="t m0 x8 h8 y9 ff1 fs7 fc0 sc0 ls0 ws0">{{$traveler->fname}}</div>
                 <div class="t m0 x9 h7 y7 ff3 fs6 fc0 sc0 ls0 ws0">Issued by / Date</div>
                 <div class="t m0 x9 h8 y8 ff1 fs7 fc0 sc0 ls0 ws0">AGT 86491845 AE</div>
-                <div class="t m0 x9 h8 y9 ff1 fs7 fc0 sc0 ls0 ws0">15JUL2018EKWWWWW DUBAI / EMIRATES IBE</div>
+                <div class="t m0 x9 h8 y9 ff1 fs7 fc0 sc0 ls0 ws0">{{\Carbon\Carbon::parse($order->expected_date)->translatedFormat('j')}}{{\Carbon\Carbon::parse($order->expected_date)->translatedFormat('F')}}{{\Carbon\Carbon::parse($order->expected_date)->year}}EKWWWWW DUBAI / EMIRATES IBE</div>
                 <div class="t m0 x8 h9 ya ff2 fs8 fc0 sc0 ls0 ws0">Your booking reference: HPGTXW</div>
                 <div class="t m0 x8 ha yb ff4 fs8 fc0 sc0 ls0 ws0">Your ticket is stored in our booking system. This receipt is your </div>
                 <div class="t m0 x8 ha yc ff4 fs8 fc0 sc0 ls0 ws0">record of your ticket and is part of your conditions of carriage.</div>

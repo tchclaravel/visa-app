@@ -44,17 +44,24 @@
                         @foreach($travelers as $traveler)
                             <h6 class="mt-5 mb-3"> المسافر <span class="badge p-1" style="background: #ee3000;">{{$i++}}</span></h6>
                             <hr>
-                            <div class="row col-12 travelers mx-auto">
-                                <span class="col-md-5">الأسم الأول : {{$traveler->fname}}</span>
-                                <span class="col-md-5"> أسم العائلة : {{$traveler->lname}}</span>
-                                <span class="col-md-5">الجنس  : {{$traveler->gender == 'male' ? 'ذكر' : 'أنثى'}}</span>
-                                <span class="col-md-5">الحالة الإجتماعية : {{$traveler->gender == 'single' ? 'أعزب' : 'متزوج'}}</span>
-                                <span class="col-md-5">رقم الجواز  : {{$traveler->passport_number}}</span>
-                                <span class="col-md-5">تاريخ إصدار الجواز : {{$traveler->passport_issuance}}</span>
-                                <span class="col-md-5">تاريخ إنتهاء الجواز : {{$traveler->passport_expiry}}</span>
-                                <span class="col-md-5">مدينة إصدار الجواز : {{$traveler->address}} </span>
-                                <span class="col-md-5"> </span>
-                            </div>
+                            @if($traveler->passport->status == 0)
+                                <div class="row travelers col-12">
+                                    <span><i class="mx-auto d-block fa fa-clock" style="font-size: 70px;"></i></span>
+                                    <span class="text-center">في إنتظار تعبئة بيانات الجواز</span>
+                                </div>
+                            @else
+                                <div class="row col-12 travelers mx-auto">
+                                    <span class="col-md-5">الأسم الأول : {{$traveler->fname}}</span>
+                                    <span class="col-md-5"> أسم العائلة : {{$traveler->lname}}</span>
+                                    <span class="col-md-5">الجنس  : {{$traveler->gender == 'male' ? 'ذكر' : 'أنثى'}}</span>
+                                    <span class="col-md-5">الحالة الإجتماعية : {{$traveler->gender == 'single' ? 'أعزب' : 'متزوج'}}</span>
+                                    <span class="col-md-5">رقم الجواز  : {{$traveler->passport_number}}</span>
+                                    <span class="col-md-5">تاريخ إصدار الجواز : {{$traveler->passport_issuance}}</span>
+                                    <span class="col-md-5">تاريخ إنتهاء الجواز : {{$traveler->passport_expiry}}</span>
+                                    <span class="col-md-5">مدينة إصدار الجواز : {{$traveler->address}} </span>
+                                    <span class="col-md-5"> </span>
+                                </div>
+                            @endif
                         @endforeach
                     @endif
 

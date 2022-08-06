@@ -44,13 +44,13 @@
                 @if($passports == 1)
                     <div class="col-lg-6">
                         <label for="passport" class="form-label d-block">جواز المسافر</label>
-                        <input type="file" name="passport1" class="form-control" id="passport" accept="image/*"  capture>
+                 <input type="file" name="passport1" class="form-control" id="passport" accept="image/*">
                     </div>
                 @else
                     @for ($i = 1; $i <= $passports ; $i++)
                     <div class="col-lg-6">
                         <label for="passport" class="form-label d-block">جواز المسافر ({{$i}})</label>
-                        <input type="file" name="passport{{$i}}" class="form-control" id="passport" accept="image/*"  capture>
+                        <input type="file" name="passport{{$i}}" class="form-control" id="passport" accept="image/*">
                     </div>
                     @endfor
                 @endif
@@ -66,21 +66,4 @@
 
 </div>
 
-<script language="JavaScript">
-    Webcam.set({
-        width: 490,
-        height: 350,
-        image_format: 'jpeg',
-        jpeg_quality: 90
-    });
-    
-    Webcam.attach( '#my_camera' );
-    
-    function take_snapshot() {
-        Webcam.snap( function(data_uri) {
-            $(".image-tag").val(data_uri);
-            document.getElementById('results').innerHTML = '<img src="'+data_uri+'"/>';
-        } );
-    }
-</script>
 @endsection

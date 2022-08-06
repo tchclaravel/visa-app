@@ -14,7 +14,7 @@
     <title>@yield('title')</title>
     <link rel="canonical" href="https://www.wrappixel.com/templates/adminwrap-lite/" />
     <!-- Favicon icon -->
-    <link rel="icon" type="image/png" sizes="16x16" href="../assets/images/favicon.png">
+    <link rel="icon" type="image/x-icon" href="{{asset('app/template/assets/img/favicon-admin.png')}}">
     <!-- Bootstrap Core CSS -->
     <link href="{{asset('/admin/assets/node_modules/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet">
     <link href="{{asset('/admin/assets/node_modules/perfect-scrollbar/css/perfect-scrollbar.css')}}" rel="stylesheet">

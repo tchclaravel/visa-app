@@ -80,9 +80,11 @@
       </select>
     </div>
 
+    @php $date_today = date("Y-m-d") @endphp
+    
     <div class="col-6">
       <label for="expected_date" class="form-label"> تاريخ السفر المتوقع </label>
-      <input wire:model="expected_date" name="expected_date" type="date" class="form-control" id="expected_date">
+      <input wire:model="expected_date" name="expected_date" type="date" min="{{$date_today}}" class="form-control" id="expected_date">
     </div>
 
     <div class="col-lg-6 select">

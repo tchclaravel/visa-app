@@ -6,6 +6,7 @@
         <meta name="description" content="" />
         <meta name="author" content="" />
         <title>@yield('title')</title>
+        <link rel="icon" type="image/x-icon" href="{{asset('app/template/assets/img/favicon-client.png')}}">
 
         {{-- Styles Sheet Links --}}
         @include('client.layout.include.style_links')

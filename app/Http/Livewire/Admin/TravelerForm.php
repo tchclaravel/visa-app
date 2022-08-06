@@ -47,7 +47,7 @@ class TravelerForm extends Component
         return [
             'fname' => ['required' , new EnglishOnly()],
             'lname' => ['required' , new EnglishOnly()],
-            'passport_number' => ['required' , new UniquePassport(),'unique:travelers' , 'size:10'], 
+            'passport_number' => ['required' , new UniquePassport(),'unique:travelers'], 
             'passport_issuance' => 'required', 
             'passport_expiry' => 'required',
             'gender' => 'required',
@@ -61,11 +61,10 @@ class TravelerForm extends Component
         'fname.required' => 'يرجى تعبئة حقل الأسم الأول',
         'lname.required' => 'يرجى تعبئة حقل أسم العائلة',
         'passport_number.required' => 'يرجى تعبئة حقل رقم الجواز',
-        'passport_number.size' => 'يجب ان يتكون رقم الجواز من 10 أرقام',
         'passport_number.unique' => 'رقم الجواز الذي أدخلته موجود في سجلاتنا',
         'passport_issuance.required' => 'يرجى تعبئة حقل تاريخ إستخراج الجواز',
         'passport_expiry.required' => 'يرجى تعبئة حقل تاريخ إنتهاء الجواز',
-        'gender.required' => 'يرُجى تعبئة حقل النوع',
+        'gender.required' => 'يرجى تعبئة حقل النوع',
         'social_status.required' => 'يرجى تعبئة حقل الحالة الإجتماعية ',
         'address.required' => 'يرجى تعبئة حقل المدينة التي تقيم بها',
     ];
