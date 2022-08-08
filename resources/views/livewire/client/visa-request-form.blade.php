@@ -31,9 +31,9 @@
       </div>
     @endif
 
-    <div class="col-lg-6 select">
+    <div class="col-lg-6">
         <label for="country_id" class="form-label d-block">أختر السفارة</label>
-        <select wire:model="country_id" class="form-control" aria-label="Default select example">
+        <select wire:model="country_id" class="form-select" aria-label="Default select example">
           <option value="">---</option>
           @foreach($countries as $country)
           <option value="{{$country->id}}">{{$country->country_name_ar}}</option>
@@ -44,7 +44,7 @@
     {{-- Livewire status --}}
     <div class="col-lg-6 select">
         <label for="city_id" class="form-label d-block">أختر الوجهة </label>
-        <select wire:model="city_id" name="city_id" class="form-control"  id="city_id" aria-label="Default select example">
+        <select wire:model="city_id" name="city_id" class="form-select"  id="city_id" aria-label="Default select example">
           <option value="">---</option>
           @if (count($cities) > 0)
             @foreach($cities as $city)
@@ -57,7 +57,7 @@
     {{-- Livewire status --}}
     <div class="col-lg-6 select">
       <label for="visa_type" class="form-label d-block">نوع التأشيرة</label>
-      <select wire:model="visa_type" name="visa_type" class="form-control" id="visa_type" aria-label="Default select example">
+      <select wire:model="visa_type" name="visa_type" class="form-select" id="visa_type" aria-label="Default select example">
         <option value="">---</option>
         @if (count($visas) > 0)
           @foreach($visas as $visa)
@@ -70,17 +70,20 @@
     </div>
 
 
-    <div class="col-lg-6 select">
+    <div class="col-lg-6">
       <label for="travelers_number" class="form-label d-block">عدد المسافرين</label>
-      <select wire:model="travelers_number" class="form-control" name="travelers_number"  id="travelers_number" class="scroll" aria-label="Default select example">
-          {{-- <option value="0" selected>---</option> --}}
-          @for($i=1 ; $i <= 10 ; $i++)
-          <option value="{{$i}}">{{$i}}</option>
-          @endfor
-      </select>
+      <div class="scrollable">
+        <select wire:model="travelers_number" class="form-select" name="travelers_number"  id="travelers_number" class="scroll" aria-label="Default select example">
+            {{-- <option value="0" selected>---</option> --}}
+            @for($i=1 ; $i <= 10 ; $i++)
+            <option value="{{$i}}">{{$i}}</option>
+            @endfor
+        </select>
+      </div> 
+
     </div>
 
-    @php $date_today = date("Y-m-d") @endphp
+    @php $date_today = date("Y-m-d"); @endphp
     
     <div class="col-6">
       <label for="expected_date" class="form-label"> تاريخ السفر المتوقع </label>
@@ -89,7 +92,7 @@
 
     <div class="col-lg-6 select">
       <label for="interview_place" class="form-label d-block">أختر مكان المقابلة؟</label>
-      <select wire:model="interview_place" class="form-control" name="interview_place" id="interview_place" aria-label="Default select example">
+      <select wire:model="interview_place" class="form-select" name="interview_place" id="interview_place" aria-label="Default select example">
         <option value="">---</option>
         <option value="Riyadh">الرياض</option>
         <option value="Dhahran">الظهران </option>

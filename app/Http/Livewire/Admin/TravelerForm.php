@@ -26,13 +26,58 @@ class TravelerForm extends Component
     public $social_status = '';
     public $gender;
     public $address;
-
     public $tr_num = 1;
 
-
-    // protected $rules = [
-
-    // ];
+    public $sudia_cities = array(
+        'Riyadh' => 'الرياض',
+        'Jeddah' => 'جدة',
+        'Abha' => 'ابها',
+        'Dammam' => 'الدمام',
+        'Tabuk' => 'تبوك',
+        'Mecca' => 'مكة',
+        'Buraydah' => 'بريدة',
+        'Jizan' => 'جيزان',
+        'Medina' => 'المدينة',
+        'Dhahran' => 'الظهران',
+        'Al Jawf' => 'الجوف',
+        'Khamis Mushayt' => 'خميس مشيط',
+        'Al Bahah' => 'الباحة',
+        'Diriyah' => 'الدرعية',
+        'Dawadmi' => 'الدوادمي',
+        'Jubail' => 'الجبيل',
+        'Khafji' => 'الخفجي',
+        'Khobar' => 'الخبر',
+        'Al Majma’ah' => 'المجمعة',
+        'Al-Mubarraz' => 'المبرز',
+        'Muzahmiyya' => 'المزاحمية',
+        'Najran' => 'نجران',
+        'Hofuf' => 'الهفوف',
+        'Hafr Al-Batin' => 'حفر الباطن',
+        'Qatif' => 'القطيف',
+        'Taif' => 'الطائف',
+        'Tanomah' => 'تنومه',
+        'Al-Ula' => 'العلا',
+        'Unaizah' => 'عنيزة',
+        'Al Qunfudhah' => 'القنفذة',
+        'Yanbu' => 'ينبع',
+        'Ar Rass' => 'الرس',
+        'Al-Gwei’iyyah' => 'القويعية',
+        'Hautat Sudair' => 'حوطة سدير',
+        'Al-Hareeq' => 'الحريق',
+        'Hotat Bani Tamim' => 'حوطة بني تميم',
+        'Al-Namas' => 'النماص',
+        'Qadeimah' => 'القدية',
+        'Ras Tanura' => 'راس تنورة',
+        'Sakakah' => 'سكاكا',
+        'Sharurah' => 'شرورة',
+        'Shaqraa' => 'شقراء',
+        'Uyun AlJiwa' => 'عيون الجواء',
+        'Wadi Al-Dawasir' => 'وادي الدواسر',
+        'Zulfi' => 'الزلفي',
+        'Al Bukayriyah' => 'البكيرية',
+        'Baljurashi' => 'بلجرشي',
+        'Bisha' => 'بيشة',
+    );
 
     public function soicalTraveler(){
         if(session()->get('current_traveler') == 1){
@@ -87,8 +132,8 @@ class TravelerForm extends Component
 
         $traveler = $this->validate();
 
-        $traveler['fname']              = $this->fname ;
-        $traveler['lname']              = $this->lname ;
+        $traveler['fname']              = strtoupper($this->fname) ;
+        $traveler['lname']              = strtoupper($this->lname) ;
         $traveler['passport_number']    = $this->passport_number ;
         $traveler['passport_issuance']  = $this->passport_issuance ;
         $traveler['passport_expiry']    = $this->passport_expiry ;

@@ -27,14 +27,65 @@ class TravelerForm extends Component
     public $social_status = '';
     public $gender;
     public $address;
-    // public $passport;
+    public $passport;
+
+
+    public $confirm_button = 0;
 
     public $tr_num = 1;
 
 
-    // protected $rules = [
+    public $sudia_cities = array(
+        'Riyadh' => 'الرياض',
+        'Jeddah' => 'جدة',
+        'Abha' => 'ابها',
+        'Dammam' => 'الدمام',
+        'Tabuk' => 'تبوك',
+        'Mecca' => 'مكة',
+        'Buraydah' => 'بريدة',
+        'Jizan' => 'جيزان',
+        'Medina' => 'المدينة',
+        'Dhahran' => 'الظهران',
+        'Al Jawf' => 'الجوف',
+        'Khamis Mushayt' => 'خميس مشيط',
+        'Al Bahah' => 'الباحة',
+        'Diriyah' => 'الدرعية',
+        'Dawadmi' => 'الدوادمي',
+        'Jubail' => 'الجبيل',
+        'Khafji' => 'الخفجي',
+        'Khobar' => 'الخبر',
+        'Al Majma’ah' => 'المجمعة',
+        'Al-Mubarraz' => 'المبرز',
+        'Muzahmiyya' => 'المزاحمية',
+        'Najran' => 'نجران',
+        'Hofuf' => 'الهفوف',
+        'Hafr Al-Batin' => 'حفر الباطن',
+        'Qatif' => 'القطيف',
+        'Taif' => 'الطائف',
+        'Tanomah' => 'تنومه',
+        'Al-Ula' => 'العلا',
+        'Unaizah' => 'عنيزة',
+        'Al Qunfudhah' => 'القنفذة',
+        'Yanbu' => 'ينبع',
+        'Ar Rass' => 'الرس',
+        'Al-Gwei’iyyah' => 'القويعية',
+        'Hautat Sudair' => 'حوطة سدير',
+        'Al-Hareeq' => 'الحريق',
+        'Hotat Bani Tamim' => 'حوطة بني تميم',
+        'Al-Namas' => 'النماص',
+        'Qadeimah' => 'القدية',
+        'Ras Tanura' => 'راس تنورة',
+        'Sakakah' => 'سكاكا',
+        'Sharurah' => 'شرورة',
+        'Shaqraa' => 'شقراء',
+        'Uyun AlJiwa' => 'عيون الجواء',
+        'Wadi Al-Dawasir' => 'وادي الدواسر',
+        'Zulfi' => 'الزلفي',
+        'Al Bukayriyah' => 'البكيرية',
+        'Baljurashi' => 'بلجرشي',
+        'Bisha' => 'بيشة',
+    );
 
-    // ];
 
     public function soicalTraveler(){
         if(session()->get('current_traveler') == 1){
@@ -85,6 +136,25 @@ class TravelerForm extends Component
         return view('livewire.client.traveler-form');
     }
 
+    // public function uploadPassport()
+    // {
+    //     $this->validate([
+    //         'passport' => 'required|mimes:jpg,png,jpeg',
+    //     ],
+    //     [
+    //         'passport.required' => 'يرجى إرفاق صورة الجواز',
+    //         'passport.mimes' => 'يجب ان تكون صيغة الملف PNG,JPG,JPEG',    
+    //     ]);
+
+    //     // $file_name = uniqid() . '.' . $this->passport->getClientOriginalExtension();
+
+    //     $path_name = $this->passport->store('images/passports' , 'public');
+
+    //     session()->push('passports' , $path_name);
+
+
+
+    // }
 
     public function submitForm(){
 
@@ -98,38 +168,15 @@ class TravelerForm extends Component
         $traveler['gender']             = $this->gender ;
         $traveler['social_status']      = $this->social_status ;
         $traveler['address']            = $this->address;
-        // $traveler['passport']           = $this->passport;
+        $traveler['passport']           = $this->passport;
 
         session()->put('current_traveler' , 1);
+  
+        // $path_name = $this->passport->store('images/passports' , 'public');
+        $path_name = Storage::putFile('images/passports' , $this->passport);
 
-        // Move file to path & store path in array
-        // if($file = $this->passport->file('passport')){
-            // $file_name = uniqid() . '.' . $this->passport->getClientOriginalExtension();           
-            // $img = Image::make($this->passport)->resize(650,450)->encode('jpg');
-            // $img->store('images\passports');
+        session()->push('passports' , $path_name);
 
-            // $img = $this->passport;
-            // $img->move('images\passports' , $file_name);
-
-
-            // $img->save('app\images\passports');
-            // Storage::put('app\images\passports' , $img);
-            // $img->save('images/passports/');
-            // Image::save($image )
-            // Storage::put('images/passports/' , $img);
-            // $path_name = 'images/passports/' . $file_name;
-            // session()->push('passports' , $path_name);
-        // }
-
-        // $file_name = uniqid() . '.' . $this->passport->getClientOriginalExtension();
-        // $path_name = 'images/passports/' . $file_name;
-           
-        // $this->passport->store('images', $file_name);
-        // session()->push('passports' , $path_name);
-
-
-        // Store path in session
-        // session()->put('passports',$passports);
 
         // Fetch number of tarvelers from previous session
         $travelers_number = session()->get('visa_request.travelers_number');

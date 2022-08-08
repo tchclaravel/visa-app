@@ -70,7 +70,7 @@
 
     <div class="col-lg-6">
         <label for="gender" class="form-label d-block">الجنس</label>
-        <select wire:model="gender" class="form-control" name="gender" id="gender" aria-label="Default select example">
+        <select wire:model="gender" class="form-select" name="gender" id="gender" aria-label="Default select example">
           <option value="">---</option>
           <option value="male">ذكر</option>
           <option value="female">أنثى</option>
@@ -81,7 +81,7 @@
 
       <div class="col-lg-6">
         <label for="social_status" class="form-label d-block">الحالة الإجتماعية</label>
-        <select wire:model="social_status"class="form-control" name="social_status" id="social_status" aria-label="Default select example">
+        <select wire:model="social_status"class="form-select" name="social_status" id="social_status" aria-label="Default select example">
           <option value="">---</option>
           <option value="single">أعزب</option>
           <option value="married">متزوج</option>
@@ -90,25 +90,27 @@
 
     @endif
 
-    <div class="col-lg-6">
+    <div class="col-lg-6 select-wrapper">
       <label for="address" class="form-label d-block">مدينة إصدار الجواز</label>
-      <select wire:model="address" name="address" class="form-control" id="address" aria-label="Default select example" class="scroll">
+      <select wire:model="address" name="address" class="form-select" id="address" aria-label="Default select example" class="scroll">
         <option value="">---</option>
-        <option value="2">جدة </option>
-        <option value="3">الرياض</option>
+        @foreach($sudia_cities as $row => $value)
+          <option value="{{$row}}">{{$value}}</option>
+        @endforeach
+        {{-- <option value="3">الرياض</option>
         <option value="4">مكة</option>
         <option value="5">المدينة</option>
         <option value="6">الدمام</option>
         <option value="7">أبها</option>
-        <option value="8">تبوك</option>
+        <option value="8">تبوك</option> --}}
       </select>
     </div>
 
 
     
     <div class="col-lg-6">
-      <label for="social_status" class="form-label d-block">صورة الجواز</label>
-      <input type="file"  class="form-control">
+      <label for="passport" class="form-label d-block">صورة الجواز</label>
+      <input type="file" wire:model="passport" id="passport"  class="form-control">
     </div>   
 
     <div class="col-12 mb-2">
