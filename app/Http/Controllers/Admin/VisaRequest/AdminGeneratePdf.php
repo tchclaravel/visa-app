@@ -27,7 +27,7 @@ class AdminGeneratePdf extends Controller
     public function booking($request_number , $traveler_id){
         $order = VisaRequest::where('request_number' , $request_number)->first();
         $traveler = Traveler::where('id' , $traveler_id)->first();
-        $seconde_traveler = Traveler::where('request_id' , $order->id)->where('id' , '!=' , $traveler->id)->first();
+        $travelers = Traveler::where('request_id' , $order->id)->where('id' , '!=' , $traveler->id)->get();
 
         $check_out = Carbon::parse($order->expected_date)->addWeeks(2);
 
@@ -49,7 +49,7 @@ class AdminGeneratePdf extends Controller
         $total_sar = number_format($tax_sar);
         $final_sar =  number_format($tax_final_sar);
 
-        return view('admin.visa-request.pdf.booking' , compact('order' , 'traveler' , 'nights' , 'check_out' , 'price_eur' , 'price_sar' , 'total_eur' , 'total_sar' , 'final_sar' , 'seconde_traveler'));
+        return view('admin.visa-request.pdf.booking' , compact('order' , 'traveler' , 'nights' , 'check_out' , 'price_eur' , 'price_sar' , 'total_eur' , 'total_sar' , 'final_sar' , 'travelers'));
     }
 
 

@@ -29,7 +29,7 @@ class MyHelpers{
     } 
 
 
-    public static function setTravelerNum(){
+    public static function travelerNum(){
 
         $passports = session()->get('passports');
         $travelers = session()->get('travelers');
@@ -76,7 +76,7 @@ class MyHelpers{
         $request->city_id = $visa_request['city_id'];
         $request->visa_type = $visa_request['visa_type'];
         $request->expected_date = $visa_request['expected_date'];
-        $request->travelers_number = MyHelpers::setTravelerNum();
+        $request->travelers_number = MyHelpers::travelerNum();
         $request->total_price = $visa_request['total_price'];
         $request->interview_place = $visa_request['interview_place'];
         // From Appointment session
@@ -99,19 +99,6 @@ class MyHelpers{
         // Passport images paths
         $passports = session()->get('passports');
 
-        // Create Passports
-        // if(is_null($travelers)){
-
-        //     for($i = 1; $i <= $visa_request['travelers_number']; $i++){
-        //         $passport = new Passport();
-        //         $passport->request_id = $request->id;
-        //         $passport->photo = $passports['photo'.$i];
-        //         $passport->status = 0;
-        //         $passport->created_at = now();
-        //         $passport->save();
-        //     }
-
-        // }
 
         // Send Passports Or Create Travalers Data depend on value of travelers session
         if(is_null($travelers)){
@@ -136,7 +123,7 @@ class MyHelpers{
                 $traveler->passport_expiry = now();
                 $traveler->gender = '---';
                 $traveler->social_status = '---';
-                $traveler->address = '---';
+                $traveler->address_id = 1;
                 $traveler->created_at = now();
                 $traveler->save();
             }
@@ -146,16 +133,17 @@ class MyHelpers{
             foreach($travelers as $row){
 
                 // Create Traveler Passport
-                // $passport = new Passport();
-                // $passport->request_id = $request->id;
-                // $passport->photo = $passports[$i++];
-                // $passport->status = 1;
-                // $passport->created_at = now();
-                // $passport->save();
+                $passport = new Passport();
+                $passport->request_id = $request->id;
+                $passport->photo = $passports[$i++];
+                $passport->status = 1;
+                $passport->created_at = now();
+                $passport->save();
+
                 // Create Traveler Data
                 $traveler = new Traveler();
                 $traveler->request_id = $request->id;
-                $traveler->passport_id = null;
+                $traveler->passport_id = $passport->id;
                 $traveler->fname = strtoupper($row['fname']);
                 $traveler->lname = strtoupper($row['lname']);
                 $traveler->passport_number = $row['passport_number'];
@@ -163,7 +151,7 @@ class MyHelpers{
                 $traveler->passport_expiry = $row['passport_expiry'];
                 $traveler->gender = $row['gender'];
                 $traveler->social_status = $row['social_status'];
-                $traveler->address = $row['address'];
+                $traveler->address_id = $row['address_id'];
                 $traveler->created_at = now();
                 $traveler->save();
             }

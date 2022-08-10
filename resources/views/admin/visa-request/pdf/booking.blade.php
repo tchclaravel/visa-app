@@ -2303,7 +2303,7 @@
                     <div class="t m0 x3 h7 y20 ff2 fs3 fc0 sc0 ls0 ws0">If you don’t show up at this booking, and you don’t cancel beforehand, the property is liable to charge you the full reservation amount. </div>
                     <div class="t m0 x3 hd y21 ff2 fs3 fc0 sc0 ls0 ws0">Please remember to read the <span class="ff1">Important information</span> below, as this may contain important details not mentioned here.</div>
                     <div class="t m0 x3 h3 y22 ff1 fs0 fc0 sc0 ls0 ws0">Standar<span class="_ _0"></span>d Double Room - Via del Corso 81 </div>
-                    <div class="t m0 x3 hd y23 ff1 fs3 fc0 sc0 ls0 ws0">Guest name:<span class="ff2"> {{$traveler->fname}},{{$seconde_traveler ? $seconde_traveler->fname : ''}}
+                    <div class="t m0 x3 hd y23 ff1 fs3 fc0 sc0 ls0 ws0">Guest name:<span class="ff2"> {{$traveler->fname}},@foreach($travelers as $row) {{$row->fname}}, @endforeach
                     </div>
                     <div class="t m0 x3 hd y24 ff1 fs3 fc0 sc0 ls0 ws0">Number of guests: <span class="ff2">adults  </span></div>
                     <div class="t m0 x3 hd y25 ff1 fs3 fc0 sc0 ls0 ws0">Meal Plan:<span class="ff2">  </span></div>

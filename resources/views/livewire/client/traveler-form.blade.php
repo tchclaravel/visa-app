@@ -1,4 +1,4 @@
-<form class="row g-4 request-form col-md-6" method="POST" wire:submit.prevent="submitForm" enctype="multipart/form-data">
+<form class="row g-4 request-form col-md-6" wire:submit.prevent="submitForm" enctype="multipart/form-data">
     @csrf
       <nav aria-label="breadcrumb">
           <ol class="breadcrumb">
@@ -92,17 +92,11 @@
 
     <div class="col-lg-6 select-wrapper">
       <label for="address" class="form-label d-block">مدينة إصدار الجواز</label>
-      <select wire:model="address" name="address" class="form-select" id="address" aria-label="Default select example" class="scroll">
+      <select wire:model="address_id" name="address_id" class="form-select" id="address" aria-label="Default select example" class="scroll">
         <option value="">---</option>
-        @foreach($sudia_cities as $row => $value)
-          <option value="{{$row}}">{{$value}}</option>
+        @foreach($passport_cities as $city)
+          <option value="{{$city->id}}">{{$city->city_name_ar}}</option>
         @endforeach
-        {{-- <option value="3">الرياض</option>
-        <option value="4">مكة</option>
-        <option value="5">المدينة</option>
-        <option value="6">الدمام</option>
-        <option value="7">أبها</option>
-        <option value="8">تبوك</option> --}}
       </select>
     </div>
 

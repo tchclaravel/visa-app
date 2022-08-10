@@ -56,16 +56,12 @@
     </div>   
 
     <div class="col-lg-6">
-      <label for="address" class="form-label d-block">مدينة إصدار الجواز</label>
-      <select wire:model="address" name="address" class="form-control" id="address" aria-label="Default select example" class="scroll">
+      <label for="address_id" class="form-label d-block">مدينة إصدار الجواز</label>
+      <select wire:model="address_id" name="address_id" class="form-control" id="address_id" aria-label="Default select example" class="scroll">
         <option value="">---</option>
-        <option value="2">جدة </option>
-        <option value="3">الرياض</option>
-        <option value="4">مكة</option>
-        <option value="5">المدينة</option>
-        <option value="6">الدمام</option>
-        <option value="7">أبها</option>
-        <option value="8">تبوك</option>
+        @foreach($passport_cities as $city)
+          <option value="{{$city->id}}">{{$city->city_name_ar}}</option>
+        @endforeach
       </select>
     </div>
 

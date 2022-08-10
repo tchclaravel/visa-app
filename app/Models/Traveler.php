@@ -19,7 +19,7 @@ class Traveler extends Model
         'passport_expiry',
         'gender',
         'social_status', 
-        'address',
+        'address_id',
     ];
 
 
@@ -29,6 +29,10 @@ class Traveler extends Model
 
     public function passport(){
         return $this->belongsTo(Passport::class , 'passport_id');
+    }
+
+    public function address(){
+        return $this->belongsTo(PassportCity::class , 'address_id');
     }
 
 

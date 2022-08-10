@@ -58,7 +58,7 @@
                                     <span class="col-md-5">رقم الجواز  : {{$traveler->passport_number}}</span>
                                     <span class="col-md-5">تاريخ إصدار الجواز : {{$traveler->passport_issuance}}</span>
                                     <span class="col-md-5">تاريخ إنتهاء الجواز : {{$traveler->passport_expiry}}</span>
-                                    <span class="col-md-5">مدينة إصدار الجواز : {{$traveler->address}} </span>
+                                    <span class="col-md-5">مدينة إصدار الجواز : {{$traveler->address->city_name_ar}} </span>
                                     <span class="col-md-5"> </span>
                                 </div>
                             @endif

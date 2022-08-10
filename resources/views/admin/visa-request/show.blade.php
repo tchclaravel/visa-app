@@ -34,16 +34,31 @@
                                 <span class="col-md-5">Passport Number  : {{$traveler->passport_number}}</span>
                                 <span class="col-md-5">Passport Issuance: {{$traveler->passport_issuance}}</span>
                                 <span class="col-md-5">Passport Expiry: {{$traveler->passport_expiry}}</span>
-                                <span class="col-md-5">Address: {{$traveler->address}} </span>
-                                <span class="col-md-11"> 
+                                <span class="col-md-5">Address: {{$traveler->address->city_name_en}} </span>
+                                <span class="col-md-5">
                                     <button type="button" class="btn pdf-btn btn-sm" data-bs-toggle="modal" data-bs-target="{{'#generatePdf' . $traveler->id}}"> <i class="fa fa-file-pdf"></i> إنشاء PDF </button>
+                                </span>
+                                <span class="col-md-5">
+                                    <button type="button" class="btn btn-sm btn-primary" data-bs-toggle="modal" data-bs-target="{{'#showPassport' . $traveler->passport->id}}"> <i class="fa fa-photo"></i> صورة الجواز </button>
                                 </span>
                             </div>
 
 
+                            <!-- Bootstrap Modal Passport Image -->
+                            <div class="modal fade" id="{{'showPassport' . $traveler->passport->id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog modal-lg">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                    </div>
+                                    <div class="modal-body mx-auto">
+                                        <img height="450px" width="650px" src="{{asset($traveler->passport->photo)}}">
+                                    </div>
+                                </div>
+                                </div>
+                            </div>
 
-
-                            <!-- Bootstrap Modal -->
+                            <!-- Bootstrap Modal Generate PDF -->
                             <div class="modal fade" id="{{'generatePdf' . $traveler->id}}" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                 <div class="modal-dialog">
                                 <div class="modal-content">

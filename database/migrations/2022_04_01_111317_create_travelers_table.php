@@ -25,7 +25,7 @@ class CreateTravelersTable extends Migration
             $table->date('passport_expiry');
             $table->string('gender');
             $table->string('social_status')->nullable();
-            $table->string('address');
+            $table->unsignedBigInteger('address_id');
             $table->timestamps();
 
             // Constraint
@@ -34,6 +34,10 @@ class CreateTravelersTable extends Migration
 
             // Constraint
             $table->foreign('passport_id')->references('id')->on('passports')
+            ->onUpdate('cascade')->onDelete('cascade');
+
+            // Constraint
+            $table->foreign('address_id')->references('id')->on('passport_cities')
             ->onUpdate('cascade')->onDelete('cascade');
             
         });

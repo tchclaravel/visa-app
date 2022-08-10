@@ -35,9 +35,9 @@ class VisaRequestController extends Controller
     // Step three => Appointment Form
     public function appointmentForm(){
 
-        echo "<pre>";
-        print_r(session()->all());
-        echo "</pre>";
+        // echo "<pre>";
+        // print_r(session()->all());
+        // echo "</pre>";
 
         // Load Page if user come from traveler-form or back from payments page
         if(session()->get('step_number') != 2){

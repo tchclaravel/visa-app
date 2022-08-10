@@ -4,6 +4,7 @@ namespace App\Http\Livewire\Admin;
 
 use App\Http\Requests\TravelerRequest;
 use App\Models\Passport;
+use App\Models\PassportCity;
 use App\Models\Traveler;
 use App\Models\VisaRequest;
 use App\Rules\EnglishOnly;
@@ -25,59 +26,14 @@ class TravelerForm extends Component
     public $passport_expiry;
     public $social_status = '';
     public $gender;
-    public $address;
+    public $address_id;
     public $tr_num = 1;
+    public $passport_cities;
 
-    public $sudia_cities = array(
-        'Riyadh' => 'الرياض',
-        'Jeddah' => 'جدة',
-        'Abha' => 'ابها',
-        'Dammam' => 'الدمام',
-        'Tabuk' => 'تبوك',
-        'Mecca' => 'مكة',
-        'Buraydah' => 'بريدة',
-        'Jizan' => 'جيزان',
-        'Medina' => 'المدينة',
-        'Dhahran' => 'الظهران',
-        'Al Jawf' => 'الجوف',
-        'Khamis Mushayt' => 'خميس مشيط',
-        'Al Bahah' => 'الباحة',
-        'Diriyah' => 'الدرعية',
-        'Dawadmi' => 'الدوادمي',
-        'Jubail' => 'الجبيل',
-        'Khafji' => 'الخفجي',
-        'Khobar' => 'الخبر',
-        'Al Majma’ah' => 'المجمعة',
-        'Al-Mubarraz' => 'المبرز',
-        'Muzahmiyya' => 'المزاحمية',
-        'Najran' => 'نجران',
-        'Hofuf' => 'الهفوف',
-        'Hafr Al-Batin' => 'حفر الباطن',
-        'Qatif' => 'القطيف',
-        'Taif' => 'الطائف',
-        'Tanomah' => 'تنومه',
-        'Al-Ula' => 'العلا',
-        'Unaizah' => 'عنيزة',
-        'Al Qunfudhah' => 'القنفذة',
-        'Yanbu' => 'ينبع',
-        'Ar Rass' => 'الرس',
-        'Al-Gwei’iyyah' => 'القويعية',
-        'Hautat Sudair' => 'حوطة سدير',
-        'Al-Hareeq' => 'الحريق',
-        'Hotat Bani Tamim' => 'حوطة بني تميم',
-        'Al-Namas' => 'النماص',
-        'Qadeimah' => 'القدية',
-        'Ras Tanura' => 'راس تنورة',
-        'Sakakah' => 'سكاكا',
-        'Sharurah' => 'شرورة',
-        'Shaqraa' => 'شقراء',
-        'Uyun AlJiwa' => 'عيون الجواء',
-        'Wadi Al-Dawasir' => 'وادي الدواسر',
-        'Zulfi' => 'الزلفي',
-        'Al Bukayriyah' => 'البكيرية',
-        'Baljurashi' => 'بلجرشي',
-        'Bisha' => 'بيشة',
-    );
+    public function mount(){
+        $this->passport_cities = PassportCity::all();
+    }
+
 
     public function soicalTraveler(){
         if(session()->get('current_traveler') == 1){
@@ -97,7 +53,7 @@ class TravelerForm extends Component
             'passport_expiry' => 'required',
             'gender' => 'required',
             'social_status' => $this->soicalTraveler(),
-            'address' => 'required'
+            'address_id' => 'required'
         ];
     }
 
@@ -111,7 +67,7 @@ class TravelerForm extends Component
         'passport_expiry.required' => 'يرجى تعبئة حقل تاريخ إنتهاء الجواز',
         'gender.required' => 'يرجى تعبئة حقل النوع',
         'social_status.required' => 'يرجى تعبئة حقل الحالة الإجتماعية ',
-        'address.required' => 'يرجى تعبئة حقل المدينة التي تقيم بها',
+        'address_id.required' => 'يرجى تعبئة حقل المدينة التي تقيم بها',
     ];
 
 
@@ -139,7 +95,7 @@ class TravelerForm extends Component
         $traveler['passport_expiry']    = $this->passport_expiry ;
         $traveler['gender']             = $this->gender ;
         $traveler['social_status']      = $this->social_status ;
-        $traveler['address']            = $this->address ;
+        $traveler['address_id']         = $this->address_id ;
 
         $traveler_new = Traveler::findOrFail(session()->get('traveler_id'));
 

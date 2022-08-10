@@ -12,6 +12,58 @@ class DatabaseSeeder extends Seeder
      *
      * @return void
      */
+
+    public $sudia_cities = array(
+        'Riyadh' => 'الرياض',
+        'Jeddah' => 'جدة',
+        'Abha' => 'ابها',
+        'Dammam' => 'الدمام',
+        'Tabuk' => 'تبوك',
+        'Mecca' => 'مكة',
+        'Buraydah' => 'بريدة',
+        'Jizan' => 'جيزان',
+        'Medina' => 'المدينة',
+        'Dhahran' => 'الظهران',
+        'Al Jawf' => 'الجوف',
+        'Khamis Mushayt' => 'خميس مشيط',
+        'Al Bahah' => 'الباحة',
+        'Diriyah' => 'الدرعية',
+        'Dawadmi' => 'الدوادمي',
+        'Jubail' => 'الجبيل',
+        'Khafji' => 'الخفجي',
+        'Khobar' => 'الخبر',
+        'Al Majma’ah' => 'المجمعة',
+        'Al-Mubarraz' => 'المبرز',
+        'Muzahmiyya' => 'المزاحمية',
+        'Najran' => 'نجران',
+        'Hofuf' => 'الهفوف',
+        'Hafr Al-Batin' => 'حفر الباطن',
+        'Qatif' => 'القطيف',
+        'Taif' => 'الطائف',
+        'Tanomah' => 'تنومه',
+        'Al-Ula' => 'العلا',
+        'Unaizah' => 'عنيزة',
+        'Al Qunfudhah' => 'القنفذة',
+        'Yanbu' => 'ينبع',
+        'Ar Rass' => 'الرس',
+        'Al-Gwei’iyyah' => 'القويعية',
+        'Hautat Sudair' => 'حوطة سدير',
+        'Al-Hareeq' => 'الحريق',
+        'Hotat Bani Tamim' => 'حوطة بني تميم',
+        'Al-Namas' => 'النماص',
+        'Qadeimah' => 'القدية',
+        'Ras Tanura' => 'راس تنورة',
+        'Sakakah' => 'سكاكا',
+        'Sharurah' => 'شرورة',
+        'Shaqraa' => 'شقراء',
+        'Uyun AlJiwa' => 'عيون الجواء',
+        'Wadi Al-Dawasir' => 'وادي الدواسر',
+        'Zulfi' => 'الزلفي',
+        'Al Bukayriyah' => 'البكيرية',
+        'Baljurashi' => 'بلجرشي',
+        'Bisha' => 'بيشة',
+    );
+
     public function run()
     {
         \App\Models\Page::factory()->create(['page_title' => 'privacy_policy',]);
@@ -38,6 +90,13 @@ class DatabaseSeeder extends Seeder
         \App\Models\Appointment::factory()->create([
             'title' => 'سوف نتواصل معك خلال أسبوعين'
         ]);
+
+        foreach($this->sudia_cities as $row => $value){
+            \App\Models\PassportCity::factory()->create([
+                'city_name_ar' => $value,
+                'city_name_en' => $row,
+            ]);
+        }
 
         // \App\Models\User::factory(10)->create();
         
